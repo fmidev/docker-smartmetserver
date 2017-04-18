@@ -1,0 +1,578 @@
+[
+    // Boundary Layer Height
+    //	grib: 159;180;BoundaryLayerHeight
+    //
+    {
+	"newbaseid" : 180,
+	"name" : "atmosphere_boundary_layer_thickness",
+	"standardname" : "atmosphere_boundary_layer_thickness",
+	"longname" : "Boundary layer height",
+	"unit" : "m"
+    },
+    // Land-Sea mask (0 - 1)
+    // 	grib: 172;281;LandSeaCoverage
+    //
+    {
+	"newbaseid" : 281,
+	"name" : "land_binary_mask",
+	"standardname" : "land_binary_mask",
+	"longname" : "Land-Sea mask",
+	"unit" : "1"
+    },
+    // Surface Roughness
+    // 	grib: 173;381;SurfaceRoughness
+    //
+    {
+	"newbaseid" : 381,
+	"name" : "surface_roughness_length",
+	"standardname" : "surface_roughness_length",
+	"longname" : "Surface roughness",
+	"unit" : "m"
+    },
+    // Mean Sea Level Pressure (msl) Pa
+    // 	grib: 151;1;msl;0;0.01;meanSea;0
+    //
+    {
+	"newbaseid" : 1,
+	"name" : "air_pressure_at_sea_level",
+	"standardname" : "air_pressure_at_sea_level",
+	"longname" : "Air pressure at sea level",
+	"divisor" : 0.01,
+	"unit" : "Pa"
+    },
+    // Surface Pressure (sp) Pa
+    // 	grib: 134;472;sp;0;0.01;heightAboveGround;0
+    //
+    {
+	"newbaseid" : 472,
+	"name" : "surface_air_pressure",
+	"standardname" : "surface_air_pressure",
+	"longname" : "Air pressure at surface level",
+	"divisor" : 0.01,
+	"unit" : "Pa"
+    },
+    // Temperature (t) K
+    // 	grib: 167;4;2t;273.15;1;heightAboveGround;2
+    //
+    {
+	"newbaseid" : 4,
+	"name" : "air_temperature",
+	"standardname" : "air_temperature",
+	"longname" : "Air temperature",
+	"offset" : 273.15,
+	"unit" : "K"
+    },
+    // Dew Point Temperature (2d) K
+    // 	grib: 3017;10;dpt;273.15;1
+    //
+    {
+	"newbaseid" : 10,
+	"name" : "dew_point_temperature",
+	"standardname" : "dew_point_temperature",
+	"longname" : "Dew point temperature",
+	"offset" : 273.15,
+	"unit" : "K"
+    },
+    // Relative Humidity (r) %
+    // 	grib: 157;13;r
+    //
+    {
+	"newbaseid" : 13,
+	"name" : "relative_humidity",
+	"standardname" : "relative_humidity",
+	"longname" : "Relative humidity",
+	"divisor" : 100,
+	"unit" : "1"
+    },
+    // U-Component of Wind (u) m/s
+    // 	grib: 131;23;u
+    //
+    {
+	"newbaseid" : 23,
+	"name" : "eastward_wind",
+	"standardname" : "eastward_wind",
+	"longname" : "Eastward wind",
+	"unit" : "m s-1"
+    },
+    // V-Component of Wind (v) m/s
+    // 	grib: 132;24;v
+    //
+    {
+	"newbaseid" : 24,
+	"name" : "northward_wind",
+	"standardname" : "northward_wind",
+	"longname" : "Northward wind",
+	"unit" : "m s-1"
+    },
+    // ??? wind_speed ???
+    // ??? wind_speed_shear (no vertical component) ???
+    //
+    // Wind speed (ws) m/s
+    // 	grib: 10;21;ws
+    //
+    {
+	"newbaseid" : 21,
+	"name" : "wind_speed",
+	"standardname" : "wind_speed",
+	"longname" : "Wind speed",
+	"unit" : "m s-1"
+    },
+    // Wind Direction
+    // 	grib: 140242;20;mdwi;0;1;heightAboveGround;10
+    //
+    {
+	"newbaseid" : 20,
+	"name" : "wind_from_direction",
+	"standardname" : "wind_from_direction",
+	"longname" : "Wind direction",
+	"unit" : "degree"
+    },
+    // WindGust
+    // 	grib: 49;417;WindGust;0;1;105;10
+    //
+    {
+	"newbaseid" : 417,
+	"name" : "wind_speed_of_gust",
+	"standardname" : "wind_speed_of_gust",
+	"longname" : "Wind gust",
+	"unit" : "m s-1",
+	"aggregatetype" : "maximum"
+    },
+    // MaximumWind
+    // 	grib: 201187;416;MaximumWind;0;1;heightAboveGround;10
+    //
+    {
+	"newbaseid" : 416,
+	"name" : "wind_speed",
+	"standardname" : "wind_speed",
+	"longname" : "Maximum wind speed",
+	"unit" : "m s-1",
+	"aggregatetype" : "maximum"
+    },
+    // ??? period ???
+    //
+    // Cat:0 004 Maximum Temperature K TMAX
+    // 	grib: 3015;5;TMax;273.15;1;heightAboveGround;2
+    //
+    {
+	"newbaseid" : 5,
+	"name" : "air_temperature",
+	"standardname" : "air_temperature",
+	"longname" : "Maximum air temperature",
+	"offset" : 273.15,
+	"unit" : "K",
+	"aggregatetype" : "maximum"
+    },
+    // ??? period ???
+    //
+    // Cat:0 005 Minimum Temperature K TMIN
+    // 	grib: 3016;6;TMin;273.15;1;heightAboveGround;2
+    //
+    {
+	"newbaseid" : 6,
+	"name" : "air_temperature",
+	"standardname" : "air_temperature",
+	"longname" : "Minimum air temperature",
+	"offset" : 273.15,
+	"unit" : "K",
+	"aggregatetype" : "minimum"
+    },
+    // Vertical Velocity (Geometric) (w) m/s
+    // 	grib: 500032;43;;0;1000.0
+    //
+    {
+	"newbaseid" : 43,
+	"name" : "upward_air_velocity",
+	"standardname" : "upward_air_velocity",
+	"longname" : "Vertical velocity (geometric)",
+	"divisor" : 1000,
+	"unit" : "m s-1"
+    },
+    // Velocity Potential Pa/s
+    // 	grib: 135;39;w;0;1
+    //
+    {
+	"newbaseid" : 39,
+	"name" : "lagrangian_tendency_of_air_pressure",
+	"standardname" : "lagrangian_tendency_of_air_pressure",
+	"longname" : "Velocity potential",
+	"unit" : "Pa s-1"
+    },
+    // Cat:3 Par:005 Geopotential Height gpm HGT
+    // 	grib: 156;2;Z
+    //
+    {
+	"newbaseid" : 2,
+	"name" : "geopotential_height",
+	"standardname" : "geopotential_height",
+	"longname" : "Geopotential Height",
+	"unit" : "gpm"
+    },
+    // Cat:6 Par:001 Total Cloud Cover % TCDC
+    // 	grib: 228164;79;N;0;1;entireAtmosphere;0
+    //
+    {
+	"newbaseid" : 79,
+	"name" : "cloud_area_fraction",
+	"standardname" : "cloud_area_fraction",
+	"longname" : "Total cloud clover",
+	"divisor" : 100,
+	"unit" : "1"
+    },
+    // Cat:6 Par:001 Total Cloud Cover % TCDC
+    // For convective, low, medium and high levels
+    // 	grib: 164;79;;0;100.0;244;0
+    //		  185;272;Cc;0;100.0;244;0
+    //		  186;273;Cl;0;100.0;214;0
+    //		  187;274;Cm;0;100.0;224;0
+    //		  188;275;Ch;0;100.0;234;0
+    //
+    {
+	"newbaseid" : 272,
+	"name" : "convective_cloud_area_fraction",
+	"standardname" : "convective_cloud_area_fraction",
+	"longname" : "Convective cloud cover",
+	"divisor" : 100,
+	"unit" : "1"
+    },
+    {
+	"newbaseid" : 273,
+	"name" : "low_cloud_area_fraction",
+	"longname" : "Low level cloud cover",
+	"divisor" : 100,
+	"unit" : "1"
+    },
+    {
+	"newbaseid" : 274,
+	"name" : "medium_cloud_area_fraction",
+	"longname" : "Middle level cloud cover",
+	"divisor" : 100,
+	"unit" : "1"
+    },
+    {
+	"newbaseid" : 275,
+	"name" : "high_cloud_area_fraction",
+	"longname" : "High level cloud cover",
+	"divisor" : 100,
+	"unit" : "1"
+    },
+    // Cat:7 Num:006 Convective Available Potential Energy J/kg CAPE
+    // 	grib: 59;59;CAPE
+    //
+    {
+	"newbaseid" : 59,
+	"name" : "atmosphere_specific_convective_available_potential_energy",
+	"standardname" : "atmosphere_specific_convective_available_potential_energy",
+	"longname" : "Convective Available Potential Energy (CAPE)"
+    },
+    // ??? unknown ???
+    //
+    // Cat:7 Par:007 Convective Inhibition J/kg CIN
+    // 	grib: 228001;66;CIN
+    //
+    // ??? unknown ???
+    //
+    // Total ozone
+    // 	grib: 260130;441;TOZONE;0;1;entireAtmosphere;0
+    //
+    // ??? unknown ???
+    //
+    // Topography
+    // 	grib: 228002;17;TopoGraf
+    //
+    // Monthly Mean Temperature
+    // 	grib: 130;433;MonthlyMeanTemperature;273.15;1;heightAboveGround;2
+    //
+    {
+	"newbaseid" : 433,
+	"name" : "air_temperature",
+	"standardname" : "air_temperature",
+	"longname" : "Monthly mean temperature",
+	"offset" : 273.15,
+	"unit" : "K",
+	"aggregatetype" : "mean",
+	"aggregatelength" : 44640
+    },
+    // Monthly precipitation
+    // 	grib: 3059;434;MonthlyPrecipitation;0;1;entireAtmohsphere;0
+    //
+    {
+	"newbaseid" : 434,
+	"name" : "precipitation_amount",
+	"standardname" : "precipitation_amount",
+	"longname" : "Monthly precipitation",
+	"unit" : "kg m-2",
+	"aggregatetype" : "mean",
+	"aggregatelength" : 44640
+    },
+    // Total precipitation kg/m^2
+    // 	grib: 228228;353;Precipitation1h
+    //
+    {
+	"newbaseid" : 353,
+	"name" : "precipitation_amount",
+	"standardname" : "precipitation_amount",
+	"longname" : "Hourly precipitation",
+	"unit" : "kg m-2",
+	"aggregatetype" : "sum",
+	"aggregatelength" : 60
+    },
+    // Precipitation amount
+    // 	grib: 201113;50;rain_con
+    //
+    {
+	"newbaseid" : 50,
+	"name" : "precipitation_amount",
+	"standardname" : "precipitation_amount",
+	"longname" : "Precipitation amount",
+	"unit" : "kg m-2",
+	"aggregatetype" : "sum"
+    },
+    // RadiationLWAccumulation
+    // 	grib: 175;1160;strd
+    //
+    {
+	"newbaseid" : 1160,
+	"name" : "integral_of_surface_downwelling_longwave_flux_in_air_wrt_time",
+	"standardname" : "integral_of_surface_downwelling_longwave_flux_in_air_wrt_time",
+	"longname" : "Long wave radiation accumulation",
+	"unit" : "W s m-2",
+	"aggregatetype" : "sum"
+    },
+    // RadiationGlobalAccumulation
+    // 	grib: 169;1159;ssrd
+    //
+    {
+	"newbaseid" : 1159,
+	"name" : "integral_of_surface_downwelling_shortwave_flux_in_air_wrt_time",
+	"standardname" : "integral_of_surface_downwelling_shortwave_flux_in_air_wrt_time",
+	"longname" : "Global radiation accumulation",
+	"unit" : "W s m-2",
+	"aggregatetype" : "sum"
+    },
+    // RadiationNetSurfaceLWAccumulation
+    // 	grib: 177;1161;str
+    //
+    {
+	"newbaseid" : 1161,
+	"name" : "integral_of_surface_net_upward_longwave_flux_in_air_wrt_time",
+	"longname" : "Net thermal radiation accumulation at the surface",
+	"unit" : "W s m-2",
+	"aggregatetype" : "sum"
+    },
+    // RadiationNetSurfaceSWAccumulation
+    // 	grib: 176;1162;ssr
+    //
+    {
+	"newbaseid" : 1162,
+	"name" : "integral_of_surface_net_upward_shortwave_flux_in_air_wrt_time",
+	"longname" : "Net short wave radiation accumulation at the surface",
+	"unit" : "W s m-2",
+	"aggregatetype" : "sum"
+    },
+    // RadiationDiffuseAccumulation
+    // 	grib: 228242;1163;fdif
+    //
+    {
+	"newbaseid" : 1163,
+	"name" : "integral_of_diffuse_downwelling_shortwave_flux_in_air_wrt_time",
+	"longname" : "Diffuse short wave radiation accumulation at the surface",
+	"unit" : "W s m-2",
+	"aggregatetype" : "sum"
+    },
+    // ??? aggregate/period ???
+    //
+    // 3102 Significant height of wind waves and swell combined (m)
+    // 	grib: 140229;165;swh;0;1 //;heightAboveGround;0 //;surface;0
+    //
+    {
+	"newbaseid" : 165,
+	"name" : "sea_surface_wave_significant_height",
+	"standardname" : "sea_surface_wave_significant_height",
+	"longname" : "Significant height of wind waves and swell combined",
+	"unit" : "m"
+    },
+    // ??? aggregate (mean)/period ???
+    //
+    // Total peak wave period (s), QD: 166 SigWavePeriod
+    // 	grib: 140232;166;mwp;0;1
+    //
+    {
+	"newbaseid" : 166,
+	"name" : "sea_surface_wind_wave_period",
+	"standardname" : "sea_surface_wind_wave_period",
+	"longname" : "Peak wave period",
+	"unit" : "s"
+    },
+    // ??? period ???
+    //
+    // 140230 Mean direction of wind waves (degrees)
+    // 	grib: 140230;167;mwd;0;1 //;heightAboveGround;0 //;surface;0
+    //
+    {
+	"newbaseid" : 167,
+	"name" : "sea_surface_wave_from_direction",
+	"standardname" : "sea_surface_wave_from_direction",
+	"longname" : "Wave direction of wind waves",
+	"unit" : "degree",
+	"aggregatetype" : "mean"
+    },
+    // Sea Surface Temperature
+    // 	grib: 150129;61;ocpt;0;1 //;heightAboveGroundes;0 //;surface;0
+    //
+    {
+	"newbaseid" : 61,
+	"name" : "sea_surface_temperature",
+	"standardname" : "sea_surface_temperature",
+	"longname" : "Sea surface temperature",
+	"offset" : 273.15,
+	"unit" : "K"
+    },
+    // Sea water salinity
+    //
+    // Ocean Salinity
+    // 	grib: 150130;62;s;0;1
+    //
+    {
+	"newbaseid" : 62,
+	"name" : "sea_water_salinity",
+	"standardname" : "sea_water_salinity",
+	"longname" : "Sea water salinity",
+	"unit" : "psu"
+    },
+    // Current U
+    // 	grib: 3049;1146;ucurr;0;1
+    //
+    {
+	"newbaseid" : 1146,
+	"name" : "eastward_sea_water_velocity",
+	"standardname" : "eastward_sea_water_velocity",
+	"longname" : "Eastward sea water velocity",
+	"unit" : "m s-1"
+    },
+    // Current V
+    // 	grib: 3050;1147;vcurr;0;1
+    //
+    {
+	"newbaseid" : 1147,
+	"name" : "northward_sea_water_velocity",
+	"standardname" : "northward_sea_water_velocity",
+	"longname" : "Northward sea water velocity",
+	"unit" : "m s-1"
+    },
+    // Pseudo adiabatic potential temperature
+    // 	grib: 3014;9;;273.15;1
+    //
+    {
+	"newbaseid" : 9,
+	"name" : "pseudo_equivalent_potential_temperature",
+	"standardname" : "pseudo_equivalent_potential_temperature",
+	"longname" : "Pseudo adiabatic potential temperature",
+	"offset" : 273.15,
+	"unit" : "K"
+    },
+    // Ice concentration
+    //	grib: 31;384;;0;100.0
+    //
+    {
+	"newbaseid" : 384,
+	"name" : "sea_ice_area_fraction",
+	"standardname" : "sea_ice_area_fraction",
+	"longname" : "Ice concentration",
+	"divisor" : 100,
+	"unit" : "1"
+    },
+    // Eastward ice velocity
+    //	grib: 3095;1149;;0;1
+    //
+    {
+	"newbaseid" : 1149,
+	"name" : "eastward_sea_ice_velocity",
+	"standardname" : "eastward_sea_ice_velocity",
+	"longname" : "Eastward ice velocity",
+	"unit" : "m s-1"
+    },
+    // Northward ice velocity
+    //	grib: 3096;1150;;0;1
+    //
+    {
+	"newbaseid" : 1150,
+	"name" : "northward_sea_ice_velocity",
+	"standardname" : "northward_sea_ice_velocity",
+	"longname" : "Northward ice velocity",
+	"unit" : "m s-1"
+    },
+    // Ice thickness
+    //	grib: 3092;1154;;0;100.0
+    //
+    {
+	"newbaseid" : 1154,
+	"name" : "sea_ice_thickness",
+	"standardname" : "sea_ice_thickness",
+	"longname" : "Sea ice thickness",
+	"divisor" : 1,
+	"unit" : "m"
+    },
+    {
+	"newbaseid" : 1180,
+	"name" : "nox_accumulated_6h_dry_deposition",
+	"longname" : "Surface 6h accumulated NOx dry deposition expressed as nitrogen",
+	"divisor" : 1,
+	"unit" : "mg m-2",
+        "aggregatetype" : "sum",
+        "aggregatelength" : 360
+    },
+    {
+	"newbaseid" : 1181,
+	"name" : "nox_accumulated_6h_wet_deposition",
+	"longname" : "Surface 6h accumulated NOx wet deposition expressed as nitrogen",
+	"divisor" : 1.0,
+	"unit" : "mg m-2",
+        "aggregatetype" : "sum",
+        "aggregatelength" : 360
+    },
+    {
+        "newbaseid" : 1182,
+        "name" : "nhx_accumulated_6h_dry_deposition",
+        "longname" : "Surface 6h accumulated NHx dry deposition expressed as nitrogen",
+        "divisor" : 1.0,
+        "unit" : "mg m-2",
+        "aggregatetype" : "sum",
+        "aggregatelength" : 360
+    },
+    {
+        "newbaseid" : 1183,
+        "name" : "nhx_accumulated_6h_wet_deposition",
+        "longname" : "Surface 6h accumulated NHx wet deposition expressed as nitrogen",
+        "divisor" : 1.0,
+        "unit" : "mg m-2",
+        "aggregatetype" : "sum",
+        "aggregatelength" : 360
+    },
+    {
+        "newbaseid" : 1184,
+        "name" : "sulfur_accumulated_6h_dry_deposition",
+        "longname" : "Surface 6h accumulated oxidized sulpfur dry deposition expressed as sulfur",
+        "divisor" : 1.0,
+        "unit" : "mg m-2",
+        "aggregatetype" : "sum",
+        "aggregatelength" : 360
+    },
+    {
+        "newbaseid" : 1185,
+        "name" : "sulfur_accumulated_6h_wet_deposition",
+        "longname" : "Surface 6h accumulated oxidized sulpfur wet deposition expressed as sulfur",
+        "divisor" : 1.0,
+        "unit" : "mg m-2",
+        "aggregatetype" : "sum",
+        "aggregatelength" : 360
+    },
+	// WeatherSymbol3
+    {
+	"newbaseid" : 338,
+	"name" : "ww",
+	"longname" : "Dominant weather",
+	"divisor" : 1,
+	"unit" : "1"
+    }
+]

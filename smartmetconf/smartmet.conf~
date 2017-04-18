@@ -1,0 +1,127 @@
+// Options
+
+accesslogdir = "/var/log/smartmet/";
+
+port 		= 8080;
+
+slowpool:
+{
+  maxthreads = 15;
+  maxrequeuesize = 1000;
+};
+
+fastpool:
+{
+  maxthreads = 15;
+  maxrequeuesize = 1000;
+};
+
+
+lazylinking = true;
+
+defaultlogging = true;
+
+debug	       	= true;
+verbose		= true;
+
+engines:
+{
+	sputnik:
+	{
+	        configfile      = "/etc/smartmet/engines/sputnik.conf";
+	};
+	authentication:
+	{
+		disabled	= true;
+	        configfile      = "/etc/smartmet/engines/authentication.conf";
+	};
+	contour:
+	{
+		disabled	= true;
+	        configfile      = "/etc/smartmet/engines/contour.conf";
+	};
+	geonames:
+	{
+		disabled	= false;
+	        configfile      = "/etc/smartmet/engines/geonames.conf";
+	};
+	geoip:
+	{
+		disabled	= true;
+	        configfile      = "/etc/smartmet/engines/geoip.conf";
+	};
+	gis:
+	{
+		disabled	= false;
+	        configfile      = "/etc/smartmet/engines/gis.conf";
+	};
+	observation:
+	{
+		disabled	= false;
+	        configfile      = "/etc/smartmet/engines/observation.conf";
+	};
+	querydata:
+	{
+	        configfile      = "/etc/smartmet/engines/querydata.conf";
+	};
+};
+
+plugins:
+{
+	backend:
+	{
+		disabled	= true;
+		configfile	= "";
+	};
+	frontend:
+	{
+		disabled	= true;
+		configfile	= "/etc/smartmet/plugins/frontend.conf";
+	};
+	admin:
+	{
+		disabled	= false;
+	        configfile      = "/etc/smartmet/plugins/admin.conf";
+	};
+	autocomplete:
+	{
+		disabled	= true;
+	        configfile      = "/etc/smartmet/plugins/autocomplete.conf";
+	};
+	avi:
+	{
+		disabled	= true;
+	        configfile      = "/etc/smartmet/plugins/avi.conf";
+	};
+	cross_section:
+	{
+		disabled	= true;
+	        configfile      = "/etc/smartmet/plugins/cross_section.conf";
+	};
+	download:
+	{
+		disabled	= false;
+	        configfile      = "/etc/smartmet/plugins/download.conf";
+	};
+	flash:
+	{
+		disabled	= true;
+	        configfile      = "/etc/smartmet/plugins/flash.conf";
+	};
+	meta:
+	{
+		disabled	= true;
+	        configfile      = "/etc/smartmet/plugins/meta.conf";
+	};
+	observation:
+	{
+		disabled	= true;
+	        configfile      = "/etc/smartmet/plugins/observation.conf";
+	};
+	timeseries:
+	{
+	        configfile      = "/etc/smartmet/plugins/timeseries.conf";
+	};
+};
+
+

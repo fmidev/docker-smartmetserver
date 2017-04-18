@@ -1,0 +1,5 @@
+
+// DLS configuration
+
+gribconfig = "../cnf/grib.json";
+netcdfconfig = "../cnf/netcdf.json";

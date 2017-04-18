@@ -1,0 +1,20 @@
+# Note: order is significant
+producers =
+[
+        "hirlam_europe_surface"
+];
+
+// types: grid, points
+// leveltypes: surface,pressure,model
+
+hirlam_europe_surface:
+{
+        alias                   = "hirlam";
+        directory               = "/smartmet/data/hirlam/surface";
+        pattern                 = ".*_hirlam_europe_surface\.sqd$";
+        forecast                = true;
+        type                    = "grid";
+        leveltype               = "surface";
+        refresh_interval_secs   = 10;
+        number_to_keep          = 1;
+};

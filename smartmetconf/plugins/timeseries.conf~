@@ -1,0 +1,4 @@
+language             = "en";
+locale               = "en_US.utf8";
+observation_disabled = true;
+postgis.disabled     = true;

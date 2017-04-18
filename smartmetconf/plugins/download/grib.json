@@ -1,0 +1,686 @@
+// http://www.ecmwf.int/publications/manuals/d/gribapi/param/
+// SmartMet from GRIB to QueryData Parameter Conversion Table
+[
+    //Boundary Layer Height
+    {
+	"gribid" : 159,
+	"newbaseid" : 180,
+	"name" : "BoundaryLayerHeight"
+    },
+    //Snow Depth in m
+    {
+	"gribid" : 3066,
+	"newbaseid" : 51,
+	"name" : "sd"
+    },
+    //Land-Sea mask
+    {
+	"gribid" : 172,
+	"newbaseid" : 281,
+	"name" : "LandSeaCoverage"
+    },
+    //Surface Roughness
+    {
+	"gribid" : 173,
+	"newbaseid" : 381,
+	"name" : "SurfaceRoughness"
+    },
+    // Mean Sea Level Pressure (msl) Pa
+    {
+	"gribid" : 151,
+	"newbaseid" : 1,
+	"name" : "msl",
+	"divisor" : 0.01,
+	"leveltype" : "meanSea"
+    },
+    // Surface Pressure (sp) Pa
+    {
+	"gribid" : 134,
+	"newbaseid" : 472,
+	"name" : "sp",
+	"divisor" : 0.01,
+	"leveltype" : "heightAboveGround"
+    },
+    // Horizontal Visiblity
+    {
+	"gribid" : 3020,
+	"newbaseid" : 407,
+	"name" : "vis"
+    },
+    // 2m Temperature (2t) K
+    {
+	"gribid" : 167,
+	"newbaseid" : 4,
+	"name" : "2t",
+	"offset" : 273.15,
+	"leveltype" : "heightAboveGround",
+	"levelvalue" : 2
+    },
+    // Temperature (t) K
+    {
+	"gribid" : 130,
+	"newbaseid" : 4,
+	"name" : "t",
+	"offset" : 273.15
+    },
+    // 2m Dew Point Temperature (2d) K
+    {
+	"gribid" : 168,
+	"newbaseid" : 10,
+	"name" : "2d",
+	"offset" : 273.15,
+	"leveltype" : "heightAboveGround",
+	"levelvalue" : 2
+    },
+    // Dew Point Temperature (2d) K
+    {
+	"gribid" : 3017,
+	"newbaseid" : 10,
+	"name" : "dpt",
+	"offset" : 273.15
+    },
+    // 2m Relative Humidity (r) %
+    {
+	"gribid" : 157,
+	"newbaseid" : 13,
+	"name" : "r",
+	"leveltype" : "heightAboveGround",
+	"levelvalue" : 2
+    },
+    // Relative Humidity (r) %
+    {
+	"gribid" : 157,
+	"newbaseid" : 13,
+	"name" : "r"
+    },
+    // 10m U-Component of Wind (u) m/s
+    {
+	"gribid" : 131,
+	"newbaseid" : 23,
+	"name" : "u",
+	"leveltype" : "heightAboveGround",
+	"levelvalue" : 10
+    },
+    // U-Component of Wind (u) m/s
+    {
+	"gribid" : 131,
+	"newbaseid" : 23,
+	"name" : "u"
+    },
+    // 10m V-Component of Wind (v) m/s
+    {
+	"gribid" : 132,
+	"newbaseid" : 24,
+	"name" : "v",
+	"leveltype" : "heightAboveGround",
+	"levelvalue" : 10
+    },
+    // V-Component of Wind (v) m/s
+    {
+	"gribid" : 132,
+	"newbaseid" : 24,
+	"name" : "v"
+    },
+    // 10m Wind speed (ws) m/s (vois olla 207?)
+    {
+	"gribid" : 10,
+	"newbaseid" : 21,
+	"name" : "ws",
+	"leveltype" : "heightAboveGround",
+	"levelvalue" : 10
+    },
+    // Wind speed (ws) m/s
+    {
+	"gribid" : 10,
+	"newbaseid" : 21,
+	"name" : "ws"
+    },
+    // HourlyMaximumWindSpeed mapped to grib_api id 201187 shortName vmax_10m (Maximum wind velocity)
+    {
+	"gribid" : 201187,
+	"newbaseid" : 466,
+	"name" : "HourlyMaximumWindSpeed"
+    },
+    // 10m Wind Direction (dd_10m)
+    {
+	"gribid" : 140242,
+	"newbaseid" : 20,
+	"name" : "mdwi",
+	"leveltype" : "heightAboveGround",
+	"levelvalue" : 10
+    },
+    // Gusts
+    {
+	"gribid" : 49,
+	"newbaseid" : 417,
+	"name" : "WindGust",
+	"leveltype" : "105",
+	"levelvalue" : 10
+    },
+    {
+	"gribid" : 260064,
+	"newbaseid" : 467,
+	"name" : "HourlyMaximumGust"
+    },
+    {
+	"gribid" : 201187,
+	"newbaseid" : 416,
+	"name" : "MaximumWind",
+	"leveltype" : "heightAboveGround",
+	"levelvalue" : 10
+    },
+    // Cat:0 004 Maximum Temperature K TMAX
+    {
+	"gribid" : 3015,
+	"newbaseid" : 5,
+	"name" : "TMax",
+	"offset" : 273.15,
+	"leveltype" : "heightAboveGround",
+	"levelvalue" : 2
+    },
+    {
+	"gribid" : 50015,
+	"newbaseid" : 5,
+	"name" : "TMax",
+	"offset" : 273.15,
+	"leveltype" : "105",
+	"levelvalue" : 2
+    },
+    // Cat:0 005 Minimum Temperature K TMIN
+    {
+	"gribid" : 3016,
+	"newbaseid" : 6,
+	"name" : "TMin",
+	"offset" : 273.15,
+	"leveltype" : "heightAboveGround",
+	"levelvalue" : 2
+    },
+    // 00-24 UTC maximum temperature at 2 m
+    {
+	"gribid" : 51,
+	"newbaseid" : 358,
+	"offset" : 273.15,
+	"leveltype" : "heightAboveGround",
+	"levelvalue" : 2,
+	"templatenumber" : 8,
+	"aggregatetype" : "max",
+	"aggregatelength" : 1440
+    },
+    // 00-24 UTC minimum temperature at 2 m
+    {
+	"gribid" : 52,
+	"newbaseid" : 359,
+	"offset" : 273.15,
+	"leveltype" : "heightAboveGround",
+	"levelvalue" : 2,
+	"templatenumber" : 8,
+	"aggregatetype" : "min",
+	"aggregatelength" : 1440
+    },
+    // Precitable water
+    {
+	"gribid" : 3054,
+	"newbaseid" : 47,
+	"name" : "PWAT",
+	"leveltype" : "entireAtmosphere"
+    },
+    // PRATE
+    {
+	"gribid" : 3059,
+	"newbaseid" : 353,
+	"name" : "rr1h",
+	"leveltype" : "entireAtmosphere"
+    },
+    // Velocity Potential Pa/s
+    {
+	"gribid" : 135,
+	"newbaseid" : 39,
+	"name" : "w"
+    },
+    // Vertical Velocity (Geometric) (w) m/s
+    {
+	"gribid" : 500032,
+	"newbaseid" : 43,
+	"divisor" : 1000,
+	"center" : "edzw"
+    },
+    // Cat:3 Par:005 Geopotential Height gpm HGT
+    {
+	"gribid" : 156,
+	"newbaseid" : 2,
+	"name" : "Z"
+    },
+    //Geometric height
+    {
+	"gribid" : 3008,
+	"newbaseid" : 3,
+	"name" : "h"
+    },
+    // Fog: QD: 327 FogIntensity
+    // GRIB: 201055 fog
+    {
+	"gribid" : 201055,
+	"newbaseid" : 327,
+	"name" : "fog"
+    },
+    // Cat:6 Par:001 Total Cloud Cover % TCDC
+    {
+	"gribid" : 228164,
+	"newbaseid" : 79,
+	"name" : "N",
+	"leveltype" : "entireAtmosphere"
+    },
+    // Cat:6 Par:001 Total Cloud Cover % TCDC
+    // For convective, low, medium and high levels
+    {
+	"gribid" : 164,
+	"newbaseid" : 79,
+	"name" : "N",
+	"divisor" : 100,
+	"leveltype" : "244"
+    },
+    {
+	"gribid" : 185,
+	"newbaseid" : 272,
+	"name" : "Cc",
+	"divisor" : 100,
+	"leveltype" : "244"
+    },
+    {
+	"gribid" : 186,
+	"newbaseid" : 273,
+	"name" : "Cl",
+	"divisor" : 100,
+	"leveltype" : "214"
+    },
+    {
+	"gribid" : 187,
+	"newbaseid" : 274,
+	"name" : "Cm",
+	"divisor" : 100,
+	"leveltype" : "224"
+    },
+    {
+	"gribid" : 188,
+	"newbaseid" : 275,
+	"name" : "Ch",
+	"divisor" : 100,
+	"leveltype" : "234"
+    },
+    // MiddleAndLowCloudCover -> Cloud amount
+    {
+	"gribid" : 260103,
+	"newbaseid" : 271,
+	"name" : "cbnt",
+	"divisor" : 100
+    },
+    // Cloud base in meters
+    {
+	"gribid" : 260107,
+	"newbaseid" : 500,
+	"name" : "cbh"
+    },
+    // GRIB: 3060 Thunderstorm probability %
+    // QD: 260 ProbabilityThunderstorm %
+    {
+	"gribid" : 3060,
+	"newbaseid" : 260,
+	"name" : "tstm"
+    },
+    // Cat:7 Num:006 Convective Available Potential Energy J/kg CAPE
+    {
+	"gribid" : 59,
+	"newbaseid" : 59,
+	"name" : "CAPE"
+    },
+    // Cat:7 Par:007 Convective Inhibition J/kg CIN
+    {
+	"gribid" : 228001,
+	"newbaseid" : 66,
+	"name" : "CIN"
+    },
+    // Total ozone
+    {
+	"gribid" : 260130,
+	"newbaseid" : 441,
+	"name" : "TOZONE",
+	"leveltype" : "entireAtmosphere"
+    },
+    // Topography
+    {
+	"gribid" : 228002,
+	"newbaseid" : 17,
+	"name" : "TopoGraf"
+    },
+    // Monthly Mean Temperature
+    {
+	"gribid" : 130,
+	"newbaseid" : 433,
+	"name" : "MonthlyMeanTemperature",
+	"offset" : 273.15,
+	"leveltype" : "heightAboveGround",
+	"levelvalue" : 2
+    },
+    // Monthly Precipitation
+    {
+	"gribid" : 3059,
+	"newbaseid" : 434,
+	"name" : "MonthlyPrecipitation",
+	"leveltype" : "entireAtmohsphere"
+    },
+    // Precipitation type
+    {
+	"gribid" : 50,
+	"newbaseid" : 56,
+	"name" : "PrecipitationType"
+    },
+    // Precipitation form. So confusing: in FMI dialect precipitation type refers to
+    // convective/stratiform precipitation but in GRIB it means division to
+    // e.g. rain/sleet/snow
+    // ID 57 in newbase = PrecipitationForm
+    // ID 260015 in GRIB API is Precipitation type
+    {
+	"gribid" : 260015,
+	"newbaseid" : 57,
+	"name" : "PrecipitationForm"
+    },
+    //This is 'PressurePrecipitationForm'
+    {
+	"gribid" : 260015,
+	"newbaseid" : 1205,
+	"name" : "PrecipitationForm2"
+    },
+    //This is 'HybridPrecipitationForm'
+    {
+	"gribid" : 260015,
+	"newbaseid" : 1206,
+	"name" : "PrecipitationForm3"
+    },
+    // Total precipitation kg/m^2
+    // This mapping is overwritten by the rr1h 353
+    // and should NOT be fixed,
+    // because it would affect lot of customers (namely YLE)
+    // So in the words of allmighty MC Hammer:
+    //    U can't touch this!
+    {
+	"gribid" : 228228,
+	"newbaseid" : 353,
+	"name" : "Precipitation1h"
+    },
+    // Total precipitation kg / m^2
+    // same as previous but for Harmonie data
+    {
+    "gribid" : 228228,
+    "newbaseid" : 1208,
+    "name" : "PrecipitationInstantTotal",
+    "templatenumber" : 8
+    },
+    //Precipitation amount
+    {
+	"gribid" : 201113,
+	"newbaseid" : 50,
+	"name" : "rain_con"
+    },
+    //Rain precipitation rate
+    {
+	"gribid" : 260058,
+	"newbaseid" : 1171,
+	"name" : "PrecipitationInstantWater"
+    },
+    //Solid precipitation rate
+    {
+	"gribid" : 260061,
+	"newbaseid" : 1193,
+	"name" : "PrecipitationInstantSolid"
+    },
+    //Absolute humidity
+    {
+	"gribid" : 260014,
+	"newbaseid" : 1192,
+	"name" : "AbsoluteHumidity"
+    },
+    // Hirlam: Downwelling surface long-wave radiation (J/m2), grib1, grib2: Surface thermal radiation downwards (J/m2), newbase: RadiationLWAccumulation
+    {
+	"gribid" : 175,
+	"newbaseid" : 1160,
+	"name" : "strd",
+	"templatenumber": 8,
+	"aggregatetype" : "accum",
+	"aggregatelength" : 60
+    },
+    // Hirlam: Downwelling (global) short-wave radiation (J/m2), grib1, grib2: Surface solar radiation downwards (J/m2), newbase: RadiationGlobalAccumulation
+    {
+	"gribid" : 169,
+	"newbaseid" : 1159,
+	"name" : "ssrd",
+	"templatenumber": 8,
+	"aggregatetype" : "accum",
+	"aggregatelength" : 60
+    },
+    // Hirlam: Net surface long-wave radiation (J/m2), grib1, grib2: Surface net thermal radiation (J/m2), newbase: RadiationNetSurfaceLWAccumulation
+    {
+	"gribid" : 177,
+	"newbaseid" : 1161,
+	"name" : "str",
+	"templatenumber": 8,
+	"aggregatetype" : "accum",
+	"aggregatelength" : 60
+    },
+    // Hirlam: Net surface short-wave radiation (J/m2), grib1, grib2: Surface net solar radiation (J/m2), newbase: RadiationNetSurfaceSWAccumulation
+    {
+	"gribid" : 176,
+	"newbaseid" : 1162,
+	"name" : "ssr",
+	"templatenumber": 8,
+	"aggregatetype" : "accum",
+	"aggregatelength" : 60
+    },
+    // Hirlam: Diffuse surface shortwave radiation (J/m2), grib1: Surface solar radiation diffuse total sky (J/m2), newbase: RadiationDiffuseAccumulation
+    {
+	"gribid" : 228242,
+	"newbaseid" : 1163,
+	"name" : "fdif"
+    },
+    //RadiationNetTopAtmLW
+    {
+	"gribid" : 179,
+	"newbaseid" : 314,
+	"name" : "ttr",
+	"templatenumber": 8,
+	"aggregatetype" : "accum",
+	"aggregatelength" : 60
+    },
+    // GRIB: 3102 Significant height of wind waves and swell combined (m),
+    // QD: 165 SigWaveHeight
+    {
+	"gribid" : 140229,
+	"newbaseid" : 165,
+	"name" : "swh",
+	"leveltype" : "heightAboveGround",
+	"levelvalue" : 0
+    },
+    // Total peak wave period (s), QD: 166 SigWavePeriod
+    // 500190;166;pp1d;0;1 //;heightAboveGround;0 //;surface;0
+    {
+	"gribid" : 140232,
+	"newbaseid" : 166,
+	"name" : "mwp"
+    },
+    // GRIB: 140230 Mean direction of wind waves (degrees), QD: 167 WaveDirection
+    {
+	"gribid" : 140230,
+	"newbaseid" : 167,
+	"name" : "mwd",
+	"leveltype" : "heightAboveGround",
+	"levelvalue" : 0
+    },
+    //Sea Surface Temperature
+    {
+	"gribid" : 150129,
+	"newbaseid" : 61,
+	"name" : "ocpt",
+	"leveltype" : "heightAboveGroundes",
+	"levelvalue" : 0
+    },
+    //Sea Level
+    {
+	"gribid" : 150152,
+	"newbaseid" : 60,
+	"name" : "sl"
+    },
+    //Ocean Salinity
+    {
+	"gribid" : 150130,
+	"newbaseid" : 62,
+	"name" : "ocs"
+    },
+    // Current U
+    {
+	"gribid" : 3049,
+	"newbaseid" : 1146,
+	"name" : "ucurr"
+    },
+    // Current V
+    {
+	"gribid" : 3050,
+	"newbaseid" : 1147,
+	"name" : "vcurr"
+    },
+    // Current Direction
+    {
+	"gribid" : 260236,
+	"newbaseid" : 164,
+	"name" : "dirc"
+    },
+    // Current Speed
+    {
+	"gribid" : 260237,
+	"newbaseid" : 163,
+	"name" : "spc"
+    },
+    // Swell Height
+    {
+	"gribid" : 3105,
+	"newbaseid" : 181,
+	"name" : "swell"
+    },
+    // Pseudo-adiabatic potential temperature (K)
+    {
+	"gribid" : 3014,
+	"newbaseid" : 9,
+	"offset" : 273.15
+    },
+    // Convective precipitation amount kg m**-2 (cumulative)
+    {
+	"gribid" : 228143,
+	"newbaseid" : 48,
+	"name" : "cp",
+	"templatenumber" : 8,
+	"aggregatetype" : "accum"
+    },
+    // Large-scale precipitation amount kg m**-2 (cumulative)
+    {
+	"gribid" : 3062,
+	"newbaseid" : 55,
+	"name" : "lsp",
+	"templatenumber" : 8,
+	"aggregatetype" : "accum"
+    },
+    //WeatherSymbol3
+    {
+	"gribid" : 500292,
+	"newbaseid" : 338,
+	"name" : "ww",
+	"center" : "edzw"
+    },
+    //Icing
+    {
+	"gribid" : 260151,
+	"newbaseid" : 480,
+	"name" : "ici"
+    },
+    //////
+    // BEGIN - HELMI Ice model parameters
+    // Sea-ice cover [0 - 1] (sea_ice_area_fraction [%])
+    {
+	"gribid" : 31,
+	"newbaseid" : 384,
+	"divisor" : 100,
+	"leveltype" : "surface"
+    },
+    // U-component of ice drift [m/s] (eastward_sea_ice_velocity [m/s])
+    {
+	"gribid" : 3095,
+	"newbaseid" : 1149,
+	"leveltype" : "surface"
+    },
+    // V-component of ice drift [m/s] (northward_sea_ice_velocity  [m/s])
+    {
+	"gribid" : 3096,
+	"newbaseid" : 1150,
+	"leveltype" : "surface"
+    },
+    // Ice drift speed
+    {
+	"gribid" : 3094,
+	"newbaseid" : 389,
+	"leveltype" : "surface"
+    },
+    // Ice drift direction
+    {
+	"gribid" : 3093,
+	"newbaseid" : 390,
+	"leveltype" : "surface"
+    },
+    // Ice thickness [m] (sea_ice_mean_thickness [m])
+    {
+	"gribid" : 3092,
+	"newbaseid" : 1154,
+	"divisor" : 1,
+	"leveltype" : "surface"
+    },
+    // END - HELMI Ice model parameters //////
+    //////
+    // Ice thickness [m] (Copernicus)
+    {
+	"gribid" : 174098,
+	"newbaseid" : 385,
+	"leveltype" : "surface"
+    },
+    // Birch pollen concentration
+    {
+    "gribid" : 860200596400000,
+    "newbaseid" : 603,
+    "center" : "efkl"
+    },
+    // Grass pollen concentration
+    {
+    "gribid" : 860200596400100,
+    "newbaseid" : 607,
+    "center" : "efkl"
+    },
+    // Copernicus marine CurrentDirection
+    {
+    "gribid" : 260236,
+    "newbaseid" : 164,
+    "leveltype" : "surface"
+    },
+    // Copernicus marine CurrentSpeed
+    {
+    "gribid" : 260237,
+    "newbaseid" : 163,
+    "leveltype" : "surface"
+    },
+    // Copernicus marine IceSpeed
+    {
+    "gribid" : 3094,
+    "newbaseid" : 389,
+    "leveltype" : "surface"
+    },
+    // Copernicus marine IceDirection
+    {
+    "gribid" : 3093,
+    "newbaseid" : 390,
+    "leveltype" : "surface"
+    }
+]
