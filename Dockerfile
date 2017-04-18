@@ -7,10 +7,10 @@ RUN rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.
 	     http://smartmet:SmartMetFMI@download.weatherproof.fi//smartmet-base/rhel/7/noarch/smartmet-release-7-1.el6.fmi.noarch.rpm && \
     yum -y update && yum -y install \
     	   	   smartmet-server \
-		   smartmet-plugins-admin \
-		   smartmet-plugins-download \
-		   smartmet-plugins-timeseries \
-		   smartmet-plugins-wms && \
+		   smartmet-plugin-admin \
+		   smartmet-plugin-download \
+		   smartmet-plugin-timeseries \
+		   smartmet-plugin-wms && \
     yum clean all
 
 
@@ -22,6 +22,7 @@ HEALTHCHECK --interval=5m --timeout=3s \
 EXPOSE 80
 
 COPY smartmetconf /etc/smartmet
+RUN mkdir -p /var/smartmet/timeseriescache /var/smartmet/imagecache
 #RUN mkdir -p /smartmet/share
 #COPY wms /smartmet/share/
 #COPY dali /smartmet/share/
