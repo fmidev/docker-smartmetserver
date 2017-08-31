@@ -1,4 +1,8 @@
 FROM centos:7
+
+ENV https_proxy=wwwcache.fmi.fi:8080
+ENV http_proxy=wwwcache.fmi.fi:8080
+
 LABEL maintainer "Mikko Rauhala <mikko.rauhala@fmi.fi>"
 
 ENV NOTO_FONTS="NotoSans-unhinted NotoSerif-unhinted NotoMono-hinted" \
