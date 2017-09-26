@@ -1,0 +1,17 @@
+database:
+{
+	host		= "gemini";
+	port		= 5432;
+	database	= "open_data_user_registry";
+	schema		= "public";
+	auth_table	= "apikey_authorization";
+	token_table	= "apikey_authorization_tokens";
+
+	update_interval_seconds = 10;
+
+	username	= "open_data_reg_user";
+	password	= "#NxDg_jYc5";
+
+}
+
+default_access_is_allow = true;

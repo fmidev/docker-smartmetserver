@@ -574,5 +574,40 @@
 	"longname" : "Dominant weather",
 	"divisor" : 1,
 	"unit" : "1"
+    },
+    {
+	"newbaseid" : 1225,
+	"name" : "BoundaryLayerTurbulance",
+	"longname" : "Boundary layer turbulance",
+	"unit" : "1"
+    },
+    {
+	"newbaseid" : 1164,
+	"name" : "ClearAirTurbulence",
+	"longname" : "Clear air turbulence",
+	"unit" : "1"
+    },
+    {
+	"newbaseid" : 1209,
+	"name" : "ClearAirTurbulence2",
+	"longname" : "Clear air turbulence",
+	"unit" : "1"
+    },
+    {
+	"newbaseid" : 1232,
+	"name" : "Visibility2",
+	"longname" : "Visibility (Himan)",
+	"unit" : "m"
+    },
+    // Ceiling2 / CloudBase2
+    // Notice, there is conflict between data and name here.
+    // Querydata name is CloudBase2 even if content is actually ceiling data (Himan).
+    // Using CloudBase2 name here to make sure parameter name in WFS XML matches
+    // the parameter name included in netcdf. But, longname gives hint about ceiling here.
+    {
+	"newbaseid" : 1229,
+	"name" : "CloudBase2",
+	"longname" : "Ceiling (Himan)",
+	"unit" : "ft"
     }
 ]

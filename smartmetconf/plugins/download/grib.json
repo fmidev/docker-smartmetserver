@@ -47,6 +47,12 @@
 	"newbaseid" : 407,
 	"name" : "vis"
     },
+    // Horizontal Visibility (Himan)
+    {
+	"gribid" : 3020,
+	"newbaseid" : 1232,
+	"name" : "Visibility2"
+    },
     // 2m Temperature (2t) K
     {
 	"gribid" : 167,
@@ -154,8 +160,11 @@
 	"gribid" : 49,
 	"newbaseid" : 417,
 	"name" : "WindGust",
-	"leveltype" : "105",
-	"levelvalue" : 10
+	"leveltype" : "103",
+	"levelvalue" : 10,
+	"templatenumber" : 8,
+	"aggregatetype" : "max",
+	"aggregatelength" : 60
     },
     {
 	"gribid" : 260064,
@@ -319,6 +328,16 @@
 	"gribid" : 260107,
 	"newbaseid" : 500,
 	"name" : "cbh"
+    },
+    // Cloud ceiling (Himan) in feets
+    // Notice, there is conflict between data and name here.
+    // Querydata name is CloudBase2 even if content is actually ceiling data (Himan).
+    // Using CloudBase2 name here to make sure parameter name in WFS matches
+    // the parameter name included in grib.
+    {
+	"gribid" : 260109,
+	"newbaseid" : 1229,
+	"name" : "CloudBase2"
     },
     // GRIB: 3060 Thunderstorm probability %
     // QD: 260 ProbabilityThunderstorm %
@@ -659,28 +678,23 @@
     "newbaseid" : 607,
     "center" : "efkl"
     },
-    // Copernicus marine CurrentDirection
+    // BoundaryLayerTurbulance
     {
-    "gribid" : 260236,
-    "newbaseid" : 164,
-    "leveltype" : "surface"
+	"gribid": 260154,
+	"newbaseid": 1225,
+	"name": "BoundaryLayerTurbulance"
     },
-    // Copernicus marine CurrentSpeed
+    // CAT1
     {
-    "gribid" : 260237,
-    "newbaseid" : 163,
-    "leveltype" : "surface"
+	"gribid": 260165,
+	"newbaseid": 1164,
+	"name": "ClearAirTurbulence"
     },
-    // Copernicus marine IceSpeed
+    // CAT2
     {
-    "gribid" : 3094,
-    "newbaseid" : 389,
-    "leveltype" : "surface"
-    },
-    // Copernicus marine IceDirection
-    {
-    "gribid" : 3093,
-    "newbaseid" : 390,
-    "leveltype" : "surface"
+	"gribid": 260165,
+	"newbaseid": 1209,
+	"name": "ClearAirTurbulence2"
     }
+
 ]

@@ -1,0 +1,133 @@
+
+url		= "/wfs";
+languages       = [ "eng", "fin" ];
+debugLevel = 0;
+storedQueryRestrictions = true;
+storedQueryConfigDirs = ["wfs/stored_queries"];
+storedQueryTemplateDir = "/etc/smartmet/plugins/wfs/templates";
+#xmlGrammarPoolDump = "/etc/smartmet/plugins/wfs/XMLGrammarPool.dump";
+cacheSize = 1000;
+cacheTimeConstant = 60;
+validateXmlOutput = false;
+enableDemoQueries = false;
+featuresDir = "wfs/features";
+
+serializedXmlSchemas = "/etc/smartmet/plugins/wfs/XMLSchemas.cache";
+
+geoserverConnStr = "dbname=open_data_gis user=open_data_gis_user password=Ve6+HurMnX host=gemini.fmi.fi";
+
+getCapabilitiesTemplate = "capabilities.c2t";
+listStoredQueriesTemplate = "list_stored_queries.c2t";
+describeStoredQueriesTemplate = "describe_stored_queries.c2t";
+featureTypeTemplate = "feature_type.c2t";
+exceptionTemplate = "exception.c2t";
+ctppDumpTemplate = "hash_dump_html.c2t";
+
+CRS =
+(
+        {
+                name  = "WGS84";
+                epsg = 4326;
+                swapCoord = true;
+                projEpochUri = "http://xml.fmi.fi/gml/crs/compoundCRS.php?crs=4326&amp;time=unixtime";
+                projUri = "http://www.opengis.net/def/crs/EPSG/0/4326";
+        },
+        {
+                name = "2D geodetic in ETRS89 on GRS80 ETRS89-GRS80";
+                epsg = 4258;
+                swapCoord = true;
+      		projEpochUri = "http://xml.fmi.fi/gml/crs/compoundCRS.php?crs=4258&amp;time=unixtime";
+      		projUri = "http://www.opengis.net/def/crs/EPSG/0/4258";
+        },
+        {
+                name = "2D LAEA projection in ETRS89 on GRS80 ETRS89-LAEA";
+                epsg = 3035;
+                swapCoord = true;
+      		projEpochUri = "http://xml.fmi.fi/gml/crs/compoundCRS.php?crs=3035&amp;time=unixtime";
+      		projUri = "http://www.opengis.net/def/crs/EPSG/0/3035";
+        },
+        {
+                name = "ETRS89 + EVRF2007 height";
+                regex = "(?:urn:ogc:def:crs:|)EPSG:{1,2}7243";
+                proj4 = "+proj=longlat +ellps=GRS80 +no_defs ";
+                swapCoord = true;
+                projUri = "http://www.opengis.net/def/crs/EPSG/0/7243";
+                epsgCode = 7423;
+      		projEpochUri = "http://xml.fmi.fi/gml/crs/compoundCRS.php?crs=7423&amp;time=unixtime";
+                showHeight = true;
+        },
+        {
+                name = "ETRS89 / TM35FIN(E,N)";
+                epsg = 3067;
+      		projEpochUri = "http://xml.fmi.fi/gml/crs/compoundCRS.php?crs=3067&amp;time=unixtime";
+      		projUri = "http://www.opengis.net/def/crs/EPSG/0/3067";
+		showHeight=true;
+        },
+        {
+                name = "ETRS89 / TM35";
+                epsg = 3047;
+      		projEpochUri = "http://xml.fmi.fi/gml/crs/compoundCRS.php?crs=3047&amp;time=unixtime";
+      		projUri = "http://www.opengis.net/def/crs/EPSG/0/3047";
+        },
+        {
+                name = "KKJ / Finland Uniform Coordinate System";
+                epsg = 2393;
+      		projEpochUri = "http://xml.fmi.fi/gml/crs/compoundCRS.php?crs=2393&amp;time=unixtime";
+      		projUri = "http://www.opengis.net/def/crs/EPSG/0/2393";
+        },
+        {
+                name = "WGS 84 / Pseudo-Mercator";
+                epsg = 3857;
+      		projEpochUri = "http://xml.fmi.fi/gml/crs/compoundCRS.php?crs=3857&amp;time=unixtime";
+      		projUri = "http://www.opengis.net/def/crs/EPSG/0/3857";
+        }
+);
+
+// typename-storedquery mapping
+typename-storedquery-mapping = (
+    {
+        type_name = "avi:VerifiableMessage";
+        stored_queries = "fmi::avi::observations::finland::latest::iwxxm";
+    },
+    {
+        type_name = "wp:WinterWeatherContours";
+        stored_queries = "fmi::forecast::ecmwf::winterweather::contours";
+    },
+    {
+        type_name = "wp:DrizzlePrecipitation";
+        stored_queries = "fmi::forecast::ecmwf::winterweather::drizzleprecipitation";
+    },
+    {
+        type_name = "wp:FreezingDrizzlePrecipitation";
+        stored_queries = "fmi::forecast::ecmwf::winterweather::freezingdrizzleprecipitation";
+    },
+    {
+        type_name = "wp:FreezingRainPrecipitation";
+        stored_queries = "fmi::forecast::ecmwf::winterweather::freezingrainprecipitation";
+    },
+    {
+        type_name = "wp:RainPrecipitation";
+        stored_queries = "fmi::forecast::ecmwf::winterweather::rainprecipitation";
+    },
+    {
+        type_name = "wp:SleetPrecipitation";
+        stored_queries = "fmi::forecast::ecmwf::winterweather::sleetprecipitation";
+    },
+    {
+        type_name = "wp:SnowPrecipitation";
+        stored_queries = "fmi::forecast::ecmwf::winterweather::snowprecipitation";
+    },
+
+    {
+        type_name = "wp:WinterWeatherGeneralContours";
+        stored_queries = "fmi::forecast::ecmwf::winterweather::general::contours";
+    },
+    {
+        type_name = "wp:WinterWeatherProbabilities";
+        stored_queries = "fmi::forecast::ecmwf::winterweather::probabilities";
+    },
+    {
+        type_name = "BsWfs:BsWfsElement";
+        stored_queries = "fmi::forecast::hirlam::surface::obsstations::simple;fmi::observation::instantaneous::finland::simple";
+    }
+);
