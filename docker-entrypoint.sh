@@ -2,7 +2,7 @@
 set -e
 
 if [ "$1" = 'smartmetd' ]; then
-    exec /usr/sbin/smartmetd -d -v --logrequests
+    exec /usr/sbin/smartmetd -c /etc/smartmet/conf/smartmet.conf
 fi
 
 exec "$@"
