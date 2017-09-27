@@ -14,7 +14,7 @@ RUN rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.
              # https://download.fmi.fi/smartmet-open/rhel/7/noarch/smartmet-open-release-7-2.el7.fmi.noarch.rpm \
              https://download.fmi.fi/repos/smartmet-open-fmi-17.9.1-1.el7.fmi.noarch.rpm && \
     yum -y update && yum -y install \
-    	   	   smartmet-plugin-backend \
+    	   	   smartmet-plugin-frontend \
 		   smartmet-plugin-admin \
 		   smartmet-plugin-autocomplete \
 		   smartmet-plugin-download \
