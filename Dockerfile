@@ -12,7 +12,7 @@ RUN rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.
              https://download.postgresql.org/pub/repos/yum/9.3/redhat/rhel-7-x86_64/pgdg-centos93-9.3-3.noarch.rpm \
              # http://download.weatherproof.fi/fmiforge/rhel/7/noarch/fmiforge-release-7-1.fmi.noarch.rpm \
              # https://download.fmi.fi/smartmet-open/rhel/7/noarch/smartmet-open-release-7-2.el7.fmi.noarch.rpm \
-             https://download.fmi.fi/repos/smartmet-open-fmi-17.9.1-1.el7.fmi.noarch.rpm && \
+             https://download.fmi.fi/smartmet-open/rhel/7/x86_64/smartmet-open-fmi-release-17.9.28-1.el7.fmi.noarch.rpm && \
     yum -y update && yum -y install \
     	   	   smartmet-plugin-backend \
 		   smartmet-plugin-admin \
