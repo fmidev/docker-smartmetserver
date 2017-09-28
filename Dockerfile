@@ -21,6 +21,8 @@ RUN rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.
 		   smartmet-plugin-timeseries \
 		   smartmet-plugin-wms \
 		   smartmet-plugin-wfs \
+           smartmet-plugin-q3 \
+           lua-newcairo-q3 \
 		   unzip && \
     yum -y reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common grib_api && \
     yum clean all 
