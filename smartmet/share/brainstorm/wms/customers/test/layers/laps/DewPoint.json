@@ -1,0 +1,401 @@
+[
+    {
+        "attributes": {
+            "class": "DewPoint_-50"
+        },
+        "hilimit": -50,
+        "qid": "DewPoint_-50"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-50_-48"
+        },
+        "hilimit": -48,
+        "lolimit": -50,
+        "qid": "DewPoint_-50_-48"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-48_-46"
+        },
+        "hilimit": -46,
+        "lolimit": -48,
+        "qid": "DewPoint_-48_-46"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-46_-44"
+        },
+        "hilimit": -44,
+        "lolimit": -46,
+        "qid": "DewPoint_-46_-44"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-44_-42"
+        },
+        "hilimit": -42,
+        "lolimit": -44,
+        "qid": "DewPoint_-44_-42"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-42_-40"
+        },
+        "hilimit": -40,
+        "lolimit": -42,
+        "qid": "DewPoint_-42_-40"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-40_-38"
+        },
+        "hilimit": -38,
+        "lolimit": -40,
+        "qid": "DewPoint_-40_-38"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-38_-36"
+        },
+        "hilimit": -36,
+        "lolimit": -38,
+        "qid": "DewPoint_-38_-36"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-36_-34"
+        },
+        "hilimit": -34,
+        "lolimit": -36,
+        "qid": "DewPoint_-36_-34"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-34_-32"
+        },
+        "hilimit": -32,
+        "lolimit": -34,
+        "qid": "DewPoint_-34_-32"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-32_-30"
+        },
+        "hilimit": -30,
+        "lolimit": -32,
+        "qid": "DewPoint_-32_-30"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-30_-28"
+        },
+        "hilimit": -28,
+        "lolimit": -30,
+        "qid": "DewPoint_-30_-28"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-28_-26"
+        },
+        "hilimit": -26,
+        "lolimit": -28,
+        "qid": "DewPoint_-28_-26"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-26_-24"
+        },
+        "hilimit": -24,
+        "lolimit": -26,
+        "qid": "DewPoint_-26_-24"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-24_-22"
+        },
+        "hilimit": -22,
+        "lolimit": -24,
+        "qid": "DewPoint_-24_-22"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-22_-20"
+        },
+        "hilimit": -20,
+        "lolimit": -22,
+        "qid": "DewPoint_-22_-20"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-20_-18"
+        },
+        "hilimit": -18,
+        "lolimit": -20,
+        "qid": "DewPoint_-20_-18"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-18_-16"
+        },
+        "hilimit": -16,
+        "lolimit": -18,
+        "qid": "DewPoint_-18_-16"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-16_-14"
+        },
+        "hilimit": -14,
+        "lolimit": -16,
+        "qid": "DewPoint_-16_-14"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-14_-12"
+        },
+        "hilimit": -12,
+        "lolimit": -14,
+        "qid": "DewPoint_-14_-12"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-12_-10"
+        },
+        "hilimit": -10,
+        "lolimit": -12,
+        "qid": "DewPoint_-12_-10"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-10_-8"
+        },
+        "hilimit": -8,
+        "lolimit": -10,
+        "qid": "DewPoint_-10_-8"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-8_-6"
+        },
+        "hilimit": -6,
+        "lolimit": -8,
+        "qid": "DewPoint_-8_-6"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-6_-5"
+        },
+        "hilimit": -5,
+        "lolimit": -6,
+        "qid": "DewPoint_-6_-5"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-5_-4"
+        },
+        "hilimit": -4,
+        "lolimit": -5,
+        "qid": "DewPoint_-5_-4"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-4_-3"
+        },
+        "hilimit": -3,
+        "lolimit": -4,
+        "qid": "DewPoint_-4_-3"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-3_-2"
+        },
+        "hilimit": -2,
+        "lolimit": -3,
+        "qid": "DewPoint_-3_-2"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-2_-1"
+        },
+        "hilimit": -1,
+        "lolimit": -2,
+        "qid": "DewPoint_-2_-1"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_-1_0"
+        },
+        "hilimit": 0,
+        "lolimit": -1,
+        "qid": "DewPoint_-1_0"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_0_1"
+        },
+        "hilimit": 1,
+        "lolimit": 0,
+        "qid": "DewPoint_0_1"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_1_2"
+        },
+        "hilimit": 2,
+        "lolimit": 1,
+        "qid": "DewPoint_1_2"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_2_4"
+        },
+        "hilimit": 4,
+        "lolimit": 2,
+        "qid": "DewPoint_2_4"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_4_6"
+        },
+        "hilimit": 6,
+        "lolimit": 4,
+        "qid": "DewPoint_4_6"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_6_8"
+        },
+        "hilimit": 8,
+        "lolimit": 6,
+        "qid": "DewPoint_6_8"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_8_10"
+        },
+        "hilimit": 10,
+        "lolimit": 8,
+        "qid": "DewPoint_8_10"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_10_12"
+        },
+        "hilimit": 12,
+        "lolimit": 10,
+        "qid": "DewPoint_10_12"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_12_14"
+        },
+        "hilimit": 14,
+        "lolimit": 12,
+        "qid": "DewPoint_12_14"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_14_16"
+        },
+        "hilimit": 16,
+        "lolimit": 14,
+        "qid": "DewPoint_14_16"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_16_18"
+        },
+        "hilimit": 18,
+        "lolimit": 16,
+        "qid": "DewPoint_16_18"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_18_20"
+        },
+        "hilimit": 20,
+        "lolimit": 18,
+        "qid": "DewPoint_18_20"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_20_22"
+        },
+        "hilimit": 22,
+        "lolimit": 20,
+        "qid": "DewPoint_20_22"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_22_24"
+        },
+        "hilimit": 24,
+        "lolimit": 22,
+        "qid": "DewPoint_22_24"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_24_26"
+        },
+        "hilimit": 26,
+        "lolimit": 24,
+        "qid": "DewPoint_24_26"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_26_28"
+        },
+        "hilimit": 28,
+        "lolimit": 26,
+        "qid": "DewPoint_26_28"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_28_30"
+        },
+        "hilimit": 30,
+        "lolimit": 28,
+        "qid": "DewPoint_28_30"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_30_32"
+        },
+        "hilimit": 32,
+        "lolimit": 30,
+        "qid": "DewPoint_30_32"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_32_34"
+        },
+        "hilimit": 34,
+        "lolimit": 32,
+        "qid": "DewPoint_32_34"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_34_36"
+        },
+        "hilimit": 36,
+        "lolimit": 34,
+        "qid": "DewPoint_34_36"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_36_38"
+        },
+        "hilimit": 38,
+        "lolimit": 36,
+        "qid": "DewPoint_36_38"
+    },
+    {
+        "attributes": {
+            "class": "DewPoint_38"
+        },
+        "lolimit": 38,
+        "qid": "DewPoint_38"
+    }
+]
+

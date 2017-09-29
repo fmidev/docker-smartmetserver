@@ -6,9 +6,9 @@ services:
     ports:
      - "8080:8080"
     volumes:
-      - $HOME/smartmet/data:/smartmet/data
-      - $HOME/smartmet/share:/smartmet/share
-      - $HOME/repos/docker-smartmetserver/smartmetconf:/etc/smartmet/conf
+      - $HOME/docker-smartmetserver/smartmet/data:/smartmet/data
+      - $HOME/docker-smartmetserver/smartmet/share:/smartmet/share
+      - $HOME/docker-smartmetserver/smartmetconf:/etc/smartmet/conf
     networks:
       smartmet-server-network:
         ipv4_address: 10.5.0.5
