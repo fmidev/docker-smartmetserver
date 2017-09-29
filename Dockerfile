@@ -12,18 +12,20 @@ RUN rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.
              https://download.postgresql.org/pub/repos/yum/9.3/redhat/rhel-7-x86_64/pgdg-centos93-9.3-3.noarch.rpm \
              # http://download.weatherproof.fi/fmiforge/rhel/7/noarch/fmiforge-release-7-1.fmi.noarch.rpm \
              # https://download.fmi.fi/smartmet-open/rhel/7/noarch/smartmet-open-release-7-2.el7.fmi.noarch.rpm \
-             https://download.fmi.fi/smartmet-open/rhel/7/x86_64/smartmet-open-fmi-release-17.9.28-1.el7.fmi.noarch.rpm && \
-    yum -y update && yum -y install \
-    	   	   smartmet-plugin-backend \
-		   smartmet-plugin-admin \
-		   smartmet-plugin-autocomplete \
-		   smartmet-plugin-download \
-		   smartmet-plugin-timeseries \
-		   smartmet-plugin-wms \
-		   smartmet-plugin-wfs \
-           smartmet-plugin-q3 \
-           lua-newcairo-q3 \
-		   unzip && \
+             https://download.fmi.fi/smartmet-open/rhel/7/x86_64/smartmet-open-release-17.9.28-1.el7.fmi.noarch.rpm && \
+            yum -y update && \
+            yum -y install \
+            smartmet-plugin-backend \
+            smartmet-plugin-admin \
+            smartmet-plugin-autocomplete \
+            smartmet-plugin-download \
+            smartmet-plugin-timeseries \
+            smartmet-plugin-wms \
+            smartmet-plugin-wfs \
+            smartmet-plugin-q3 \
+            lua-newcairo-q3 \
+            unzip && \
+            yum -y downgrade "librsvg2*2.40.6-3*" && \
     yum -y reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common grib_api && \
     yum clean all 
 
