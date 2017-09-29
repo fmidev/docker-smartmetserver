@@ -1,0 +1,19 @@
+{
+    "title" : "DewPoint",
+    "abstract" : "DewPoint",
+    "projection": {},
+    "producer": "testdata",
+    "views": [{
+        "layers": [{
+            "qid": "l",
+            "layer_type": "isoband",
+            "parameter": "DewPoint",
+            "isobands": "json:laps/DewPoint.json",
+            "css": "laps/DewPoint.css",
+            "attributes": {
+                "shape-rendering": "crispEdges"
+            }
+        }]
+    }]
+}
+
