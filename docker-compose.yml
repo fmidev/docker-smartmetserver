@@ -9,6 +9,8 @@ services:
       - $HOME/docker-smartmetserver/smartmet/data:/smartmet/data
       - $HOME/docker-smartmetserver/smartmet/share:/smartmet/share
       - $HOME/docker-smartmetserver/smartmetconf:/etc/smartmet/conf
+      - $HOME/docker-smartmetserver/smartmet/observation:/var/smartmet/observation
+      - $HOME/docker-smartmetserver/smartmet/cnf/smartmetd/clients/engines/observation/db_registry:/smartmet/cnf/smartmetd/clients/engines/observation/db_registry
     networks:
       smartmet-server-network:
         ipv4_address: 10.5.0.5
