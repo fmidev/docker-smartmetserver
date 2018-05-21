@@ -1,20 +1,13 @@
 FROM centos:7
-
-# ENV https_proxy=wwwcache.fmi.fi:8080
-# ENV http_proxy=wwwcache.fmi.fi:8080
-
 LABEL maintainer "Mikko Rauhala <mikko.rauhala@fmi.fi>"
 
 ENV NOTO_FONTS="NotoSans-unhinted NotoSerif-unhinted NotoMono-hinted" \
     GOOGLE_FONTS="Open%20Sans Roboto Lato Ubuntu" 
 
 RUN rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
-             https://download.postgresql.org/pub/repos/yum/9.3/redhat/rhel-7-x86_64/pgdg-centos93-9.3-3.noarch.rpm \
-             # http://download.weatherproof.fi/fmiforge/rhel/7/noarch/fmiforge-release-7-1.fmi.noarch.rpm \
-             # https://download.fmi.fi/smartmet-open/rhel/7/noarch/smartmet-open-release-7-2.el7.fmi.noarch.rpm \
-             https://download.fmi.fi/repos/smartmet-open-fmi-17.9.1-1.el7.fmi.noarch.rpm \
-             https://download.fmi.fi/repos/smartmet-private-fmi-17.9.1-1.el7.fmi.noarch.rpm && \
-    yum -y update && yum -y install \
+    	     https://download.postgresql.org/pub/repos/yum/9.5/redhat/rhel-7-x86_64/pgdg-centos95-9.5-3.noarch.rpm \
+	     https://download.fmi.fi/smartmet-open/rhel/7/x86_64/smartmet-open-release-17.9.28-1.el7.fmi.noarch.rpm && \
+    yum -y update && yum -y install librsvg2-2.40.6-3.el7.x86_64 && yum -y install \
     	   	   smartmet-server \
     	   	   smartmet-engine-sputnik \
 		   smartmet-plugin-admin \
@@ -45,7 +38,6 @@ RUN \
         unzip -o ${FONT}.zip -d /usr/share/fonts/truetype/${FONT} && \
         rm -f ${FONT}.zip ; \
     done
-
 
 HEALTHCHECK --interval=5m --timeout=3s \
   CMD curl -f http://localhost/admin?what=qengine || exit 1
