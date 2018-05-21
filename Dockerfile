@@ -43,14 +43,17 @@ HEALTHCHECK --interval=5m --timeout=3s \
   CMD curl -f http://localhost/admin?what=qengine || exit 1
 
 # Expose GeoServer's default port
-EXPOSE 80
+EXPOSE 8080
 
 COPY smartmetconf /etc/smartmet
-RUN mkdir -p /var/smartmet/timeseriescache /var/smartmet/imagecache
-#RUN mkdir -p /smartmet/share
-#COPY wms /smartmet/share/
-#COPY dali /smartmet/share/
 COPY docker-entrypoint.sh /
+
+RUN mkdir -p /var/smartmet/timeseriescache /var/smartmet/imagecache && \
+    chgrp -R 0 /var/smartmet/timeseriescache /var/smartmet/imagecache && \
+    chmod -R g=u /var/smartmet/timeseriescache /var/smartmet/imagecache /etc/passwd /var/log
+
+### Containers should NOT run as root as a good practice
+USER 101010
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["smartmetd"]
