@@ -25,3 +25,49 @@ The server is INSPIRE compliant. It is used for FMI data services and product ge
 
 The server is especially good for extracting weather data and generating products based on gridded data (GRIB and NetCDF). The data is extracted and products generating always on-demand.
 
+### This image includes following packages:
+
+#### Libraries
+* [smartmet-library-gis](https://github.com/fmidev/smartmet-library-gis)
+* [smartmet-library-locus](https://github.com/fmidev/smartmet-library-locus)
+* [smartmet-library-macgyver](https://github.com/fmidev/smartmet-library-macgyver)
+* [smartmet-library-newbase](https://github.com/fmidev/smartmet-library-newbase)
+* [smartmet-library-spine](https://github.com/fmidev/smartmet-library-spine)
+* [smartmet-library-tron](https://github.com/fmidev/smartmet-library-spine)
+
+#### Engines
+* [smartmet-engine-contour](https://github.com/fmidev/smartmet-engine-contour)
+* [smartmet-engine-geonames](https://github.com/fmidev/smartmet-engine-geonames)
+* [smartmet-engine-gis](https://github.com/fmidev/smartmet-engine-gis)
+* [smartmet-engine-observation](https://github.com/fmidev/smartmet-engine-observation)
+* [smartmet-engine-querydata](https://github.com/fmidev/smartmet-engine-querydata)
+* [smartmet-engine-sputnik](https://github.com/fmidev/smartmet-engine-querydata)
+
+#### Plugins
+* [smartmet-plugin-admin](https://github.com/fmidev/smartmet-plugin-admin)
+* [smartmet-plugin-backend](https://github.com/fmidev/smartmet-plugin-backend)
+* [smartmet-plugin-download](https://github.com/fmidev/smartmet-plugin-download) [[Guide](https://github.com/fmidev/smartmet-plugin-download/wiki/SmartMet-plugin-download)]
+* [smartmet-plugin-meta](https://github.com/fmidev/smartmet-plugin-meta)
+* [smartmet-plugin-timeseries](https://github.com/fmidev/smartmet-plugin-timeseries)  [[Guide](https://github.com/fmidev/smartmet-plugin-timeseries/wiki/SmartMet-plugin-TimeSeries)]
+* [smartmet-plugin-wfs](https://github.com/fmidev/smartmet-plugin-wfs)
+* [smartmet-plugin-wms](https://github.com/fmidev/smartmet-plugin-wms)
+* [smartmet-server](https://github.com/fmidev/smartmet-server)
+
+### Usage
+#### Run container
+```
+docker run -d --restart=always --name smartmetserver -v $HOME/data:/smartmet/data \
+-p 8080:8080 fmidev/smartmetserver
+```
+#### Get data to play with
+```
+mkdir -p $HOME/data/hirlam/surface
+wget -O $HOME/data/hirlam/surface/$(date -u +%Y%m%d0000)_hirlam_europe_surface.sqd \ 
+-S "https://opendata.fmi.fi/download?param=Temperature,DewPoint,WindUMS,WindVMS,TotalCloudCover,Precipitation1h,WindSpeedMS,Humidit
+y,Pressure,WeatherSymbol3&format=qd&producer=hirlam&origintime=$(date -u +%Y-%m-%dT00Z)&timestep=data
+```
+
+#### Access timeseries plugin
+http://container-ip:8080//timeseries?producer=hirlam&lonlat=24.94,60.17&param=time,temperature,pressure
+
+Get more help for timeseries usage from github [wiki page](https://github.com/fmidev/smartmet-plugin-timeseries/wiki/SmartMet-plugin-TimeSeries).
