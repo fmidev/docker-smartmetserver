@@ -1,5 +1,6 @@
 FROM centos:7
 LABEL maintainer "Mikko Rauhala <mikko.rauhala@fmi.fi>"
+LABEL license    "MIT License Copyright (c) 2017 FMI Open Development"
 
 ENV NOTO_FONTS="NotoSans-unhinted NotoSerif-unhinted NotoMono-hinted" \
     GOOGLE_FONTS="Open%20Sans Roboto Lato Ubuntu" 
@@ -47,6 +48,9 @@ EXPOSE 8080
 
 COPY smartmetconf /etc/smartmet
 COPY docker-entrypoint.sh /
+
+RUN mkdir -p /smartmet/data/{hirlam,hirlam-knmi,gfs,icon,gem,gens-avg,gens-ctrl,hbm-fmi}/{surface,pressure} \
+             /smartmet/share/wms/customers
 
 RUN mkdir -p /var/smartmet/timeseriescache /var/smartmet/imagecache && \
     chgrp -R 0 /var/smartmet/timeseriescache /var/smartmet/imagecache && \
