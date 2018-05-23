@@ -40,8 +40,8 @@ RUN \
         rm -f ${FONT}.zip ; \
     done
 
-HEALTHCHECK --interval=5m --timeout=3s \
-  CMD curl -f http://localhost/admin?what=qengine || exit 1
+HEALTHCHECK --interval=1m --timeout=10s \
+  CMD curl -f http://localhost:8080/admin?what=qengine || exit 1
 
 # Expose GeoServer's default port
 EXPOSE 8080
