@@ -40,7 +40,7 @@ RUN \
         rm -f ${FONT}.zip ; \
     done
 
-HEALTHCHECK --interval=1m --timeout=10s \
+HEALTHCHECK --interval=30s --timeout=10s \
   CMD curl -f http://localhost:8080/admin?what=qengine || exit 1
 
 # Expose GeoServer's default port
@@ -52,9 +52,9 @@ COPY docker-entrypoint.sh /
 RUN mkdir -p /smartmet/data/{hirlam,hirlam-knmi,gfs,icon,gem,gens-avg,gens-ctrl,hbm-fmi}/{surface,pressure} \
              /smartmet/share/wms/customers
 
-RUN mkdir -p /var/smartmet/timeseriescache /var/smartmet/imagecache && \
-    chgrp -R 0 /var/smartmet/timeseriescache /var/smartmet/imagecache && \
-    chmod -R g=u /var/smartmet/timeseriescache /var/smartmet/imagecache /etc/passwd /var/log
+RUN mkdir -p /var/smartmet/timeseriescache /var/smartmet/imagecache /var/smartmet/querydata/validpoints && \
+    chgrp -R 0 /var/smartmet/timeseriescache /var/smartmet/imagecache /var/smartmet/querydata/validpoints && \
+    chmod -R g=u /var/smartmet/timeseriescache /var/smartmet/imagecache /var/smartmet/querydata/validpoints /etc/passwd /var/log
 
 ### Containers should NOT run as root as a good practice
 USER 101010
