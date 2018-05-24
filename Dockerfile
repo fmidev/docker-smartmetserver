@@ -49,7 +49,7 @@ EXPOSE 8080
 COPY smartmetconf /etc/smartmet
 COPY docker-entrypoint.sh /
 
-RUN mkdir -p /smartmet/data/{hirlam,hirlam-knmi,gfs,icon,gem,gens-avg,gens-ctrl,hbm-fmi}/{surface,pressure} \
+RUN mkdir -p /smartmet/data/{meps,hirlam,hirlam-knmi,gfs,icon,gem,gens-avg,gens-ctrl,hbm-fmi}/{surface,pressure} \
              /smartmet/share/wms/customers
 
 RUN mkdir -p /var/smartmet/timeseriescache /var/smartmet/imagecache /var/smartmet/querydata/validpoints && \
