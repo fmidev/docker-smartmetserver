@@ -29,11 +29,11 @@ The server is especially good for extracting weather data and generating product
 
 #### Libraries
 * [smartmet-library-gis](https://github.com/fmidev/smartmet-library-gis)
+* [smartmet-library-giza](https://github.com/fmidev/smartmet-library-giza)
 * [smartmet-library-locus](https://github.com/fmidev/smartmet-library-locus)
 * [smartmet-library-macgyver](https://github.com/fmidev/smartmet-library-macgyver)
 * [smartmet-library-newbase](https://github.com/fmidev/smartmet-library-newbase)
 * [smartmet-library-spine](https://github.com/fmidev/smartmet-library-spine)
-* [smartmet-library-tron](https://github.com/fmidev/smartmet-library-spine)
 
 #### Engines
 * [smartmet-engine-contour](https://github.com/fmidev/smartmet-engine-contour)
@@ -45,12 +45,11 @@ The server is especially good for extracting weather data and generating product
 
 #### Plugins
 * [smartmet-plugin-admin](https://github.com/fmidev/smartmet-plugin-admin)
-* [smartmet-plugin-backend](https://github.com/fmidev/smartmet-plugin-backend)
+* [smartmet-plugin-autocomplete](https://github.com/fmidev/smartmet-plugin-autocomplete)
 * [smartmet-plugin-download](https://github.com/fmidev/smartmet-plugin-download) [[Guide](https://github.com/fmidev/smartmet-plugin-download/wiki/SmartMet-plugin-download)]
-* [smartmet-plugin-meta](https://github.com/fmidev/smartmet-plugin-meta)
 * [smartmet-plugin-timeseries](https://github.com/fmidev/smartmet-plugin-timeseries)  [[Guide](https://github.com/fmidev/smartmet-plugin-timeseries/wiki/SmartMet-plugin-TimeSeries)]
-* [smartmet-plugin-wfs](https://github.com/fmidev/smartmet-plugin-wfs)
-* [smartmet-plugin-wms](https://github.com/fmidev/smartmet-plugin-wms)
+* [smartmet-plugin-wfs](https://github.com/fmidev/smartmet-plugin-wfs) [[Guide](https://github.com/fmidev/smartmet-plugin-wfs/wiki/SmartMet-plugin-WFS)]
+* [smartmet-plugin-wms](https://github.com/fmidev/smartmet-plugin-wms) [[Guide](https://github.com/fmidev/smartmet-plugin-wms/wiki/SmartMet-plugin-WMS-(Dali-&-WMS))]
 * [smartmet-server](https://github.com/fmidev/smartmet-server)
 
 ### Usage
