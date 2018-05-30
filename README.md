@@ -49,7 +49,7 @@ The server is especially good for extracting weather data and generating product
 * [smartmet-plugin-download](https://github.com/fmidev/smartmet-plugin-download) [[Guide](https://github.com/fmidev/smartmet-plugin-download/wiki/SmartMet-plugin-download)]
 * [smartmet-plugin-timeseries](https://github.com/fmidev/smartmet-plugin-timeseries)  [[Guide](https://github.com/fmidev/smartmet-plugin-timeseries/wiki/SmartMet-plugin-TimeSeries)]
 * [smartmet-plugin-wfs](https://github.com/fmidev/smartmet-plugin-wfs) [[Guide](https://github.com/fmidev/smartmet-plugin-wfs/wiki/SmartMet-plugin-WFS)]
-* [smartmet-plugin-wms](https://github.com/fmidev/smartmet-plugin-wms) [[Guide](https://github.com/fmidev/smartmet-plugin-wms/wiki/SmartMet-plugin-WMS-(Dali-&-WMS))]
+* [smartmet-plugin-wms](https://github.com/fmidev/smartmet-plugin-wms) [[Guide](https://github.com/fmidev/smartmet-plugin-wms/wiki/SmartMet-plugin-WMS-%28Dali-%26-WMS%29)]
 * [smartmet-server](https://github.com/fmidev/smartmet-server)
 
 ### Usage
