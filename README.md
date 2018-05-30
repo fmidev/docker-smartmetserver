@@ -63,11 +63,11 @@ docker run -d --restart=always --name smartmetserver -v $HOME/data:/smartmet/dat
 ```
 mkdir -p $HOME/data/hirlam/surface
 wget -O $HOME/data/hirlam/surface/$(date -u +%Y%m%d0000)_hirlam_europe_surface.sqd \ 
--S "https://opendata.fmi.fi/download?param=Temperature,DewPoint,WindUMS,WindVMS,TotalCloudCover,Precipitation1h,WindSpeedMS,Humidit
-y,Pressure,WeatherSymbol3&format=qd&producer=hirlam&origintime=$(date -u +%Y-%m-%dT00Z)&timestep=data
+-S "https://opendata.fmi.fi/download?param=Temperature,TotalCloudCover,Precipitation1h,WindSpeedMS,Humidity,
+Pressure,WeatherSymbol3&format=qd&producer=hirlam&origintime=$(date -u +%Y-%m-%dT00Z)&timestep=data"
 ```
 
 #### Access timeseries plugin
-http://container-ip:8080//timeseries?producer=hirlam&lonlat=24.94,60.17&param=time,temperature,pressure
+http://localhost:8080//timeseries?producer=hirlam&lonlat=24.94,60.17&param=time,temperature,pressure
 
 Get more help for timeseries usage from github [wiki page](https://github.com/fmidev/smartmet-plugin-timeseries/wiki/SmartMet-plugin-TimeSeries).
