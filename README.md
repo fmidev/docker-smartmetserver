@@ -69,6 +69,9 @@ Pressure,WeatherSymbol3&format=qd&producer=hirlam&origintime=$(date -u +%Y-%m-%d
 #### Access timeseries plugin
 http://localhost:8080/timeseries?producer=hirlam&lonlat=24.94,60.17&param=time,temperature,pressure
 
+#### Access WMS Capabilities
+http://localhost:8080/wms?service=wms&version=1.3.0&request=GetCapabilities
+
 #### Access data inventory
 http://localhost:8080/admin?what=qengine
 
