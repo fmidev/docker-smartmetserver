@@ -1,0 +1,18 @@
+{
+    "title" : "Relative Humidity",
+    "abstract" : "Relative Humidity 2m from MEPS",
+    "projection": {},
+    "producer": "meps_northeurope_surface",
+    "views": [{
+        "layers": [{
+            "qid": "l",
+            "layer_type": "isoband",
+            "isobands": "json:/resources/isobands/relativehumidity.json",
+            "css": "/resources/isobands/relativehumidity.css",
+            "parameter": "Humidity",
+            "attributes": {
+                "shape-rendering": "crispEdges"
+            }
+        }]
+    }]
+}
