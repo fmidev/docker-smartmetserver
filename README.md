@@ -67,6 +67,9 @@ Pressure,WeatherSymbol3&format=qd&producer=hirlam&origintime=$(date -u +%Y-%m-%d
 ```
 
 #### Access timeseries plugin
-http://localhost:8080//timeseries?producer=hirlam&lonlat=24.94,60.17&param=time,temperature,pressure
+http://localhost:8080/timeseries?producer=hirlam&lonlat=24.94,60.17&param=time,temperature,pressure
+
+#### Access data inventory
+http://localhost:8080/admin?what=qengine
 
 Get more help for timeseries usage from github [wiki page](https://github.com/fmidev/smartmet-plugin-timeseries/wiki/SmartMet-plugin-TimeSeries).
