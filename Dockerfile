@@ -47,6 +47,7 @@ HEALTHCHECK --interval=30s --timeout=10s \
 EXPOSE 8080
 
 COPY smartmetconf /etc/smartmet
+COPY wms /smartmet/share/wms
 COPY docker-entrypoint.sh /
 
 RUN mkdir -p /smartmet/data/{meps,hirlam,hirlam-knmi,gfs,icon,gem,gens-avg,gens-ctrl,hbm,wam}/{surface,pressure} \

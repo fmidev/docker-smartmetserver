@@ -1,0 +1,18 @@
+{
+    "title" : "Temperature",
+    "abstract" : "Temperature 2m from HIRLAM",
+    "projection": {},
+    "producer": "hirlam_europe_surface",
+    "views": [{
+        "layers": [{
+            "qid": "l",
+            "layer_type": "isoband",
+            "isobands": "json:/resources/isobands/temperature.json",
+            "css": "temperature.css",
+            "parameter": "Temperature",
+            "attributes": {
+                "shape-rendering": "crispEdges"
+            }
+        }]
+    }]
+}
