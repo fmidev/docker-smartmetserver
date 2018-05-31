@@ -10,7 +10,7 @@
             "isobands": "json:/resources/isobands/temperature.json",
             "css": "/resources/isobands/temperature.css",
             "parameter": "Temperature",
-            "level": "850",
+            "level": 850,
             "attributes": {
                 "shape-rendering": "crispEdges"
             }

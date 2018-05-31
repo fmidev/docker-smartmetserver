@@ -10,7 +10,7 @@
             "isobands": "json:/resources/isobands/temperature.json",
             "css": "/resources/isobands/temperature.css",
             "parameter": "TemperatureSea",
-            "level": "0",
+            "level": 0,
             "attributes": {
                 "shape-rendering": "crispEdges"
             }
