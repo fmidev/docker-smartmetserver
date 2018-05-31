@@ -8,7 +8,7 @@
             "qid": "l",
             "layer_type": "isoband",
             "isobands": "json:/resources/isobands/relativehumidity.json",
-            "css": "relativehumidity.css",
+            "css": "/resources/isobands/relativehumidity.css",
             "parameter": "Humidity",
             "attributes": {
                 "shape-rendering": "crispEdges"
