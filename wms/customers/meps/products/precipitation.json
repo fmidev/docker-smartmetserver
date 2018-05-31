@@ -1,0 +1,18 @@
+{
+    "title" : "Precipitation Rate",
+    "abstract" : "Precipitation Rate from MEPS",
+    "projection": {},
+    "producer": "meps_northeurope_surface",
+    "views": [{
+        "layers": [{
+            "qid": "l",
+            "layer_type": "isoband",
+            "isobands": "json:/resources/isobands/precipitation.json",
+            "css": "/resources/isobands/precipitation.css",
+            "parameter": "Precipitation1h",
+            "attributes": {
+                "shape-rendering": "crispEdges"
+            }
+        }]
+    }]
+}
