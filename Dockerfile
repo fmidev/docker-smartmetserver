@@ -9,8 +9,6 @@ RUN rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.
     	     https://download.postgresql.org/pub/repos/yum/9.5/redhat/rhel-7-x86_64/pgdg-centos95-9.5-3.noarch.rpm \
 	     https://download.fmi.fi/smartmet-open/rhel/7/x86_64/smartmet-open-release-17.9.28-1.el7.fmi.noarch.rpm && \
     yum -y update && yum -y install librsvg2-2.40.6-3.el7.x86_64 && yum -y install \
-    	   	   smartmet-server \
-    	   	   smartmet-engine-sputnik \
 		   smartmet-plugin-admin \
 		   smartmet-plugin-autocomplete \
 		   smartmet-plugin-download \
@@ -18,8 +16,8 @@ RUN rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.
 		   smartmet-plugin-wms \
 		   smartmet-plugin-wfs \
 		   unzip && \
-    yum -y reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common grib_api && \
-    yum clean all 
+    yum -y reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common && \
+    yum clean all && rm -rf /var/cache/yum
 
 # Install Google Noto fonts
 RUN mkdir -p /usr/share/fonts/truetype/noto && \
