@@ -1,0 +1,3 @@
+<filter id="grayscale">
+  <feColorMatrix type="saturate" values="0"/>
+</filter>
