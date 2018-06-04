@@ -1,0 +1,73 @@
+{
+    "defs":
+    {
+	"layers": [
+	    {
+		"tag": "symbol",
+		"attributes":
+		{
+		    "id": "isoband_symbol_id" // will be replaced in the code
+		},
+		"layers": [
+		    {
+			"tag": "rect",
+			"attributes":
+			{
+			    "width": "14",
+			    "height": "9"
+			}
+		    }
+		]
+	    }
+	]
+    },
+    "layer_type": "legend",
+    "x": 99999, // will be replaced in the code
+    "y": 99999, // will be replaced in the code
+    "dx": 0,
+    "dy": 9,
+    "isobands": "isoband_color_scale", // will be replaced in the code
+    "symbols":
+    {
+	"css": "isoband_css", // will be replaced in the code
+	"symbol": "isoband_symbol_id",  // will be replaced in the code
+	"attributes":
+	{
+	    "stroke": "black",
+	    "stroke-width": "0.5"
+	}
+    },
+    "labels":
+    {
+	"separator": "-",	// en dash = " \u2013 "
+	"dx": 18,
+	"dy": 9,
+	"conversions":
+	{
+	    "10": "&#62; 10"
+	}
+    },
+     "layers" : 
+     [
+        {
+	    "tag": "text",
+	    "cdata": "isoband_header", // will be replaced in the code
+	    "attributes":
+	    {
+		"x": 99999,  // will be replaced in the code
+		"y": 99999,  // will be replaced in the code
+		"class": "Units"
+	    }
+	},
+	{
+	    "tag": "text",
+	    "cdata": "isoband_unit",
+	    "attributes":
+	    {
+		"x": 99999,  // will be replaced in the code
+		"y": 99999,  // will be replaced in the code
+		"class": "Units"
+	    }
+	}
+    ]
+}

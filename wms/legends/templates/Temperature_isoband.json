@@ -1,0 +1,153 @@
+{
+    "defs":
+    {
+	"styles":
+	{
+	    ".Label":
+	    {
+		"font": "Arial",
+		"font-size": 9
+	    },
+	    ".Units":
+	    {
+		"font": "Arial",
+		"font-size": 14
+	    }
+	},
+	"layers": [
+	    {
+		"tag": "symbol",
+		"attributes":
+		{
+		    "id": "temperature_isoband_rect"
+		},
+		"layers": [
+		    {
+			"tag": "rect",
+			"attributes":
+			{
+			    "width": "14",
+			    "height": "9"
+			}
+		    }
+		]
+	    },
+	    {
+		"tag": "symbol",
+		"attributes":
+		{
+		    "id": "temperature_isoband_uptriangle"
+		},
+		"layers": [
+		    {
+			"tag": "path",
+			"attributes":
+			{
+			    "d": "M0 9,7 0,14 9Z"
+			}
+		    }
+		]
+	    },
+	    {
+		"tag": "symbol",
+		"attributes":
+		{
+		    "id": "temperature_isoband_downtriangle"
+		},
+		"layers": [
+		    {
+			"tag": "path",
+			"attributes":
+			{
+			    "d": "M0 0,7 9,14 0Z"
+			}
+		    }
+		]
+	    }
+	]
+    },
+   "layer_type": "legend",
+    "symbols":
+    {
+        "symbol": ""
+    },
+    "layers": [
+	{
+	    "tag": "text",
+	    "cdata": "&#176;C",
+	    "attributes":
+	    {
+		"x": 20,  // will be replaced in the code, the original value will be added
+		"y": 0,  // will be replaced in the code, the original value will be added
+		"dx": 20,
+		"dy": 15,
+		"class": "Units"
+	    }
+	},
+	{
+	    "layer_type": "legend",
+	    "x": 10,  // will be replaced in the code, the original value will be added
+	    "y": 15,  // will be replaced in the code, the original value will be added
+	    "dx": 0,
+	    "dy": 9,
+	    "isobands": "json:isobands/temperature.json",
+	    "symbols":
+	    {
+		"css": "isobands/temperature.css",
+		"symbol": "temperature_isoband_rect",
+		"start": "temperature_isoband_uptriangle",
+		"end": "temperature_isoband_downtriangle",
+		"attributes":
+		{
+		    "stroke": "black",
+		    "stroke-width": "0.5"
+		}
+	    },
+	    "labels":
+	    {
+		"type": "lolimit",
+		"separator": "...",	// en dash = " \u2013 "
+		"dx": 18,
+		"dy": 12,
+		"conversions":
+		{
+		    "0": "GETTING WARMER",
+		    "14": "WARM",
+		    "30":
+		    {
+			"fi": "KUUMA",
+			"en": "HOT"
+		    },
+		    "38": "&#62; 38",
+		    "-50": "&#60; -50"
+		}
+	    }
+	},
+	{
+	    "tag": "mask",
+	    "attributes":
+	    {
+		"id": "temperaturelegendmask"
+	    },
+	    "layers": [
+		{
+		    "tag": "rect",
+		    "attributes":
+		    {
+			"fill": "white",
+			"width": "100%",
+			"height": "100%"
+		    }
+		},
+		{
+		    "tag": "use",
+		    "attributes":
+		    {
+			"xlink:href": "#temperaturelegend",
+			"filter": "url(#alphadilation)"
+		    }
+		}
+	    ]	    
+	}
+    ]
+}
