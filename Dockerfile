@@ -2,9 +2,6 @@ FROM centos:7
 LABEL maintainer "Mikko Rauhala <mikko.rauhala@fmi.fi>"
 LABEL license    "MIT License Copyright (c) 2017 FMI Open Development"
 
-ENV https_proxy=wwwcache.fmi.fi:8080
-ENV http_proxy=wwwcache.fmi.fi:8080
-
 ENV NOTO_FONTS="NotoSans-unhinted NotoSerif-unhinted NotoMono-hinted" \
     GOOGLE_FONTS="Open%20Sans Roboto Lato Ubuntu" 
 
