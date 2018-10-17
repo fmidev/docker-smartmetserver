@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/rhel7/rhel-atomic
+FROM registry.access.redhat.com/rhel7.5
 LABEL maintainer "Mikko Rauhala <mikko.rauhala@fmi.fi>"
 LABEL license    "MIT License Copyright (c) 2017 FMI Open Development"
 
