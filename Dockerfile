@@ -1,4 +1,5 @@
-FROM centos:7
+ARG  BASEIMAGE=centos:7
+FROM ${BASEIMAGE}
 LABEL maintainer "Mikko Rauhala <mikko.rauhala@fmi.fi>"
 LABEL license    "MIT License Copyright (c) 2017 FMI Open Development"
 
