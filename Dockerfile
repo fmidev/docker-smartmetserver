@@ -42,7 +42,7 @@ RUN \
 HEALTHCHECK --interval=30s --timeout=10s \
   CMD curl -f http://localhost:8080/admin?what=qengine || exit 1
 
-# Expose GeoServer's default port
+# Expose SmartMet Server's default port
 EXPOSE 8080
 
 COPY smartmetconf /etc/smartmet
