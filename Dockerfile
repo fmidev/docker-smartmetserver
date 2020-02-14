@@ -1,23 +1,27 @@
-FROM centos:7
+FROM docker.io/centos:7
 LABEL maintainer "Mikko Rauhala <mikko.rauhala@fmi.fi>"
-LABEL license    "MIT License Copyright (c) 2017 FMI Open Development"
+LABEL license    "MIT License Copyright (c) 2020 FMI Open Development"
 
-ENV NOTO_FONTS="NotoSans-unhinted NotoSerif-unhinted NotoMono-hinted" \
+ENV USER_NAME="smartmet" \
+    NOTO_FONTS="NotoSans-unhinted NotoSerif-unhinted NotoMono-hinted" \
     GOOGLE_FONTS="Open%20Sans Roboto Lato Ubuntu" 
 
 RUN rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
     https://download.postgresql.org/pub/repos/yum/9.5/redhat/rhel-7-x86_64/pgdg-centos95-9.5-3.noarch.rpm \
     https://download.fmi.fi/smartmet-open/rhel/7/x86_64/smartmet-open-release-17.9.28-1.el7.fmi.noarch.rpm && \
-    yum -y update && \
+    yum-config-manager --disable "pgdg*" && \
+    yum-config-manager --enable "pgdg95"
+
+RUN yum -y update && \
+    yum -y install postgresql95 postgis librsvg2*2.40.6-3* && \
     yum -y install \
-    librsvg2*2.40.6-3* \
     smartmet-plugin-backend \
     smartmet-plugin-admin \
     smartmet-plugin-download \
     smartmet-plugin-timeseries \
     smartmet-plugin-wms \
     unzip && \
-    yum -y reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common grib_api && \
+    yum -y reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common eccodes && \
     yum clean all 
 
 # Install Google Noto fonts
