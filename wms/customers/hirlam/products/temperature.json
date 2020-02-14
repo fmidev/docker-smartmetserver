@@ -1,5 +1,5 @@
 {
-    "title" : "Temperature",
+    "title" : "HIRLAM Temperature 2m",
     "abstract" : "Temperature 2m from HIRLAM",
     "projection": {},
     "producer": "hirlam_europe_surface",
