@@ -1,5 +1,5 @@
 {
-    "title" : "Precipitation Rate",
+    "title" : "HIRLAM Precipitation Rate",
     "abstract" : "Precipitation Rate from HIRLAM",
     "projection": {},
     "producer": "hirlam_europe_surface",
