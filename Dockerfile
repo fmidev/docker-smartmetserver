@@ -6,14 +6,12 @@ ENV USER_NAME="smartmet" \
     NOTO_FONTS="NotoSans-unhinted NotoSerif-unhinted NotoMono-hinted" \
     GOOGLE_FONTS="Open%20Sans Roboto Lato Ubuntu" 
 
-RUN rpm -ivh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm \
-    https://download.postgresql.org/pub/repos/yum/9.5/redhat/rhel-7-x86_64/pgdg-centos95-9.5-3.noarch.rpm \
-    https://download.fmi.fi/smartmet-open/rhel/7/x86_64/smartmet-open-release-17.9.28-1.el7.fmi.noarch.rpm && \
-    yum-config-manager --disable "pgdg*" && \
-    yum-config-manager --enable "pgdg95"
-
-RUN yum -y update && \
-    yum -y install postgresql95 postgis librsvg2*2.40.6-3* && \
+RUN yum -y install https://download.fmi.fi/smartmet-open/rhel/7/x86_64/smartmet-open-release-21.3.26-2.el7.fmi.noarch.rpm && \
+    yum -y update && \
+    yum -y install epel-release && \
+    yum-config-manager --setopt="epel.exclude=librsvg2*" --save && \
+    yum-config-manager --setopt="base.exclude=librsvg2*" --save && \
+    yum-config-manager --disable epel-source && \ 
     yum -y install \
     smartmet-plugin-backend \
     smartmet-plugin-admin \
