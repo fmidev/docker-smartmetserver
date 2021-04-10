@@ -1,5 +1,5 @@
 {
-    "title" : "Temperature 850hPa",
+    "title" : "HIRLAM Temperature 850hPa",
     "abstract" : "Temperature 850hPa from HIRLAM",
     "projection": {},
     "producer": "hirlam_europe_pressure",

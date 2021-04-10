@@ -1,15 +1,15 @@
 {
-    "title" : "MEPS Temperature 2m",
-    "abstract" : "Temperature 2m from MEPS",
+    "title" : "MEPS Wind Speed 10m",
+    "abstract" : "Wind speed in m/s from MEPS forecast model.",
     "projection": {},
     "producer": "meps_northeurope_surface",
     "views": [{
         "layers": [{
             "qid": "l",
             "layer_type": "isoband",
-            "isobands": "json:/resources/isobands/temperature.json",
-            "css": "/resources/isobands/temperature.css",
-            "parameter": "Temperature",
+            "parameter": "WindSpeedMS",
+            "isobands": "json:/resources/isobands/windspeed.json",
+            "css": "/resources/isobands/windspeed.css",
             "attributes": {
                 "shape-rendering": "crispEdges"
             }

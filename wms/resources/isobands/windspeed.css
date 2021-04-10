@@ -1,0 +1,9 @@
+.WindSpeedMS_3_5	{ stroke: none; fill: rgba(0,229,255,1.00); }	/*  kohtalainen 1 (sinis-vy) */
+.WindSpeedMS_5_7	{ stroke: none; fill: rgba(0,195,255,1.00); }	/*  kohtalainen 2 (sinis-vy) */
+.WindSpeedMS_7_10	{ stroke: none; fill: rgba(0,110,255,1.00); }	/*  navakka 1 (tunnasinis-vy) */
+.WindSpeedMS_10_14	{ stroke: none; fill: rgba(0,26,255,1.00); }	/*  navakka 2 (sinivioletti) */
+.WindSpeedMS_14_17	{ stroke: none; fill: rgba(212,0,255,1.00); }	/*  kova 1 (violetti) */
+.WindSpeedMS_17_21	{ stroke: none; fill: rgba(179,0,149,1.00); }	/*  kova 2 */
+.WindSpeedMS_21_26	{ stroke: none; fill: rgba(255,0,0,1.00); }	/*  myrsky 1 */
+.WindSpeedMS_26_32	{ stroke: none; fill: rgba(255,85,0,1.00); }	/*  myrsky 1 */
+.WindSpeedMS_32	{ stroke: none; fill: rgba(255,170,0,1.00); }	/*  hirmumyrsky */
