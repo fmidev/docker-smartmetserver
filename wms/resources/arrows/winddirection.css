@@ -1,0 +1,8 @@
+.ModerateWindArrow_3_5	{ stroke: black; stroke-width: 0.2px; fill: rgb(0,229,255) }
+.ModerateWindArrow_5_7	{ stroke: black; stroke-width: 0.2px; fill: rgb(0,195,255) }
+.FreshWindArrow_7_10	{ stroke: black; stroke-width: 0.2px; fill: rgb(0,110,255) }
+.FreshWindArrow_10_14	{ stroke: black; stroke-width: 0.2px; fill: rgb(0,26,255) }
+.HardWindArrow_14_17	{ stroke: black; stroke-width: 0.2px; fill: rgb(212,0,255) }
+.HardWindArrow_17_21	{ stroke: black; stroke-width: 0.2px; fill: rgb(179,0,149) }
+.StormWindArrow_21_26	{ stroke: black; stroke-width: 0.2px; fill: rgb(255,0,0) }
+.GaleWindArrow_32_inf	{ stroke: black; stroke-width: 0.2px; fill: rgb(255,170,0) }
