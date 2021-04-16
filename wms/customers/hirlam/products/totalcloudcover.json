@@ -1,0 +1,18 @@
+{
+    "title" : "HIRLAM Total Cloud Cover",
+    "abstract" : "Total cloud cover from HIRLAM forecast model.",
+    "projection": {},
+    "producer": "hirlam_europe_surface",
+    "views": [{
+        "layers": [{
+            "qid": "l",
+            "layer_type": "isoband",
+            "parameter": "TotalCloudCover",
+            "isobands": "json:/resources/isobands/totalcloudcover.json",
+            "css": "/resources/isobands/totalcloudcover.css",
+            "attributes": {
+                "shape-rendering": "crispEdges"
+            }
+        }]
+    }]
+}
