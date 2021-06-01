@@ -1,5 +1,5 @@
 {
-    "title" : "Sea Surface Temperature",
+    "title" : "HBM Sea Surface Temperature",
     "abstract" : "Sea Surface Temperature from HBM",
     "projection": {},
     "producer": "hbm_baltic_surface",
