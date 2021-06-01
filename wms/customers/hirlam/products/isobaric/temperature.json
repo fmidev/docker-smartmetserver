@@ -1,8 +1,8 @@
 {
-    "title" : "HIRLAM Temperature 2m",
-    "abstract" : "Temperature 2m from HIRLAM",
+    "title" : "HIRLAM Pressure Level Temperature",
+    "abstract" : "Temperature for Pressure Levels from HIRLAM",
     "projection": {},
-    "producer": "hirlam_europe_surface",
+    "producer": "hirlam_europe_pressure",
     "views": [{
         "layers": [{
             "qid": "l",
@@ -10,6 +10,7 @@
             "isobands": "json:/resources/isobands/temperature.json",
             "css": "/resources/isobands/temperature.css",
             "parameter": "Temperature",
+            "level": 850,
             "attributes": {
                 "shape-rendering": "crispEdges"
             }

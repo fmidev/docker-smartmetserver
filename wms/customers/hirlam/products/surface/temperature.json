@@ -1,0 +1,50 @@
+{
+    "title": "HIRLAM Temperature 2m",
+    "abstract": "Temperature 2m from HIRLAM",
+    "projection": {},
+    "producer": "hirlam_europe_surface",
+    "styles": [
+        {
+            "name": "temperature_two_degrees",
+            "title": "Temperature isobands every two degrees",
+            "abstract": "Temperature isoband width is two degrees",
+            "layers": [
+                {
+                    "qid": "l",
+                    "layer_type": "isoband",
+                    "isobands": "json:/resources/isobands/temperature.json",
+                    "css": "resources/isobands/temperature.css"
+                }
+            ]
+        },
+        {
+            "name": "temperature_one_degrees",
+            "title": "Temperature isobands every one degrees",
+            "abstract": "Temperature isoband width is one degrees",
+            "layers": [
+                {
+                    "qid": "l",
+                    "layer_type": "isoband",
+                    "isobands": "json:/resources/isobands/temperature-hires.json",
+                    "css": "/resources/isobands/temperature-hiress.css"
+                }
+            ]
+        }
+    ],
+    "views": [
+        {
+            "layers": [
+                {
+                    "qid": "l",
+                    "layer_type": "isoband",
+                    "parameter": "Temperature",
+                    "isobands": "json:/resources/isobands/temperature.json",
+                    "css": "/resources/isobands/temperature.css",
+                    "attributes": {
+                        "shape-rendering": "crispEdges"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "title": "MEPS Wind Direction 10m",
+    "abstract": "Wind direction from MEPS forecast model.",
+    "projection": {},
+    "producer": "meps_northeurope_surface",
+    "views": [
+        {
+            "layers": [
+                {
+                    "qid": "l",
+                    "layer_type": "arrow",
+                    "direction": "WindDirection",
+                    "speed": "WindSpeedMS",
+                    "symbol": "windarrow",
+                    "isobands": "json:/resources/arrows/winddirection.json",
+                    "css": "/resources/arrows/winddirection.css",
+                    "attributes": {
+                        "id": "wind_arrows"
+                    }
+                }
+            ]
+        }
+    ]
+}

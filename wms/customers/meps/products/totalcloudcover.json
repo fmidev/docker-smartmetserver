@@ -1,0 +1,18 @@
+{
+    "title" : "MEPS Total Cloud Cover",
+    "abstract" : "Total cloud cover from MEPS forecast model.",
+    "projection": {},
+    "producer": "meps_northeurope_surface",
+    "views": [{
+        "layers": [{
+            "qid": "l",
+            "layer_type": "isoband",
+            "parameter": "TotalCloudCover",
+            "isobands": "json:/resources/isobands/totalcloudcover.json",
+            "css": "/resources/isobands/totalcloudcover.css",
+            "attributes": {
+                "shape-rendering": "crispEdges"
+            }
+        }]
+    }]
+}
