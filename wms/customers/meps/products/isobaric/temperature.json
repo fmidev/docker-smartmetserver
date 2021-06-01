@@ -1,8 +1,8 @@
 {
-    "title" : "HIRLAM Temperature Isobaric",
-    "abstract" : "Temperature on Constant Presures Surfaces from HIRLAM",
+    "title" : "MEPS Temperature Isobaric",
+    "abstract" : "Temperature on Constant Presures Surfaces from MEPS",
     "projection": {},
-    "producer": "hirlam_europe_pressure",
+    "producer": "meps_northeurope_surface",
     "views": [{
         "layers": [{
             "qid": "l",

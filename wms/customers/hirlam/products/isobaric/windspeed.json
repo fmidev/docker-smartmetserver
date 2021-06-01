@@ -1,0 +1,18 @@
+{
+    "title" : "HIRLAM Wind Speed Isobaric",
+    "abstract" : "Wind speed on Constant Pressure Levels from HIRLAM forecast model.",
+    "projection": {},
+    "producer": "hirlam_europe_pressure",
+    "views": [{
+        "layers": [{
+            "qid": "l",
+            "layer_type": "isoband",
+            "parameter": "WindSpeedMS",
+            "isobands": "json:/resources/isobands/windspeed.json",
+            "css": "/resources/isobands/windspeed.css",
+            "attributes": {
+                "shape-rendering": "crispEdges"
+            }
+        }]
+    }]
+}

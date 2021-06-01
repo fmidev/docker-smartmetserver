@@ -1,0 +1,24 @@
+{
+    "title": "HIRLAM Wind Direction Isobaric",
+    "abstract": "Wind direction on Constant Perssure Levels from HIRLAM forecast model.",
+    "projection": {},
+    "producer": "hirlam_europe_pressure",
+    "views": [
+        {
+            "layers": [
+                {
+                    "qid": "l",
+                    "layer_type": "arrow",
+                    "direction": "WindDirection",
+                    "speed": "WindSpeedMS",
+                    "symbol": "windarrow",
+                    "isobands": "json:/resources/arrows/winddirection.json",
+                    "css": "/resources/arrows/winddirection.css",
+                    "attributes": {
+                        "id": "wind_arrows"
+                    }
+                }
+            ]
+        }
+    ]
+}
