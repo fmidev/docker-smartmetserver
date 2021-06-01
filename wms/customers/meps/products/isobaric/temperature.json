@@ -2,7 +2,7 @@
     "title" : "MEPS Temperature Isobaric",
     "abstract" : "Temperature on Constant Presures Surfaces from MEPS",
     "projection": {},
-    "producer": "meps_northeurope_surface",
+    "producer": "meps_northeurope_pressure",
     "views": [{
         "layers": [{
             "qid": "l",

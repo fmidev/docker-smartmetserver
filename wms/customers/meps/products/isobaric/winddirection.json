@@ -2,7 +2,7 @@
     "title": "MEPS Wind Direction Isobaric",
     "abstract": "Wind direction on Constant Perssure Levels from MEPS forecast model.",
     "projection": {},
-    "producer": "meps_northeurope_surface",
+    "producer": "meps_northeurope_pressure",
     "views": [
         {
             "layers": [

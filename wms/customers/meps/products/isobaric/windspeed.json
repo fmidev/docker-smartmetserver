@@ -2,7 +2,7 @@
     "title" : "MEPS Wind Speed Isobaric",
     "abstract" : "Wind speed on Constant Pressure Levels from MEPS forecast model.",
     "projection": {},
-    "producer": "meps_northeurope_surface",
+    "producer": "meps_northeurope_pressure",
     "views": [{
         "layers": [{
             "qid": "l",
