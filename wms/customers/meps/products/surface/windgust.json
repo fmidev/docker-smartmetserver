@@ -1,0 +1,18 @@
+{
+    "title" : "MEPS Wind Gust 10m",
+    "abstract" : "Wind gust in m/s from MEPS forecast model.",
+    "projection": {},
+    "producer": "meps_northeurope_surface",
+    "views": [{
+        "layers": [{
+            "qid": "l",
+            "layer_type": "isoband",
+            "parameter": "WindSpeedMS",
+            "isobands": "json:/resources/isobands/windspeed.json",
+            "css": "/resources/isobands/windspeed.css",
+            "attributes": {
+                "shape-rendering": "crispEdges"
+            }
+        }]
+    }]
+}
