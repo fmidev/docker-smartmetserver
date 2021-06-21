@@ -1,0 +1,199 @@
+[
+    {
+        "qid": "CAPE_4000",
+        "lolimit": 4000,
+        "attributes": {
+            "fill": "rgb(255, 255, 255)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "CAPE_3500_4000",
+        "hilimit": 4000,
+        "lolimit": 3500,
+        "attributes": {
+            "fill": "rgb(255, 199, 255)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_3000_3500",
+        "hilimit": 3500,
+        "lolimit": 3000,
+        "attributes": {
+            "fill": "rgb(255, 156, 245)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "CAPE_2500_3000",
+        "hilimit": 3000,
+        "lolimit": 2500,
+        "attributes": {
+            "fill": "rgb(238, 76, 245)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "CAPE_2000_2500",
+        "hilimit": 2500,
+        "lolimit": 2000,
+        "attributes": {
+            "fill": "rgb(192, 46, 217)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "CAPE_1800_2000",
+        "hilimit": 2000,
+        "lolimit": 1800,
+        "attributes": {
+            "fill": "rgb(151, 0, 151)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "CAPE_1600_1800",
+        "hilimit": 1800,
+        "lolimit": 1600,
+        "attributes": {
+            "fill": "rgb(125, 0, 0)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "CAPE_1400_1600",
+        "hilimit": 1600,
+        "lolimit": 1400,
+        "attributes": {
+            "fill": "rgb(145, 0, 0)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "CAPE_1300_1400",
+        "hilimit": 1400,
+        "lolimit": 1300,
+        "attributes": {
+            "fill": "rgb(255, 161, 0)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "CAPE_1200_1300",
+        "hilimit": 1300,
+        "lolimit": 1200,
+        "attributes": {
+            "fill": "rgb(192, 0, 0)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "CAPE_1100_1200",
+        "hilimit": 1200,
+        "lolimit": 1100,
+        "attributes": {
+            "fill": "rgb(225, 20, 0)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "CAPE_1000_1100",
+        "hilimit": 1100,
+        "lolimit": 1000,
+        "attributes": {
+            "fill": "rgb(255, 51, 0)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "CAPE_900_1000",
+        "hilimit": 1000,
+        "lolimit": 900,
+        "attributes": {
+            "fill": "rgb(255, 97, 0)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "CAPE_800_900",
+        "hilimit": 900,
+        "lolimit": 800,
+        "attributes": {
+            "fill": "rgb(255, 161, 0)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "CAPE_700_800",
+        "hilimit": 800,
+        "lolimit": 700,
+        "attributes": {
+            "fill": "rgb(255, 192, 61)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "CAPE_600_700",
+        "hilimit": 700,
+        "lolimit": 600,
+        "attributes": {
+            "fill": "rgb(255, 232, 120)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "CAPE_500_600",
+        "hilimit": 600,
+        "lolimit": 500,
+        "attributes": {
+            "fill": "rgb(238, 255, 158)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "CAPE_400_500",
+        "hilimit": 500,
+        "lolimit": 400,
+        "attributes": {
+            "fill": "rgb(120, 245, 115)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "CAPE_300_400",
+        "hilimit": 400,
+        "lolimit": 300,
+        "attributes": {
+            "fill": "rgb(151, 245, 140)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "CAPE_200_300",
+        "hilimit": 300,
+        "lolimit": 200,
+        "attributes": {
+            "fill": "rgb(181, 250, 171)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "CAPE_100_200",
+        "hilimit": 200,
+        "lolimit": 100,
+        "attributes": {
+            "fill": "rgb(199, 255, 192)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "CAPE_50_100",
+        "hilimit": 100,
+        "lolimit": 50,
+        "attributes": {
+            "fill": "rgb(230, 255, 225)",
+            "stroke": "none"
+        }
+    }
+]

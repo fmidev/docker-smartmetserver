@@ -1,0 +1,17 @@
+{
+    "title" : "HIRLAM CAPE",
+    "abstract" : "CAPE from HIRLAM",
+    "projection": {},
+    "producer": "hirlam_europe_surface",
+    "views": [{
+        "layers": [{
+            "qid": "l",
+            "layer_type": "isoband",
+            "isobands": "json:/resources/isobands/cape.json",
+            "parameter": "CAPE",
+            "attributes": {
+                "shape-rendering": "crispEdges"
+            }
+        }]
+    }]
+}

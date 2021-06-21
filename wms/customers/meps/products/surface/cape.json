@@ -1,0 +1,17 @@
+{
+    "title" : "MEPS CAPE",
+    "abstract" : "CAPE from MEPS",
+    "projection": {},
+    "producer": "meps_northeurope_surface",
+    "views": [{
+        "layers": [{
+            "qid": "l",
+            "layer_type": "isoband",
+            "isobands": "json:/resources/isobands/cape.json",
+            "parameter": "CAPE",
+            "attributes": {
+                "shape-rendering": "crispEdges"
+            }
+        }]
+    }]
+}
