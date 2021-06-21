@@ -75,7 +75,7 @@
         "hilimit": 1400,
         "lolimit": 1300,
         "attributes": {
-            "fill": "rgb(255, 161, 0)",
+            "fill": "rgb(166, 0, 0)",
             "stroke": "none"
         }
     },
