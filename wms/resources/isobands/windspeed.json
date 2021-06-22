@@ -1,73 +1,226 @@
 [
     {
+        "qid": "WindSpeed_27",
+        "lolimit": 27,
         "attributes": {
-            "class": "WindSpeedMS_3_5"
-        },
-        "hilimit": 5,
-        "lolimit": 3,
-        "qid": "WindSpeedMS_3_5"
+            "fill": "rgb(181, 40, 40)",
+            "stroke": "none"
+        }
     },
     {
-        "attributes": {
-            "class": "WindSpeedMS_5_7"
-        },
-        "hilimit": 7,
-        "lolimit": 5,
-        "qid": "WindSpeedMS_5_7"
-    },
-    {
-        "attributes": {
-            "class": "WindSpeedMS_7_10"
-        },
-        "hilimit": 10,
-        "lolimit": 7,
-        "qid": "WindSpeedMS_7_10"
-    },
-    {
-        "attributes": {
-            "class": "WindSpeedMS_10_14"
-        },
-        "hilimit": 14,
-        "lolimit": 10,
-        "qid": "WindSpeedMS_10_14"
-    },
-    {
-        "attributes": {
-            "class": "WindSpeedMS_14_17"
-        },
-        "hilimit": 17,
-        "lolimit": 14,
-        "qid": "WindSpeedMS_14_17"
-    },
-    {
-        "attributes": {
-            "class": "WindSpeedMS_17_21"
-        },
-        "hilimit": 21,
-        "lolimit": 17,
-        "qid": "WindSpeedMS_17_21"
-    },
-    {
-        "attributes": {
-            "class": "WindSpeedMS_21_26"
-        },
-        "hilimit": 26,
-        "lolimit": 21,
-        "qid": "WindSpeedMS_21_26"
-    },
-    {
-        "attributes": {
-            "class": "WindSpeedMS_26_32"
-        },
-        "hilimit": 32,
+        "qid": "WindSpeed_26_27",
+        "hilimit": 27,
         "lolimit": 26,
-        "qid": "WindSpeedMS_26_32"
+        "attributes": {
+            "fill": "rgb(199, 61, 61)",
+            "stroke": "none"
+        }
     },
     {
+        "qid": "WindSpeed_25_26",
+        "hilimit": 26,
+        "lolimit": 25,
         "attributes": {
-            "class": "WindSpeedMS_32"
-        },
-        "lolimit": 32,
-        "qid": "WindSpeedMS_32"
+            "fill": "rgb(230, 79, 79)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_24_25",
+        "hilimit": 25,
+        "lolimit": 24,
+        "attributes": {
+            "fill": "rgb(230, 112, 112)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_23_24",
+        "hilimit": 24,
+        "lolimit": 23,
+        "attributes": {
+            "fill": "rgb(230, 140, 140)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_22_23",
+        "hilimit": 23,
+        "lolimit": 22,
+        "attributes": {
+            "fill": "rgb(248, 161, 161)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_21_22",
+        "hilimit": 22,
+        "lolimit": 21,
+        "attributes": {
+            "fill": "rgb(255, 199, 199)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_20_21",
+        "hilimit": 21,
+        "lolimit": 20,
+        "attributes": {
+            "fill": "rgb(166, 0, 0)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_19_20",
+        "hilimit": 20,
+        "lolimit": 19,
+        "attributes": {
+            "fill": "rgb(225, 20, 0)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_18_19",
+        "hilimit": 19,
+        "lolimit": 18,
+        "attributes": {
+            "fill": "rgb(255, 51, 0)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_17_18",
+        "hilimit": 18,
+        "lolimit": 17,
+        "attributes": {
+            "fill": "rgb(255, 97, 0)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_16_17",
+        "hilimit": 17,
+        "lolimit": 16,
+        "attributes": {
+            "fill": "rgb(255, 161, 0)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_15_16",
+        "hilimit": 16,
+        "lolimit": 15,
+        "attributes": {
+            "fill": "rgb(255, 192, 61)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_14_15",
+        "hilimit": 15,
+        "lolimit": 14,
+        "attributes": {
+            "fill": "rgb(255, 232, 120)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_13_14",
+        "hilimit": 14,
+        "lolimit": 13,
+        "attributes": {
+            "fill": "rgb(56, 209, 61)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_12_13",
+        "hilimit": 13,
+        "lolimit": 12,
+        "attributes": {
+            "fill": "rgb(79, 240, 79)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_11_12",
+        "hilimit": 12,
+        "lolimit": 11,
+        "attributes": {
+            "fill": "rgb(120, 245, 115)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_10_11",
+        "hilimit": 11,
+        "lolimit": 10,
+        "attributes": {
+            "fill": "rgb(151, 245, 140)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_9_10",
+        "hilimit": 10,
+        "lolimit": 9,
+        "attributes": {
+            "fill": "rgb(181, 250, 171)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_8_9",
+        "hilimit": 9,
+        "lolimit": 8,
+        "attributes": {
+            "fill": "rgb(199, 255, 192)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_7_8",
+        "hilimit": 8,
+        "lolimit": 7,
+        "attributes": {
+            "fill": "rgb(79, 166, 245)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_6_7",
+        "hilimit": 7,
+        "lolimit": 6,
+        "attributes": {
+            "fill": "rgb(120, 186, 250)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_5_6",
+        "hilimit": 6,
+        "lolimit": 5,
+        "attributes": {
+            "fill": "rgb(151, 209, 250)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_4_5",
+        "hilimit": 5,
+        "lolimit": 4,
+        "attributes": {
+            "fill": "rgb(181, 240, 250)",
+            "stroke": "none"
+        }
+    },
+    {
+        "qid": "WindSpeed_3_4",
+        "hilimit": 4,
+        "lolimit": 3,
+        "attributes": {
+            "fill": "rgb(225, 255, 255)",
+            "stroke": "none"
+        }
     }
 ]

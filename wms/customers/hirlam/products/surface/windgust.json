@@ -9,7 +9,6 @@
             "layer_type": "isoband",
             "parameter": "WindGust",
             "isobands": "json:/resources/isobands/windspeed.json",
-            "css": "/resources/isobands/windspeed.css",
             "attributes": {
                 "shape-rendering": "crispEdges"
             }
