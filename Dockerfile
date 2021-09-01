@@ -18,6 +18,7 @@ RUN yum -y install https://download.fmi.fi/smartmet-open/rhel/7/x86_64/smartmet-
     smartmet-plugin-download \
     smartmet-plugin-timeseries \
     smartmet-plugin-wms \
+    smartmet-engine-grid \
     unzip && \
     yum -y reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common eccodes && \
     yum clean all 
