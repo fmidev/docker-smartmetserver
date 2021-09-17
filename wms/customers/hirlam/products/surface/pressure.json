@@ -1,0 +1,18 @@
+{
+    "title" : "HIRLAM Pressure MSL",
+    "abstract" : "MSL Pressure from HIRLAM",
+    "projection": {},
+    "producer": "hirlam_europe_surface",
+    "views": [{
+        "layers": [{
+            "qid": "l",
+            "layer_type": "isoline",
+            "isobands": "json:/resources/isolines/pressure.json",
+            "css": "/resources/isolines/pressure.css",
+            "parameter": "Pressure",
+            "attributes": {
+                "shape-rendering": "crispEdges"
+            }
+        }]
+    }]
+}
