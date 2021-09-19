@@ -1,8 +1,8 @@
 {
-    "title" : "HIRLAM Pressure MSL",
-    "abstract" : "MSL Pressure from HIRLAM",
+    "title" : "MEPS Pressure MSL",
+    "abstract" : "MSL Pressure from MEPS",
     "projection": {},
-    "producer": "hirlam_europe_surface",
+    "producer": "meps_northeurope_surface",
     "views": [{
         "layers": [{
             "qid": "l",
