@@ -1,10 +1,9 @@
 FROM docker.io/centos:7
 LABEL maintainer "Mikko Rauhala <mikko.rauhala@fmi.fi>"
-LABEL license    "MIT License Copyright (c) 2020 FMI Open Development"
+LABEL license    "MIT License Copyright (c) 2021 FMI Open Development"
 
 ENV USER_NAME="smartmet" \
-    NOTO_FONTS="NotoSans-unhinted NotoSerif-unhinted NotoMono-hinted" \
-    GOOGLE_FONTS="Open%20Sans Roboto Lato Ubuntu" 
+    GOOGLE_FONTS="Lato Noto%20Sans Open%20Sans Poppins Roboto Ubuntu" 
 
 RUN yum -y install https://download.fmi.fi/smartmet-open/rhel/7/x86_64/smartmet-open-release-21.3.26-2.el7.fmi.noarch.rpm && \
     yum -y update && \
@@ -22,15 +21,6 @@ RUN yum -y install https://download.fmi.fi/smartmet-open/rhel/7/x86_64/smartmet-
     unzip && \
     yum -y reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common eccodes && \
     yum clean all 
-
-# Install Google Noto fonts
-RUN mkdir -p /usr/share/fonts/truetype/noto && \
-    for FONT in ${NOTO_FONTS}; \
-    do \
-        curl -s -S -o ${FONT}.zip https://noto-website-2.storage.googleapis.com/pkgs/${FONT}.zip && \
-        unzip -o ${FONT}.zip -d /usr/share/fonts/truetype/noto && \
-        rm -f ${FONT}.zip ; \
-    done
 
 # Install Google Fonts
 RUN \
