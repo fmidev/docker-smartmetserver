@@ -3,6 +3,7 @@
     "abstract" : "Relative Humidity 2m from GFS",
     "projection": {},
     "producer": "gfs_world_surface",
+    "keyword": ["model:gfs"],
     "views": [{
         "layers": [{
             "qid": "l",

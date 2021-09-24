@@ -1,0 +1,23 @@
+{
+    "title": "GFS Wind Direction 10m",
+    "abstract": "Wind direction from GFS forecast model.",
+    "producer": "gfs_world_surface",
+    "views": [
+        {
+            "layers": [
+                {
+                    "qid": "l",
+                    "layer_type": "arrow",
+                    "direction": "WindDirection",
+                    "speed": "WindSpeedMS",
+                    "symbol": "windarrow",
+                    "isobands": "json:/resources/arrows/winddirection.json",
+                    "css": "/resources/arrows/winddirection.css",
+                    "attributes": {
+                        "id": "wind_arrows"
+                    }
+                }
+            ]
+        }
+    ]
+}
