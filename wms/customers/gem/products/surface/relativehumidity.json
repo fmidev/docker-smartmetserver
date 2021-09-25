@@ -1,0 +1,18 @@
+{
+    "title" : "GEM Relative Humidity 2m",
+    "abstract" : "Relative Humidity 2m from GEM",
+    "producer": "gem_world_surface",
+    "keyword": ["model:gem"],
+    "views": [{
+        "layers": [{
+            "qid": "l",
+            "layer_type": "isoband",
+            "isobands": "json:/resources/isobands/relativehumidity.json",
+            "css": "/resources/isobands/relativehumidity.css",
+            "parameter": "Humidity",
+            "attributes": {
+                "shape-rendering": "crispEdges"
+            }
+        }]
+    }]
+}

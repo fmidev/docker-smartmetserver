@@ -1,0 +1,21 @@
+{
+    "title": "GEM Temperature 2m",
+    "abstract": "Temperature 2m from GEM",
+    "producer": "gem_world_surface",
+    "views": [
+        {
+            "layers": [
+                {
+                    "qid": "l",
+                    "layer_type": "isoband",
+                    "parameter": "Temperature",
+                    "isobands": "json:/resources/isobands/temperature.json",
+                    "css": "/resources/isobands/temperature.css",
+                    "attributes": {
+                        "shape-rendering": "crispEdges"
+                    }
+                }
+            ]
+        }
+    ]
+}
