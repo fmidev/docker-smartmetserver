@@ -1,7 +1,6 @@
 {
     "title": "GFS Temperature 2m",
     "abstract": "Temperature 2m from GFS",
-    "projection": {},
     "producer": "gfs_world_surface",
     "views": [
         {

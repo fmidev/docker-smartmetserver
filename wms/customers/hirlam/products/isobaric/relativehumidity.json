@@ -1,7 +1,6 @@
 {
     "title" : "HIRLAM Relative Humidity Isobaric",
     "abstract" : "Relative Humidity on Constant Pressure Surfaces from HIRLAM",
-    "projection": {},
     "producer": "hirlam_europe_pressure",
     "views": [{
         "layers": [{
