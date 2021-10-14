@@ -38,16 +38,16 @@ HEALTHCHECK --interval=30s --timeout=10s \
 # Expose SmartMet Server's default port
 EXPOSE 8080
 
-COPY smartmetconf /etc/smartmet
-COPY wms /smartmet/share/wms
-COPY docker-entrypoint.sh /
-
 RUN mkdir -p /smartmet/data/{meps,hirlam,hirlam-knmi,gfs,icon,gem,gens-avg,gens-ctrl,hbm,wam}/{surface,pressure} \
              /smartmet/share/wms/customers
 
 RUN mkdir -p /var/smartmet/imagecache /var/smartmet/querydata/validpoints && \
-    chgrp -R 0 /var/smartmet/imagecache /var/smartmet/querydata/validpoints && \
-    chmod -R g=u /var/smartmet/imagecache /var/smartmet/querydata/validpoints /etc/passwd /var/log
+    chgrp -R 0 /var/smartmet && \
+    chmod -R g=u /var/smartmet /etc/passwd /var/log
+
+COPY smartmetconf /etc/smartmet
+COPY wms /smartmet/share/wms
+COPY docker-entrypoint.sh /
 
 ### Containers should NOT run as root as a good practice
 USER 101010
