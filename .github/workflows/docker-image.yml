@@ -25,6 +25,6 @@ jobs:
     - name: Docker build
       run: docker build . --file Dockerfile --tag fmidev/smartmetserver:latest
     - name: Docker tag
-      run: docker image tag fmidev/smartmetserver:latest fmidev/smartmetserver:$(date +%y.%m.%d -d @$(docker run --rm -it fmidev/smartmetserver:latest rpm -qa --queryformat %'{buildtime}\n' smartmet-*|sort -n|tail -1))
+      run: docker image tag fmidev/smartmetserver:latest fmidev/smartmetserver:$(date +%y.%m.%d -d @$(docker run --rm fmidev/smartmetserver:latest rpm -qa --queryformat %'{buildtime}\n' smartmet-*|sort -n|tail -1))
     - name: Docker push
       run: docker push --all-tags fmidev/smartmetserver
