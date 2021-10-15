@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  smartmetserver:
+    build: .
+    image: fmidev/smartmetserver:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - model-fmi-hirlam:/smartmet/data/hirlam
+    restart: unless-stopped
+  hirlam-surface:
+    image: fmidev/fmidownloader
+    container_name: fmidownloader-hirlam-surface
+    command:
+      - "--producer=hirlam"
+      - "--dir=surface"
+      - "--filename=hirlam_europe_surface"
+      - "--parameters=Temperature,DewPoint,Humidity,WindDirection,WindSpeedMS,WindGust,TotalCloudCover,Precipitation1h,WeatherSymbol3,Pressure,CAPE,CIN"
+    volumes:
+      - model-fmi-hirlam:/tmp
+    restart: unless-stopped
+
+volumes:
+  model-fmi-hirlam:
+    name: model-fmi-hirlam
