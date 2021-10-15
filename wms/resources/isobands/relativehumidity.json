@@ -1,101 +1,91 @@
 [
-        {
-	    "qid": "relativehumidity_90_inf",
-            "lolimit": 90,
-	    "attributes":
-	    {
-		"fill": "rgb(56,209,61)",
-		"stroke": "none"
-	    }
-        },
-        {
-	    "qid": "relativehumidity_80_90",
-            "lolimit": 80,
-            "hilimit": 90,
-	    "attributes":
-	    {
-		"fill": "rgb(79,240,79)",
-		"stroke": "none"
-	    }
-        },
-        {
-	    "qid": "relativehumidity_70_80",
-            "lolimit": 70,
-            "hilimit": 80,
-	    "attributes":
-	    {
-		"fill": "rgb(151,245,140)",
-		"stroke": "none"
-	    }
-        },
-        {
-	    "qid": "relativehumidity_60_70",
-            "lolimit": 60,
-            "hilimit": 70,
-	    "attributes":
-	    {
-		"fill": "rgb(181,250,171)",
-		"stroke": "none"
-	    }
-        },
-        {
-	    "qid": "relativehumidity_50_60",
-            "lolimit": 50,
-            "hilimit": 60,
-	    "attributes":
-	    {
-		"fill": "rgb(199,255,192)",
-		"stroke": "none"
-	    }
-        },
-        {
-	    "qid": "relativehumidity_40_50",
-            "lolimit": 40,
-            "hilimit": 50,
-	    "attributes":
-	    {
-		"fill": "rgb(230,255,225)",
-		"stroke": "none"
-	    }
-        },
-        {
-	    "qid": "relativehumidity_30_40",
-            "lolimit": 30,
-            "hilimit": 40,
-	    "attributes":
-	    {
-		"fill": "rgb(255,255,255)",
-		"stroke": "none"
-	    }
-        },
-        {
-	    "qid": "relativehumidity_20_30",
-            "lolimit": 20,
-            "hilimit": 30,
-	    "attributes":
-	    {
-		"fill": "rgb(255,255,209)",
-		"stroke": "none"
-	    }
-        },
-        {
-	    "qid": "relativehumidity_10_20",
-            "lolimit": 10,
-            "hilimit": 20,
-	    "attributes":
-	    {
-		"fill": "rgb(255,255,171)",
-		"stroke": "none"
-	    }
-        },
-        {
-	    "qid": "relativehumidity_00_10",
-            "lolimit": 0,
-            "hilimit": 10,
-	    "attributes":
-	    {
-		"fill": "rgb(255,255,145)",
-		"stroke": "none"
-	    }
-        }
+	{
+		"qid": "relativehumidity_90_inf",
+		"lolimit": 90,
+		"attributes": {
+			"fill": "rgb(56,209,61)",
+			"stroke": "none"
+		}
+	},
+	{
+		"qid": "relativehumidity_80_90",
+		"lolimit": 80,
+		"hilimit": 90,
+		"attributes": {
+			"fill": "rgb(79,240,79)",
+			"stroke": "none"
+		}
+	},
+	{
+		"qid": "relativehumidity_00_10",
+		"lolimit": 0,
+		"hilimit": 10,
+		"attributes": {
+			"fill": "rgb(255,255,145)",
+			"stroke": "none"
+		}
+	},
+	{
+		"qid": "relativehumidity_10_20",
+		"lolimit": 10,
+		"hilimit": 20,
+		"attributes": {
+			"fill": "rgb(255,255,171)",
+			"stroke": "none"
+		}
+	},
+	{
+		"qid": "relativehumidity_20_30",
+		"lolimit": 20,
+		"hilimit": 30,
+		"attributes": {
+			"fill": "rgb(255,255,209)",
+			"stroke": "none"
+		}
+	},
+	{
+		"qid": "relativehumidity_30_40",
+		"lolimit": 30,
+		"hilimit": 40,
+		"attributes": {
+			"fill": "rgb(255,255,255)",
+			"stroke": "none"
+		}
+	},
+	{
+		"qid": "relativehumidity_40_50",
+		"lolimit": 40,
+		"hilimit": 50,
+		"attributes": {
+			"fill": "rgb(230,255,225)",
+			"stroke": "none"
+		}
+	},
+	{
+		"qid": "relativehumidity_50_60",
+		"lolimit": 50,
+		"hilimit": 60,
+		"attributes": {
+			"fill": "rgb(199,255,192)",
+			"stroke": "none"
+		}
+	},
+	{
+		"qid": "relativehumidity_60_70",
+		"lolimit": 60,
+		"hilimit": 70,
+		"attributes": {
+			"fill": "rgb(181,250,171)",
+			"stroke": "none"
+		}
+	},
+	{
+		"qid": "relativehumidity_70_80",
+		"lolimit": 70,
+		"hilimit": 80,
+		"attributes": {
+			"fill": "rgb(151,245,140)",
+			"stroke": "none"
+		}
+	}
 ]
