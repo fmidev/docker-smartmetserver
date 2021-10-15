@@ -1,7 +1,6 @@
 {
     "title" : "HIRLAM Relative Humidity 2m",
     "abstract" : "Relative Humidity 2m from HIRLAM",
-    "projection": {},
     "producer": "hirlam_europe_surface",
     "views": [{
         "layers": [{
