@@ -24,6 +24,11 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
     - name: Docker build
       run: docker build . --file Dockerfile --tag fmidev/smartmetserver:latest
+    - name: Test
+      run: |
+        docker run --name test --rm -d  -p 127.0.0.1:8080:8080 fmidev/smartmetserver:latest
+        curl -f  "http://localhost:8989/wms?request=getCapabilities&service=WMS" || exit 1
+        docker stop test
     - name: Docker tag
       run: docker image tag fmidev/smartmetserver:latest fmidev/smartmetserver:$(date +%y.%m.%d -d @$(docker run --rm fmidev/smartmetserver:latest rpm -qa --queryformat %'{buildtime}\n' smartmet-*|sort -n|tail -1))
     - name: Docker push
