@@ -8,7 +8,7 @@
             "qid": "l",
             "layer_type": "isoband",
             "parameter": "WindGust",
-            "isobands": "json:/resources/isobands/windspeed.json",
+            "isobands": "json:isobands/windspeed.json",
             "attributes": {
                 "shape-rendering": "crispEdges"
             }

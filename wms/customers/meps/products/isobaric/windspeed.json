@@ -1,14 +1,13 @@
 {
     "title" : "MEPS Wind Speed Isobaric",
     "abstract" : "Wind speed on Constant Pressure Levels from MEPS forecast model.",
-    "projection": {},
     "producer": "meps_northeurope_pressure",
     "views": [{
         "layers": [{
             "qid": "l",
             "layer_type": "isoband",
             "parameter": "WindSpeedMS",
-            "isobands": "json:/resources/isobands/windspeed.json",
+            "isobands": "json:isobands/windspeed.json",
             "attributes": {
                 "shape-rendering": "crispEdges"
             }

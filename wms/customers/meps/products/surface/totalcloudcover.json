@@ -8,8 +8,8 @@
             "qid": "l",
             "layer_type": "isoband",
             "parameter": "TotalCloudCover",
-            "isobands": "json:/resources/isobands/totalcloudcover.json",
-            "css": "/resources/isobands/totalcloudcover.css",
+            "isobands": "json:isobands/totalcloudcover.json",
+            "css": "isobands/totalcloudcover.css",
             "attributes": {
                 "shape-rendering": "crispEdges"
             }

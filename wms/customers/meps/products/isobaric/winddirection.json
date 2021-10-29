@@ -1,7 +1,6 @@
 {
     "title": "MEPS Wind Direction Isobaric",
     "abstract": "Wind direction on Constant Perssure Levels from MEPS forecast model.",
-    "projection": {},
     "producer": "meps_northeurope_pressure",
     "views": [
         {
@@ -12,8 +11,8 @@
                     "direction": "WindDirection",
                     "speed": "WindSpeedMS",
                     "symbol": "windarrow",
-                    "isobands": "json:/resources/arrows/winddirection.json",
-                    "css": "/resources/arrows/winddirection.css",
+                    "isobands": "json:arrows/winddirection.json",
+                    "css": "arrows/winddirection.css",
                     "attributes": {
                         "id": "wind_arrows"
                     }

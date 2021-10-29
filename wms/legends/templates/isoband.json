@@ -1,72 +1,63 @@
 {
     "defs":
     {
-	"layers": [
-	    {
-		"tag": "symbol",
-		"attributes":
-		{
-		    "id": "isoband_symbol_id" // will be replaced in the code
-		},
 		"layers": [
-		    {
-			"tag": "rect",
-			"attributes":
-			{
-			    "width": "14",
-			    "height": "9"
+	    	{
+				"tag": "symbol",
+				"attributes":
+				{
+		    		"id": "isoband_symbol_id" // will be replaced in the code
+				},
+				"layers": [
+		    		{
+						"tag": "rect",
+						"attributes":
+							{
+								"stroke": "black",
+								"stroke-width": "0.5",
+			   					"width": "14",
+			    				"height": "30"
+							}
+		    		}
+				]
 			}
-		    }
 		]
-	    }
-	]
     },
+
     "layer_type": "legend",
     "x": 99999, // will be replaced in the code
     "y": 99999, // will be replaced in the code
-    "dx": 0,
-    "dy": 9,
+    "dx": 14,
+    "dy": 0,
     "isobands": "isoband_color_scale", // will be replaced in the code
-    "symbols":
+    
+	"symbols":
     {
-	"css": "isoband_css", // will be replaced in the code
-	"symbol": "isoband_symbol_id",  // will be replaced in the code
-	"attributes":
-	{
-	    "stroke": "black",
-	    "stroke-width": "0.5"
-	}
+		"css": "isoband_css", // will be replaced in the code
+		"symbol": "isoband_symbol_id"  // will be replaced in the code
     },
     "labels":
     {
-	"separator": "-",	// en dash = " \u2013 "
-	"dx": 18,
-	"dy": 9,
-	"conversions":
-	{
-	    "10": "&#62; 10"
-	}
-    },
-     "layers" : 
-     [
-        {
-	    "tag": "text",
-	    "cdata": "isoband_header", // will be replaced in the code
-	    "attributes":
+		"type": "lolimit",
+		"separator": "...",
+		"dx": -3,
+		"dy": -4,
+		"attributes":
 	    {
-		"x": 99999,  // will be replaced in the code
-		"y": 99999,  // will be replaced in the code
-		"class": "Units"
-	    }
-	},
+			"font-family": "Helvetica",
+			"font-size": "9"
+		}
+    },
+    "layers": [
 	{
-	    "tag": "text",
+		"tag": "text",
 	    "cdata": "isoband_unit",
 	    "attributes":
 	    {
-		"x": 99999,  // will be replaced in the code
-		"y": 99999,  // will be replaced in the code
-		"class": "Units"
+			"x": 99999,  // will be replaced in the code
+			"y": 99999,  // will be replaced in the code
+			"font-family": "Roboto",
+			"font-size": "smaller"
 	    }
 	}
     ]
