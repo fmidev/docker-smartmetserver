@@ -1,7 +1,6 @@
 {
     "title" : "HIRLAM Pressure MSL",
     "abstract" : "MSL Pressure from HIRLAM",
-    "projection": {},
     "producer": "hirlam_europe_surface",
     "views": [{
         "layers": [{

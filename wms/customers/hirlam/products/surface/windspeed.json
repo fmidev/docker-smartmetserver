@@ -1,7 +1,6 @@
 {
     "title" : "HIRLAM Wind Speed 10m",
     "abstract" : "Wind speed in m/s from HIRLAM forecast model.",
-    "projection": {},
     "producer": "hirlam_europe_surface",
     "views": [{
         "layers": [{

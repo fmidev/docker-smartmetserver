@@ -1,17 +1,20 @@
 {
-    "title" : "HIRLAM Wind Gust 10m",
-    "abstract" : "Wind gust in m/s from HIRLAM forecast model.",
-    "projection": {},
+    "title": "HIRLAM Wind Gust 10m",
+    "abstract": "Wind gust in m/s from HIRLAM forecast model.",
     "producer": "hirlam_europe_surface",
-    "views": [{
-        "layers": [{
-            "qid": "l",
-            "layer_type": "isoband",
-            "parameter": "WindGust",
-            "isobands": "json:/resources/isobands/windspeed.json",
-            "attributes": {
-                "shape-rendering": "crispEdges"
-            }
-        }]
-    }]
+    "views": [
+        {
+            "layers": [
+                {
+                    "qid": "l",
+                    "layer_type": "isoband",
+                    "parameter": "WindGust",
+                    "isobands": "json:/resources/isobands/windspeed.json",
+                    "attributes": {
+                        "shape-rendering": "crispEdges"
+                    }
+                }
+            ]
+        }
+    ]
 }

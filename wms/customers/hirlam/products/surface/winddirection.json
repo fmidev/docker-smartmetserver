@@ -1,7 +1,6 @@
 {
     "title": "HIRLAM Wind Direction 10m",
     "abstract": "Wind direction from HIRLAM forecast model.",
-    "projection": {},
     "producer": "hirlam_europe_surface",
     "views": [
         {
