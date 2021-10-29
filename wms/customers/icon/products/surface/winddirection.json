@@ -1,15 +1,15 @@
 {
-    "title": "GEM Wind Direction 10m",
-    "abstract": "Wind direction from GEM forecast model.",
-    "producer": "gem_world_surface",
+    "title": "ICON Wind Direction 10m",
+    "abstract": "Wind direction from ICON forecast model.",
+    "producer": "icon_surface",
     "views": [
         {
             "layers": [
                 {
                     "qid": "l",
                     "layer_type": "arrow",
-                    "direction": "WindDirection",
-                    "speed": "WindSpeedMS",
+                    "u": "WindUMS",
+                    "v": "WindVMS",
                     "symbol": "windarrow",
                     "isobands": "json:arrows/winddirection.json",
                     "css": "arrows/winddirection.css",

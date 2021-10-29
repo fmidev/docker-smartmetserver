@@ -1,8 +1,8 @@
 {
-    "title" : "GEM Relative Humidity 2m",
-    "abstract" : "Relative Humidity 2m from GEM",
-    "producer": "gem_world_surface",
-    "keyword": ["model:gem"],
+    "title" : "ICON Relative Humidity 2m",
+    "abstract" : "Relative Humidity 2m from ICON",
+    "producer": "icon_surface",
+    "keyword": ["model:gfs"],
     "views": [{
         "layers": [{
             "qid": "l",

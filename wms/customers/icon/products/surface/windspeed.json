@@ -1,7 +1,7 @@
 {
-    "title" : "GEM Wind Speed 10m",
-    "abstract" : "Wind speed in m/s from GEM forecast model.",
-    "producer": "gem_world_surface",
+    "title" : "ICON Wind Speed 10m",
+    "abstract" : "Wind speed in m/s from ICON forecast model.",
+    "producer": "icon_surface",
     "views": [{
         "layers": [{
             "qid": "l",
