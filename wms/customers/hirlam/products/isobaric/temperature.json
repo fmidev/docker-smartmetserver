@@ -6,8 +6,8 @@
         "layers": [{
             "qid": "l",
             "layer_type": "isoband",
-            "isobands": "json:/resources/isobands/temperature.json",
-            "css": "/resources/isobands/temperature.css",
+            "isobands": "json:isobands/temperature.json",
+            "css": "isobands/temperature.css",
             "parameter": "Temperature",
             "level": 850,
             "attributes": {

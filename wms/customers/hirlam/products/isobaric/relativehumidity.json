@@ -6,7 +6,7 @@
         "layers": [{
             "qid": "l",
             "layer_type": "isoband",
-            "isobands": "json:/resources/isobands/relativehumidity.json",
+            "isobands": "json:isobands/relativehumidity.json",
             "parameter": "Humidity",
             "level": 700,
             "attributes": {

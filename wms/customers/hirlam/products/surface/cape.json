@@ -6,7 +6,7 @@
         "layers": [{
             "qid": "l",
             "layer_type": "isoband",
-            "isobands": "json:/resources/isobands/cape.json",
+            "isobands": "json:isobands/cape.json",
             "parameter": "CAPE",
             "attributes": {
                 "shape-rendering": "crispEdges"
