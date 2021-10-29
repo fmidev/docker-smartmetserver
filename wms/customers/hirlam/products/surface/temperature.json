@@ -1,7 +1,6 @@
 {
     "title": "HIRLAM Temperature 2m",
     "abstract": "Temperature 2m from HIRLAM",
-    "projection": {},
     "producer": "hirlam_europe_surface",
     "styles": [
         {
@@ -12,8 +11,8 @@
                 {
                     "qid": "l",
                     "layer_type": "isoband",
-                    "isobands": "json:/resources/isobands/temperature.json",
-                    "css": "resources/isobands/temperature.css"
+                    "isobands": "json:isobands/temperature.json",
+                    "css": "isobands/temperature.css"
                 }
             ]
         },
@@ -25,8 +24,8 @@
                 {
                     "qid": "l",
                     "layer_type": "isoband",
-                    "isobands": "json:/resources/isobands/temperature-hires.json",
-                    "css": "/resources/isobands/temperature-hiress.css"
+                    "isobands": "json:isobands/temperature-hires.json",
+                    "css": "isobands/temperature-hiress.css"
                 }
             ]
         }
