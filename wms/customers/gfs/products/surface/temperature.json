@@ -9,8 +9,8 @@
                     "qid": "l",
                     "layer_type": "isoband",
                     "parameter": "Temperature",
-                    "isobands": "json:/resources/isobands/temperature.json",
-                    "css": "/resources/isobands/temperature.css",
+                    "isobands": "json:isobands/temperature.json",
+                    "css": "isobands/temperature.css",
                     "attributes": {
                         "shape-rendering": "crispEdges"
                     }
