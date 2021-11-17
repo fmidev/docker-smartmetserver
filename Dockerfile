@@ -38,12 +38,12 @@ HEALTHCHECK --interval=30s --timeout=10s \
 # Expose SmartMet Server's default port
 EXPOSE 8080
 
-RUN mkdir -p /smartmet/data/{meps,hirlam,hirlam-knmi,gfs,icon,gem,gens-avg,gens-ctrl,hbm,wam}/{surface,pressure} \
-             /smartmet/share/wms/customers
+RUN mkdir -p /smartmet/data/{meps,hirlam,gfs,icon,gem,gens-avg,gens-ctrl,hbm,wam}/{surface,pressure} \
+             /smartmet/share/wms
 
-RUN mkdir -p /var/smartmet/imagecache /var/smartmet/querydata/validpoints && \
-    chgrp -R 0 /var/smartmet && \
-    chmod -R g=u /var/smartmet /etc/passwd /var/log
+RUN install -m 775 -g 0 -d /var/smartmet
+
+RUN chmod -R g=u /etc/passwd
 
 COPY smartmetconf /etc/smartmet
 COPY wms /smartmet/share/wms
