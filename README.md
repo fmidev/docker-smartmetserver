@@ -76,3 +76,13 @@ http://localhost:8080/wms?service=wms&version=1.3.0&request=GetCapabilities
 http://localhost:8080/admin?what=qengine
 
 Get more help for timeseries usage from github [wiki page](https://github.com/fmidev/smartmet-plugin-timeseries/wiki/SmartMet-plugin-TimeSeries).
+
+
+### Build custom container
+```
+FROM fmidev/smartmetserver:latest
+USER root
+COPY smartmetconf /etc/smartmet
+COPY wms /smartmet/share/wms
+USER 101010
+```
