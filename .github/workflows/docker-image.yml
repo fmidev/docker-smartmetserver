@@ -27,7 +27,8 @@ jobs:
     - name: Docker test
       run: |
         docker run --name test --rm -d  -p 127.0.0.1:8080:8080 fmidev/smartmetserver:latest
-        sleep 30 && curl -f  "http://localhost:8080/wms?request=getCapabilities&service=WMS" || exit 1
+        docker logs test
+        sleep 60 && curl -f  "http://localhost:8080/wms?request=getCapabilities&service=WMS" || exit 1
         docker stop test
     - name: Docker tag
       run: docker image tag fmidev/smartmetserver:latest fmidev/smartmetserver:$(date +%y.%m.%d -d @$(docker run --rm fmidev/smartmetserver:latest rpm -qa --queryformat %'{buildtime}\n' smartmet-*|sort -n|tail -1))
