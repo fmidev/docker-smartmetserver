@@ -27,6 +27,7 @@ jobs:
     - name: Docker test
       run: |
         docker run --name test --rm -d  -p 127.0.0.1:8080:8080 fmidev/smartmetserver:latest
+        docker logs test
         sleep 60
         docker logs test
         curl -f  "http://localhost:8080/wms?request=getCapabilities&service=WMS" || exit 1
