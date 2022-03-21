@@ -1,0 +1,17 @@
+{
+    "title" : "NAM Pressure MSL",
+    "abstract" : "MSL Pressure from NAM",
+    "producer": "nam_surface",
+    "views": [{
+        "layers": [{
+            "qid": "l",
+            "layer_type": "isoline",
+            "isolines": "json:isolines/pressure.json",
+            "css": "isolines/pressure.css",
+            "parameter": "Pressure",
+            "attributes": {
+                "shape-rendering": "crispEdges"
+            }
+        }]
+    }]
+}
