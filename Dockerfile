@@ -38,7 +38,7 @@ HEALTHCHECK --interval=30s --timeout=10s \
 # Expose SmartMet Server's default port
 EXPOSE 8080
 
-RUN mkdir -p /smartmet/data/{meps,hirlam,gfs,icon,gem,gens-avg,gens-ctrl,hbm,wam}/{surface,pressure} \
+RUN mkdir -p /smartmet/data/{meps,hirlam,gfs,meteor,nam,icon,gem,gens-avg,gens-ctrl,hbm,wam}/{surface,pressure} \
              /smartmet/share/wms
 
 RUN install -m 775 -g 0 -d /var/smartmet
