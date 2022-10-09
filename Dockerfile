@@ -1,6 +1,6 @@
 FROM docker.io/centos:7
 LABEL maintainer "Mikko Rauhala <mikko.rauhala@fmi.fi>"
-LABEL license    "MIT License Copyright (c) 2021 FMI Open Development"
+LABEL license    "MIT License Copyright (c) 2022 FMI Open Development"
 
 ENV USER_NAME="smartmet" \
     GOOGLE_FONTS="Lato Noto%20Sans Open%20Sans Poppins Roboto Ubuntu" 
@@ -12,9 +12,11 @@ RUN yum -y install https://download.fmi.fi/smartmet-open/rhel/7/x86_64/smartmet-
     yum-config-manager --setopt="base.exclude=librsvg2*" --save && \
     yum-config-manager --disable epel-source && \ 
     yum -y install \
-    smartmet-plugin-backend \
     smartmet-plugin-admin \
+    smartmet-plugin-autocomplete \
+    smartmet-plugin-backend \
     smartmet-plugin-download \
+    smartmet-plugin-edr \
     smartmet-plugin-timeseries \
     smartmet-plugin-wms \
     smartmet-engine-grid \
