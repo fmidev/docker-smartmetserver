@@ -60,14 +60,14 @@ docker run -d --restart=always --name smartmetserver -v $HOME/data:/smartmet/dat
 ```
 #### Get data to play with
 ```
-mkdir -p $HOME/data/hirlam/surface
-wget -O $HOME/data/hirlam/surface/$(date -u +%Y%m%d0000)_hirlam_europe_surface.sqd \ 
+mkdir -p $HOME/data/meps/surface
+wget -O $HOME/data/meps/surface/$(date -u +%Y%m%d0000)_meps_northeurope_surface.sqd \ 
 -S "https://opendata.fmi.fi/download?param=Temperature,TotalCloudCover,Precipitation1h,WindSpeedMS,Humidity,
-Pressure,WeatherSymbol3&format=qd&producer=hirlam&origintime=$(date -u +%Y-%m-%dT00Z)&timestep=data"
+Pressure,WeatherSymbol3&format=qd&producer=harmonie_scandinavia_surface&origintime=$(date -u +%Y-%m-%dT00Z)&timestep=data"
 ```
 
 #### Access timeseries plugin
-http://localhost:8080/timeseries?producer=hirlam&lonlat=24.94,60.17&param=time,temperature,pressure
+http://localhost:8080/timeseries?producer=meps&lonlat=24.94,60.17&param=time,temperature,pressure
 
 #### Access WMS Capabilities
 http://localhost:8080/wms?service=wms&version=1.3.0&request=GetCapabilities
