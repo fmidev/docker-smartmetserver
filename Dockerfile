@@ -1,6 +1,6 @@
 FROM docker.io/centos:7
 LABEL maintainer "Mikko Rauhala <mikko.rauhala@fmi.fi>"
-LABEL license    "MIT License Copyright (c) 2022 FMI Open Development"
+LABEL license    "MIT License Copyright (c) 2023 FMI Open Development"
 
 ENV USER_NAME="smartmet" \
     GOOGLE_FONTS="Lato Noto%20Sans Open%20Sans Poppins Roboto Ubuntu" 
