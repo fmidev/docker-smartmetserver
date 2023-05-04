@@ -61,9 +61,11 @@ docker run -d --restart=always --name smartmetserver -v $HOME/data:/smartmet/dat
 #### Get data to play with
 ```
 mkdir -p $HOME/data/meps/surface
+mkdir -p $HOME/data/ecmwf/surface
 wget -O $HOME/data/meps/surface/$(date -u +%Y%m%d0000)_meps_northeurope_surface.sqd \ 
 -S "https://opendata.fmi.fi/download?param=Temperature,TotalCloudCover,Precipitation1h,WindSpeedMS,Humidity,
 Pressure,WeatherSymbol3&format=qd&producer=harmonie_scandinavia_surface&origintime=$(date -u +%Y-%m-%dT00Z)&timestep=data"
+wget -O $HOME/data/ecmwf/surface/$(date -u +%Y%m%d0000)_ecmwf_europe_surface.sqd -S "https://opendata.fmi.fi/download?param=Temperature&format=qd&producer=ecmwf&origintime=$(date -u +%Y-%m-%dT00Z)&timestep=data"
 ```
 
 #### Access timeseries plugin
