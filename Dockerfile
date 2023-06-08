@@ -10,6 +10,7 @@ RUN yum -y install https://download.fmi.fi/smartmet-open/rhel/7/x86_64/smartmet-
     yum -y install epel-release && \
     yum-config-manager --setopt="epel.exclude=librsvg2*" --save && \
     yum-config-manager --setopt="base.exclude=librsvg2*" --save && \
+    yum-config-manager --setopt="epel.exclude=eccodes*" --save && \
     yum-config-manager --disable epel-source && \ 
     yum -y install \
     smartmet-plugin-admin \
