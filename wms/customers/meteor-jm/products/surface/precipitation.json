@@ -8,7 +8,6 @@
             "qid": "l",
             "layer_type": "isoband",
             "isobands": "json:isobands/precipitation-jm.json",
-            "css": "isobands/precipitation.css",
             "parameter": "Precipitation1h",
             "attributes": {
                 "shape-rendering": "crispEdges"
