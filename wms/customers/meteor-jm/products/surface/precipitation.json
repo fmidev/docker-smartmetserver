@@ -2,7 +2,7 @@
     "title" : "METEOR Precipitation Rate",
     "abstract" : "Precipitation Rate from METEOR",
     "projection": {},
-    "producer": "meteor_surface",
+    "producer": "meteor",
     "views": [{
         "layers": [{
             "qid": "l",
