@@ -5,7 +5,7 @@ LABEL license    "MIT License Copyright (c) 2023 FMI Open Development"
 ENV USER_NAME="smartmet" \
     GOOGLE_FONTS="Lato Noto%20Sans Open%20Sans Poppins Roboto Ubuntu" 
 
-RUN yum -y install https://download.fmi.fi/smartmet-open/rhel/7/x86_64/smartmet-open-release-latest-7.noarch.rpm&& \
+RUN yum -y install https://download.fmi.fi/smartmet-open/rhel/7/x86_64/smartmet-open-release-latest-7.noarch.rpm && \
     yum -y update && \
     yum -y install epel-release && \
     yum-config-manager --setopt="epel.exclude=librsvg2*" --save && \
