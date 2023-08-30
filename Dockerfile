@@ -6,11 +6,12 @@ ENV USER_NAME="smartmet" \
     GOOGLE_FONTS="Lato Noto%20Sans Open%20Sans Poppins Roboto Ubuntu" 
 
 RUN dnf -y install https://download.fmi.fi/smartmet-open/rhel/8/x86_64/smartmet-open-release-latest-8.noarch.rpm && \
-    dnf -y install epel-release && \
+    dnf -y install yum-tools epel-release && \
+    dnf config-manager --set-enabled crb
     dnf config-manager --setopt="epel.exclude=librsvg2*" --save && \
     dnf config-manager --setopt="base.exclude=librsvg2*" --save && \
     dnf config-manager --setopt="epel.exclude=eccodes*" --save && \
-    dnf config-manager --disable epel-source && \ 
+    dnf config-manager --set-disabled epel-source && \ 
     dnf -y update && \
     dnf -y install \
     smartmet-plugin-admin \
