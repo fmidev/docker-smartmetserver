@@ -24,7 +24,8 @@ RUN dnf -y install https://download.fmi.fi/smartmet-open/rhel/8/x86_64/smartmet-
     smartmet-plugin-timeseries \
     smartmet-plugin-wms \
     smartmet-engine-grid \
-    unzip && \
+    unzip \
+    glibc-langpack-en && \
     dnf -y reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common eccodes && \
     dnf clean all 
 
