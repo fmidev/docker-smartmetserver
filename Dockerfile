@@ -13,6 +13,7 @@ RUN dnf -y install https://download.fmi.fi/smartmet-open/rhel/8/x86_64/smartmet-
     dnf config-manager --setopt="baseos.exclude=librsvg2*" --save && \
     dnf config-manager --setopt="epel.exclude=eccodes*" --save && \
     dnf config-manager --set-disabled epel-source && \ 
+    dnf -y module disable postgresql:12 && \
     dnf -y update && \
     dnf -y install \
     smartmet-plugin-admin \
