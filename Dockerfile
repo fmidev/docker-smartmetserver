@@ -6,12 +6,12 @@ ENV USER_NAME="smartmet" \
     GOOGLE_FONTS="Lato Noto%20Sans Open%20Sans Poppins Roboto Ubuntu" 
 
 RUN yum -y install https://download.fmi.fi/smartmet-open/rhel/7/x86_64/smartmet-open-release-latest-7.noarch.rpm && \
-    yum -y update && \
     yum -y install epel-release && \
     yum-config-manager --setopt="epel.exclude=librsvg2*" --save && \
     yum-config-manager --setopt="base.exclude=librsvg2*" --save && \
     yum-config-manager --setopt="epel.exclude=eccodes*" --save && \
     yum-config-manager --disable epel-source && \ 
+    yum -y update && \
     yum -y install \
     smartmet-plugin-admin \
     smartmet-plugin-autocomplete \
