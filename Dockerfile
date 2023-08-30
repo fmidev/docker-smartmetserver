@@ -7,7 +7,7 @@ ENV USER_NAME="smartmet" \
 
 RUN dnf -y install https://download.fmi.fi/smartmet-open/rhel/8/x86_64/smartmet-open-release-latest-8.noarch.rpm && \
     dnf -y install yum-tools epel-release && \
-    dnf config-manager --set-enabled crb
+    dnf config-manager --set-enabled crb && \
     dnf config-manager --setopt="epel.exclude=librsvg2*" --save && \
     dnf config-manager --setopt="base.exclude=librsvg2*" --save && \
     dnf config-manager --setopt="epel.exclude=eccodes*" --save && \
