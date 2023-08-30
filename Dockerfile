@@ -1,19 +1,18 @@
-FROM docker.io/rockylinux:8-minimal
+FROM docker.io/rockylinux:8
 LABEL maintainer "Mikko Rauhala <mikko.rauhala@fmi.fi>"
 LABEL license    "MIT License Copyright (c) 2023 FMI Open Development"
 
 ENV USER_NAME="smartmet" \
     GOOGLE_FONTS="Lato Noto%20Sans Open%20Sans Poppins Roboto Ubuntu" 
 
-RUN wget -O smartmet-open.rpm https://download.fmi.fi/smartmet-open/rhel/8/x86_64/smartmet-open-release-latest-8.noarch.rpm && \
-    rpm -iv smartmet-open.rpm && \
-    microdnf -y install epel-release && \
-    microdnf config-manager --setopt="epel.exclude=librsvg2*" --save && \
-    microdnf config-manager --setopt="base.exclude=librsvg2*" --save && \
-    microdnf config-manager --setopt="epel.exclude=eccodes*" --save && \
-    microdnf config-manager --disable epel-source && \ 
-    microdnf -y update && \
-    microdnf -y install \
+RUN dnf -y install https://download.fmi.fi/smartmet-open/rhel/8/x86_64/smartmet-open-release-latest-8.noarch.rpm && \
+    dnf -y install epel-release && \
+    dnf config-manager --setopt="epel.exclude=librsvg2*" --save && \
+    dnf config-manager --setopt="base.exclude=librsvg2*" --save && \
+    dnf config-manager --setopt="epel.exclude=eccodes*" --save && \
+    dnf config-manager --disable epel-source && \ 
+    dnf -y update && \
+    dnf -y install \
     smartmet-plugin-admin \
     smartmet-plugin-autocomplete \
     smartmet-plugin-backend \
@@ -23,8 +22,8 @@ RUN wget -O smartmet-open.rpm https://download.fmi.fi/smartmet-open/rhel/8/x86_6
     smartmet-plugin-wms \
     smartmet-engine-grid \
     unzip && \
-    microdnf -y reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common eccodes && \
-    microdnf clean all 
+    dnf -y reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common eccodes && \
+    dnf clean all 
 
 # Install Google Fonts
 RUN \
