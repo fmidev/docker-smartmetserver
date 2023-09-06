@@ -1,19 +1,19 @@
-FROM docker.io/rockylinux:8
+FROM docker.io/rockylinux:9
 LABEL maintainer "Mikko Rauhala <mikko.rauhala@fmi.fi>"
 LABEL license    "MIT License Copyright (c) 2023 FMI Open Development"
 
 ENV USER_NAME="smartmet" \
     GOOGLE_FONTS="Lato Noto%20Sans Open%20Sans Poppins Roboto Ubuntu" 
 
-RUN dnf -y install https://download.fmi.fi/smartmet-open/rhel/8/x86_64/smartmet-open-release-latest-8.noarch.rpm && \
+RUN dnf -y install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-open-release-latest-9.noarch.rpm && \
     dnf -y install yum-utils && \
-    dnf config-manager --set-enabled powertools && \
+    dnf config-manager --set-enabled crb && \
     dnf -y install epel-release && \
     dnf config-manager --setopt="epel.exclude=librsvg2*" --save && \
     dnf config-manager --setopt="baseos.exclude=librsvg2*" --save && \
     dnf config-manager --setopt="epel.exclude=eccodes*" --save && \
     dnf config-manager --set-disabled epel-source && \ 
-    dnf -y module disable postgresql:12 && \
+    dnf -y module disable postgresql:15 && \
     dnf -y update && \
     dnf -y install \
     smartmet-plugin-admin \
