@@ -15,7 +15,7 @@ RUN dnf -y install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-
     dnf config-manager --set-disabled epel-source && \ 
     dnf -y module disable postgresql:15 && \
     dnf -y update && \
-    dnf -y install \
+    dnf -y install --setopt=install_weak_deps=False \
     smartmet-plugin-admin \
     smartmet-plugin-autocomplete \
     smartmet-plugin-backend \
@@ -27,6 +27,7 @@ RUN dnf -y install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-
     unzip \
     glibc-langpack-en && \
     dnf -y reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common eccodes && \
+    dnf -y remove postgresql \
     dnf clean all 
 
 # Install Google Fonts
