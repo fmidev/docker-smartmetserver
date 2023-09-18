@@ -2,7 +2,7 @@
     "title" : "MEPS Wind Speed 10m",
     "abstract" : "Wind speed in m/s from MEPS forecast model.",
     "projection": {},
-    "producer": "meps_northeurope_surface",
+    "producer": "meps_surface",
     "views": [{
         "layers": [{
             "qid": "l",

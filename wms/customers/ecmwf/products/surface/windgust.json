@@ -1,7 +1,7 @@
 {
-    "title": "HIRLAM Wind Gust 10m",
-    "abstract": "Wind gust in m/s from HIRLAM forecast model.",
-    "producer": "hirlam_europe_surface",
+    "title": "ECMWF Wind Gust 10m",
+    "abstract": "Wind gust in m/s from ECMWF forecast model.",
+    "producer": "ecmwf_surface",
     "views": [
         {
             "layers": [

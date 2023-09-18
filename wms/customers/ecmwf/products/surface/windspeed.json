@@ -1,7 +1,7 @@
 {
-    "title" : "HIRLAM Wind Speed 10m",
-    "abstract" : "Wind speed in m/s from HIRLAM forecast model.",
-    "producer": "hirlam_europe_surface",
+    "title" : "ECMWF Wind Speed 10m",
+    "abstract" : "Wind speed in m/s from ECMWF forecast model.",
+    "producer": "ecmwf_surface",
     "views": [{
         "layers": [{
             "qid": "l",

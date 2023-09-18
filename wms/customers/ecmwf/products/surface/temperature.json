@@ -1,7 +1,7 @@
 {
-    "title": "HIRLAM Temperature 2m",
-    "abstract": "Temperature 2m from HIRLAM",
-    "producer": "hirlam_europe_surface",
+    "title": "ECMWF Temperature 2m",
+    "abstract": "Temperature 2m from ECMWF",
+    "producer": "ecmwf_surface",
     "styles": [
         {
             "name": "temperature_two_degrees",

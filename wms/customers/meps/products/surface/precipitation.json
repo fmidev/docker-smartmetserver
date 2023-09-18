@@ -2,7 +2,7 @@
     "title" : "MEPS Precipitation Rate",
     "abstract" : "Precipitation Rate from MEPS",
     "projection": {},
-    "producer": "meps_northeurope_surface",
+    "producer": "meps_surface",
     "views": [{
         "layers": [{
             "qid": "l",

@@ -2,7 +2,7 @@
     "title" : "MEPS Total Cloud Cover",
     "abstract" : "Total cloud cover from MEPS forecast model.",
     "projection": {},
-    "producer": "meps_northeurope_surface",
+    "producer": "meps_surface",
     "views": [{
         "layers": [{
             "qid": "l",

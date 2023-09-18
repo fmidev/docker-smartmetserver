@@ -1,7 +1,7 @@
 {
-    "title": "HIRLAM Pressure MSL",
-    "abstract": "MSL Pressure from HIRLAM",
-    "producer": "hirlam_europe_surface",
+    "title": "ECMWF Pressure MSL",
+    "abstract": "MSL Pressure from ECMWF",
+    "producer": "ecmwf_surface",
     "views": [
         {
             "layers": [

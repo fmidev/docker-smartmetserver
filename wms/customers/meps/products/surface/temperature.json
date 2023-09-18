@@ -2,7 +2,7 @@
     "title" : "MEPS Temperature 2m",
     "abstract" : "Temperature 2m from MEPS",
     "projection": {},
-    "producer": "meps_northeurope_surface",
+    "producer": "meps_surface",
     "views": [{
         "layers": [{
             "qid": "l",

@@ -1,7 +1,7 @@
 {
-    "title" : "HIRLAM CAPE",
-    "abstract" : "CAPE from HIRLAM",
-    "producer": "hirlam_europe_surface",
+    "title" : "ECMWF CAPE",
+    "abstract" : "CAPE from ECMWF",
+    "producer": "ecmwf_surface",
     "views": [{
         "layers": [{
             "qid": "l",

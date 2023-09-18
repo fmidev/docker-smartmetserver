@@ -1,7 +1,7 @@
 {
     "title" : "MEPS Relative Humidity 2m",
     "abstract" : "Relative Humidity 2m from MEPS",
-    "producer": "meps_northeurope_surface",
+    "producer": "meps_surface",
     "views": [{
         "layers": [{
             "qid": "l",

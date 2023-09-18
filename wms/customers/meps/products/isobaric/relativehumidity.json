@@ -1,7 +1,7 @@
 {
     "title" : "MEPS Relative Humidity Isobaric",
     "abstract" : "Relative Humidity on Constant Pressure Surfaces from MEPS",
-    "producer": "meps_northeurope_pressure",
+    "producer": "meps_pressure",
     "views": [{
         "layers": [{
             "qid": "l",

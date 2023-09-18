@@ -2,7 +2,7 @@
     "title": "MEPS Wind Direction 10m",
     "abstract": "Wind direction from MEPS forecast model.",
     "projection": {},
-    "producer": "meps_northeurope_surface",
+    "producer": "meps_surface",
     "views": [
         {
             "layers": [
