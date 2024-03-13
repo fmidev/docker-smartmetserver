@@ -8,12 +8,13 @@ services:
       - "8080:8080"
       - "8081:8081"
     volumes:
-      - ./conf/smartmet-server.conf:/smartmet/cnf/smartmetd/server.conf
+      - ./conf/server.conf:/smartmet/cnf/smartmetd/server.conf
       - ./conf/smartmet.env:/smartmet/smartmet.env
       - ./conf/smartmet_alert.sh:/etc/smartmet/smartmet_alert.sh
       - ./conf/plugins/:/smartmet/cnf/smartmetd/plugins
       - ./conf/engines/:/smartmet/cnf/smartmetd/engines
       - ./logs:/var/log/smartmet
+      - ./src/favicon.ico:/smartmet/share/brainstorm/favicon.ico
     restart: unless-stopped
 
 # konffit
