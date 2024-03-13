@@ -12,6 +12,7 @@ services:
       - ./conf/smartmet.env:/smartmet/smartmet.env
       - ./conf/smartmet_alert.sh:/etc/smartmet/smartmet_alert.sh
       - ./conf/plugins/:/smartmet/cnf/smartmetd/plugins
+      - ./conf/engines/:/smartmet/cnf/smartmetd/engines
       - ./logs:/var/log/smartmet
     restart: unless-stopped
 
