@@ -48,7 +48,7 @@ RUN dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/
 
 #redis omana konffina
 
-RUN mv /usr/sbin/smartmetd /usr/bin/smartmetd
+RUN mv /usr/sbin/smartmetd /tmp/smartmetd
 
 EXPOSE ${SMARTMET_SERVER_PORT}
 
