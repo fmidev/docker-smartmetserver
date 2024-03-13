@@ -3,6 +3,9 @@ FROM rockylinux:9.3
 ARG SMARTMET_SERVER_PORT=8080
 ARG USERNAME="smartmet-server"
 
+RUN groupadd --gid 1300 htj
+RUN useradd --uid 7620 --no-create-home --gid 1300 --shell /sbin/nologin smartmet-server
+
 COPY src/docker-entrypoint.sh /docker-entrypoint.sh
 
 RUN dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-open-release-latest-9.noarch.rpm && \
