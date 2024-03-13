@@ -3,6 +3,8 @@ FROM rockylinux:9.3
 ARG SMARTMET_SERVER_PORT=8080
 ARG USERNAME="smartmet-server"
 
+COPY src/docker-entrypoint.sh /docker-entrypoint.sh
+
 RUN dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-open-release-latest-9.noarch.rpm && \
     dnf --assumeyes install yum-utils && \
     dnf config-manager --set-enabled crb && \
@@ -27,8 +29,6 @@ RUN dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/
     dnf --assumeyes reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common eccodes && \
     dnf clean all 
 
-# RUN mkdir -p /smartmet/data/{meps,hirlam,gfs,meteor,nam,icon,gem,gens-avg,gens-ctrl,hbm,wam}/{surface,pressure} \
-#              /smartmet/share/wms
 
 # RUN install -m 775 -g 0 -d /var/smartmet
 
