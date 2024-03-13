@@ -1,8 +1,0 @@
-<filter id="lightyellowoutline">
-  <feMorphology in="SourceAlpha" result="morphed" operator="dilate" radius="2"/>
-  <feColorMatrix in="morphed" result="yellowed" type="matrix" values="1 1 1 1 1, 1 1 1 1 1, 0.75 0.75 0.75 0.75 0, 0 0 0 1 0"/>
-  <feMerge>
-    <feMergeNode in="yellowed"/>
-    <feMergeNode in="SourceGraphic"/>
-  </feMerge>
-</filter>

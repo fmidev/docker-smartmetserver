@@ -1,26 +1,22 @@
-version: '3'
-
+version: '3.8'
 services:
   smartmetserver:
     build: .
-    image: fmidev/smartmetserver:latest
+    image: smartmetserver:latest
     ports:
       - "8080:8080"
     volumes:
-      - model-fmi-hirlam:/smartmet/data/hirlam
-    restart: unless-stopped
-  hirlam-surface:
-    image: fmidev/fmidownloader
-    container_name: fmidownloader-hirlam-surface
-    command:
-      - "--producer=hirlam"
-      - "--dir=surface"
-      - "--filename=hirlam_europe_surface"
-      - "--parameters=Temperature,DewPoint,Humidity,WindDirection,WindSpeedMS,WindGust,TotalCloudCover,Precipitation1h,WeatherSymbol3,Pressure,CAPE,CIN"
-    volumes:
-      - model-fmi-hirlam:/tmp
+      - ./conf/backend.cfg:/smartmet/cnf/smartmetd/clients/backend.conf
+      - ./conf/smartmet.env:/smartmet/smartmet.env
+      - ./conf/smartmet_alert.sh:/etc/smartmet/smartmet_alert.sh
+      - ./logs:/var/log/smartmet
     restart: unless-stopped
 
-volumes:
-  model-fmi-hirlam:
-    name: model-fmi-hirlam
+# konffit
+# backend
+# - sputnik fmi gitissä (generoidaan tai gitistä?)
+# - etc/smartmet/smartmet.env määritellään käynnistys & portit yms systemd:lle --optiot
+#  -c = CONFIGFILE=/smartmet/cnf/smartmetd/clients/backend.conf
+# frontent
+
+#configmap -> config tiedosto -> ajokomennolle

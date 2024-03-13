@@ -1,8 +1,0 @@
-<filter id="whiteoutline_thick">
-  <feMorphology in="SourceAlpha" result="MORPH" operator="dilate" radius="3" />
-  <feColorMatrix in="MORPH" result="WHITENED" type="matrix" values="-1 0 0 1 0, 0 -1 0 1 0, 0 0 -1 1 0, 0 0 0 1 0"/>
-  <feMerge>
-    <feMergeNode in="WHITENED"/>
-    <feMergeNode in="SourceGraphic"/>
-  </feMerge>
-</filter>

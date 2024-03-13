@@ -1,4 +1,0 @@
-<filter id="alphadilation">
- <feMorphology in="SourceAlpha" operator="dilate" radius="3"/>
- <feComposite in="SourceAlpha"/>
-</filter>

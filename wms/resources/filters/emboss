@@ -1,7 +1,0 @@
-<filter id="emboss">
- <feGaussianBlur in="SourceAlpha" result="blurred" stdDeviation="2"/>
- <feSpecularLighting in="blurred" result="lighted" surfaceScale="-3" style="lighting-color:white" specularConstant="1" specularExponent="16" kernelUnitLength="1" >
-  <feDistantLight azimuth="45" elevation="45"/>
- </feSpecularLighting>
- <feComposite in="lighted" in2="SourceGraphic" operator="in"/>
-</filter>
