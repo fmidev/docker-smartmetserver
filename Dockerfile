@@ -48,9 +48,11 @@ RUN dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/
 
 #redis omana konffina
 
+RUN mv /usr/sbin/smartmetd /usr/bin/smartmetd
+
 EXPOSE ${SMARTMET_SERVER_PORT}
 
 USER ${USERNAME}
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
-CMD ["smartmetd -c conf"]
+

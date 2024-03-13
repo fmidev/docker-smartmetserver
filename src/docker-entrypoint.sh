@@ -10,7 +10,7 @@ fi
 if [ "$1" = 'smartmetd' ]; then
     id
     whoami
-    exec /usr/sbin/smartmetd
+    exec /usr/bin/smartmetd
 fi
 
 exec "$@"
