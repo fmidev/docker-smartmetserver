@@ -48,6 +48,8 @@ RUN dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/
 
 #redis omana konffina
 
+RUN chmod u+s /usr/sbin/smartmetd
+
 EXPOSE ${SMARTMET_SERVER_PORT}
 COPY src/favicon.ico /smartmet/share/brainstorm/favicon.ico
 
