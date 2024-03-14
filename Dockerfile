@@ -3,9 +3,6 @@ FROM rockylinux:9.3
 ARG SMARTMET_SERVER_PORT=8080
 ARG USERNAME="smartmet-server"
 
-RUN groupadd --gid 1300 htj
-RUN useradd --uid 7620 --no-create-home --gid 1300 --shell /sbin/nologin smartmet-server
-
 COPY src/docker-entrypoint.sh /docker-entrypoint.sh
 
 RUN dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-open-release-latest-9.noarch.rpm && \
@@ -48,10 +45,15 @@ RUN dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/
 
 #redis omana konffina
 
-RUN chmod u+s /usr/sbin/smartmetd
+COPY src/favicon.ico /smartmet/share/brainstorm/favicon.ico
+
+RUN setcap 'cap_net_bind_service=' /usr/sbin/smartmetd
+
+RUN mkdir -p /var/log/smartmet && \
+    chgrp 0 /var/log/smartmet && \
+    chmod g+w /var/log/smartmet
 
 EXPOSE ${SMARTMET_SERVER_PORT}
-COPY src/favicon.ico /smartmet/share/brainstorm/favicon.ico
 
 USER ${USERNAME}
 
