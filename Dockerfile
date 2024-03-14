@@ -3,8 +3,14 @@ FROM rockylinux:9.3
 ARG SMARTMET_SERVER_PORT=8080
 ARG USERNAME="smartmet-server"
 
-COPY src/docker-entrypoint.sh /docker-entrypoint.sh
+ENV LC_ALL=fi_FI.UTF-8 \
+    LANG=en_US.UTF-8
 
+# Install FI language pack and change locale
+RUN dnf --assumeyes install glibc-all-langpacks glibc-locale-source
+RUN localedef -c -i fi_FI -f UTF-8 fi_FI.utf8
+
+# Install required packages
 RUN dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-open-release-latest-9.noarch.rpm && \
     dnf --assumeyes install yum-utils && \
     dnf config-manager --set-enabled crb && \
@@ -29,26 +35,13 @@ RUN dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/
     dnf --assumeyes reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common eccodes && \
     dnf clean all 
 
-
-# RUN install -m 775 -g 0 -d /var/smartmet
-
-# RUN chmod -R g=u /etc/passwd
-
-# konffit
-# backend
-# - sputnik fmi gitissä (generoidaan tai gitistä?)
-# - etc/smartmet/smartmet.env määritellään käynnistys & portit yms systemd:lle --optiot
-#  -c = CONFIGFILE=/smartmet/cnf/smartmetd/clients/backend.conf
-# frontent
-
-#configmap -> config tiedosto -> ajokomennolle
-
-#redis omana konffina
-
+# favicon is required
 COPY src/favicon.ico /smartmet/share/brainstorm/favicon.ico
 
+# Set capabilities for smartmetd
 RUN setcap 'cap_net_bind_service=' /usr/sbin/smartmetd
 
+# create default logging directory
 RUN mkdir -p /var/log/smartmet && \
     chgrp 0 /var/log/smartmet && \
     chmod g+w /var/log/smartmet
@@ -57,5 +50,4 @@ EXPOSE ${SMARTMET_SERVER_PORT}
 
 USER ${USERNAME}
 
-ENTRYPOINT ["/docker-entrypoint.sh"]
-
+CMD [ "/usr/sbin/smartmetd"]
