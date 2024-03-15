@@ -1,11 +1,11 @@
 version: '3.8'
 services:
-  smartmetserver:
-    build: .
-    image: smartmetserver:latest
+  smartmet-server:
+    image: quay.io/fmi/smartmet-server:0.0.8
     command: '/usr/sbin/smartmetd --debug --configfile /smartmet/cnf/smartmetd/server.conf --port 8080'
     ports:
       - "8080:8080"
+
       - "8081:8081"
     volumes:
       - ./conf/server.conf:/smartmet/cnf/smartmetd/server.conf
@@ -14,7 +14,6 @@ services:
       - ./conf/plugins/:/smartmet/cnf/smartmetd/plugins
       - ./conf/engines/:/smartmet/cnf/smartmetd/engines
       - ./logs:/var/log/smartmet
-      - ./src/favicon.ico:/smartmet/share/brainstorm/favicon.ico
     restart: unless-stopped
 
 # konffit
