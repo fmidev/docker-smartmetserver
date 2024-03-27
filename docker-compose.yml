@@ -15,7 +15,7 @@ services:
     command:
       - "--producer=meps"
       - "--dir=surface"
-      - "--filename=meps_europe_surface"
+      - "--filename=meps_northeurope_surface"
       - "--parameters=Temperature,DewPoint,Humidity,WindDirection,WindSpeedMS,WindGust,TotalCloudCover,Precipitation1h,WeatherSymbol3,Pressure,CAPE,CIN"
     volumes:
       - model-fmi-meps:/tmp
