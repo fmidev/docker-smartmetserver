@@ -9,7 +9,7 @@ services:
     volumes:
       - model-fmi-meps:/smartmet/data/meps
     restart: unless-stopped
-   meps-surface:
+  meps-surface:
     image: fmidev/fmidownloader
     container_name: fmidownloader-meps-surface
     command:
