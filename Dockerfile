@@ -49,7 +49,7 @@ RUN mkdir -p /var/log/smartmet && \
 
 # Create grid engine directories
 RUN mkdir -p /var/smartmet/grid && \
-    chown smartmet-server /var/smartmet/grid && \
+    chown ${USERNAME} /var/smartmet/grid && \
     chmod u+w /var/smartmet/grid
 
 EXPOSE ${SMARTMET_SERVER_PORT}
