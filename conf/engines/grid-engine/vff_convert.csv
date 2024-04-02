@@ -1,0 +1,19 @@
+# FIELDS
+# 1. Virtual parameter (fmiName)
+# 2. Source parameters (fmiName)
+# 3. Function name
+# 4. Function type
+# 5. Producer (empty = all)
+# 6. Geometry (-1 = all)
+#
+#T-C;T-K;K2C;2;ECG;
+#T-F;T-K;K2F;2;ECG;
+
+VIRT-WIND-DIR;U-MS,V-MS;WIND_DIR;4;ECG;1008
+VIRT-WIND-DIR;U-MS,V-MS;WIND_DIR;4;MEPS;-1
+
+VIRT-WIND-SPEED;U-MS,V-MS;WIND_SPEED;3;ECG;1008
+VIRT-WIND-SPEED;V-MS,U-MS;WIND_SPEED;3;MEPS;-1
+
+VIRT-WIND-V;U-MS,V-MS;WIND_V;4;ECG;1008
+VIRT-WIND-U;U-MS,V-MS;WIND_U;4;ECG;1008

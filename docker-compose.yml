@@ -1,20 +1,32 @@
 version: '3.8'
 services:
   smartmet-server:
-    image: quay.io/fmi/smartmet-server:0.0.8
+    build: .
+    image: quay.io/fmi/smartmet-server:0.0.11
     command: '/usr/sbin/smartmetd --debug --configfile /smartmet/cnf/smartmetd/server.conf --port 8080'
     ports:
       - "8080:8080"
-
       - "8081:8081"
     volumes:
+      # Main configuration file
       - ./conf/server.conf:/smartmet/cnf/smartmetd/server.conf
+      # Environment variables
       - ./conf/smartmet.env:/smartmet/smartmet.env
+      # Health check
       - ./conf/smartmet_alert.sh:/etc/smartmet/smartmet_alert.sh
-      - ./conf/plugins/:/smartmet/cnf/smartmetd/plugins
+      # Engine configuration
       - ./conf/engines/:/smartmet/cnf/smartmetd/engines
-      - ./logs:/var/log/smartmet
+      # Plugin configuration
+      - ./conf/plugins/:/smartmet/cnf/smartmetd/plugins
+      # Library configuration
+      - ./conf/libraries/:/smartmet/cnf/smartmetd/libraries
     restart: unless-stopped
+  redis:
+    image: redis:latest
+    restart: unless-stopped
+    ports:
+      - "6380:6379"
+
 
 # konffit
 # backend

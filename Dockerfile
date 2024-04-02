@@ -27,6 +27,7 @@ RUN dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/
     smartmet-plugin-backend \
     smartmet-plugin-download \
     smartmet-plugin-edr \
+    smartmet-plugin-grid-admin \
     smartmet-plugin-timeseries \
     smartmet-plugin-wms \
     smartmet-engine-grid \
@@ -45,6 +46,11 @@ RUN setcap 'cap_net_bind_service=' /usr/sbin/smartmetd
 RUN mkdir -p /var/log/smartmet && \
     chgrp 0 /var/log/smartmet && \
     chmod g+w /var/log/smartmet
+
+# Create grid engine directories
+RUN mkdir -p /var/smartmet/grid && \
+    chown smartmet-server /var/smartmet/grid && \
+    chmod u+w /var/smartmet/grid
 
 EXPOSE ${SMARTMET_SERVER_PORT}
 
