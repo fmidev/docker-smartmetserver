@@ -39,6 +39,9 @@ RUN dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/
 # favicon is required
 COPY src/favicon.ico /smartmet/share/brainstorm/favicon.ico
 
+# Health check
+COPY conf/smartmet_alert.sh /etc/smartmet/smartmet_alert.sh
+
 # Set capabilities for smartmetd
 RUN setcap 'cap_net_bind_service=' /usr/sbin/smartmetd
 

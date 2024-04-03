@@ -14,12 +14,14 @@ RUN dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/
     dnf --assumeyes install epel-release && \
     dnf --assumeyes install smartmet-tools-grid
 
-COPY data/seaheat_20240319T000000_xxx.grib2 /data/seaheat_20240319T000000_xxx.grib2
+# Demo data
+COPY data/seaheat/seaheat_20240319T000000_xxx.grib2 /data/seaheat/seaheat_20240319T000000_xxx.grib2
 
+# Default configuration
 COPY conf/default.env /environment/
-COPY conf/*.conf /config/
-COPY conf/*.csv /config/
+COPY conf/*.conf /config/filesys2smartmet/
+COPY conf/*.csv /config/filesys2smartmet/
 
 USER ${USERNAME}
 
-CMD ["filesys2smartmet", "/config/default.conf", "30"]
+CMD ["filesys2smartmet", "/config/filesys2smartmet/filesys2smartmet.conf", "30"]
