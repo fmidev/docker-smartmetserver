@@ -1,0 +1,46 @@
+#################################################################################
+#
+# This file defines FMI level identifiers for GRIB1 files. The main purpose
+# of this file is to identify GRIB1 levels according to GRIB1 (header) fields so
+# that we will get unique FMI level identifiers for them.
+#
+# Notice that this file contains default definitions that comes with 
+# the installation package. You should use another file for your own definitions
+# (for example 'ext/fmi_levelId_grib1.csv'. Add the name of your file into the
+# 'grid-files.conf' file so that the programs can find it.
+#
+# Fields:
+#   1 FMI level id
+#   2 Fields used for identification
+#
+#################################################################################
+#
+
+1;indicatorOfTypeOfLevel=1;
+
+2;indicatorOfTypeOfLevel=100;
+
+3;indicatorOfTypeOfLevel=109;
+
+4;indicatorOfTypeOfLevel=103;
+
+5;indicatorOfTypeOfLevel=8;
+
+6;indicatorOfTypeOfLevel=105;
+6;generatingProcessIdentifier=210,centre=86,indicatorOfTypeOfLevel=163;
+6;generatingProcessIdentifier=240,centre=86,indicatorOfTypeOfLevel=163;
+
+7;indicatorOfTypeOfLevel=102;
+7;generatingProcessIdentifier=0,centre=251,indicatorOfTypeOfLevel=103;
+7;generatingProcessIdentifier=1,centre=251,indicatorOfTypeOfLevel=103;
+7;generatingProcessIdentifier=10,centre=251,indicatorOfTypeOfLevel=103;
+
+8;indicatorOfTypeOfLevel=200;
+
+9;indicatorOfTypeOfLevel=112;
+
+12;indicatorOfTypeOfLevel=246;
+
+13;indicatorOfTypeOfLevel=106;
+
+15;indicatorOfTypeOfLevel=20;

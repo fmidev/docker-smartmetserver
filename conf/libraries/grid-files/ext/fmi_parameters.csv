@@ -1,0 +1,56 @@
+#################################################################################
+#
+# This file is an extension for the 'parameterDef_fmi.csv' file. You can add your
+# own parameter definitions here. They will be not overridden.
+#
+# FIELDS:
+# 1) FmiParameterId
+# 2) FmiParameterName
+# 3) FmiParameterUnits
+# 4) FmiParameterDescription
+# 5) AreaInterpolationMethod
+# 6) TimeInterpolationMethod
+# 7) LevelInterpolationMethod
+# 8) DefaultPrecision
+#
+#################################################################################
+
+
+#################################################################################
+# Defining additional FMI parameters for GRIB parameters that do not yet have 
+# matching FMI parameters. We are using FMI identifiers that are calculated
+# directly from the grib identifiers (fmi-id = 10000000 + grib-id). Let's 
+# use "X-" prefix in the fmi-names in order to indicate that these names are
+# our own "extensions". 
+#
+# Notice that in this file we only define the basic information of the parameters.
+# After that we can be map different kinds of parameters identifiers to these
+# parameters. For example, we map grib identifiers into these FMI identifiers
+# in the "fmi_parameterId_grib.csv" file.
+
+#################################################################################
+
+10000008;X-SRO-M;m;Surface runoff (metres);
+10000009;X-SSRO-M;m;Subsurface Runoff (metres);
+10000029;X-TVL-N;;Type of low vegetation 
+10000030;X-TVH-N;;Type of high vegetation
+10000039;X-SWVL1-M3M3;M3M3;Surface soil wetness;1;1;1;5;
+10000040;X-SWVL2-M3M3;M3M3;Volumetric Soil Water layer 2;1;1;1;5;
+10000041;X-SWVL3-M3M3;M3M3;Volumetric Soil Water layer 3;1;1;1;5;
+10000042;X-SWVL4-M3M3;M3M3;Volumetric Soil Water layer 4;1;1;1;5;
+10000139;X-STL1-K;K;Soil temperature level 1 in Kelvins;1;1;1;1;
+10000141;X-WESD-M;m;Snow depth (m of water equivalent);1;1;1;2;
+10000178;X-TSR-J;J;Top Net Solar Radation;1;1;1;2;
+10000182;X-EVAP-M;m;Evaporation (m of water equivalent);1;1;1;1;
+10000170;X-STL2-K;K;Soil temperature level 2 in Kelvins;1;1;1;1;
+10000183;X-STL3-K;K;Soil temperature level 3 in Kelvins;1;1;1;1;
+10000205;X-RO-M;M;Runoff in depth of water in metres;1;1;1;5;
+10000228;X-RR-M;m;Total precipitation in meters;1;1;1;1;
+10000236;X-STL4-K;K;Soil temperature level 4 in Kelvins;1;1;1;1;
+10260045;X-TWATERP-KGM2;kg m-2;Total Water Precipitation;1;1;1;2;
+10260046;X-TSNOWP-KGM2;kg m-2;Total snow precipitation;1;1;1;2;
+10260056;X-WESD-KGM2;kg m-2;Water equivalent of accumulated snow depth (deprecated);1;1;1;2;
+10172228;X-RRR-MEAN-MS;m s-1;Mean total precipitation rate;1;1;1;2;
+10228090;X-TCSNOWWAT-KGM2;kg m2;Total column snow water (kg m-2)
+10228251;X-EVAPP-M;m;Potential evaporation
+

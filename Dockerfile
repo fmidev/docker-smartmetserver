@@ -44,6 +44,9 @@ RUN mkdir -p /config && \
     mkdir -p /config/plugins && \
     mkdir -p /config/libraries
     
+# Copy grid engine configuration
+COPY conf/libraries/grid-files /config/libraries/grid-files
+COPY conf/plugins/grid-gui /config/plugins/grid-gui
 
 # create default logging directory
 RUN mkdir -p /var/log/smartmet && \

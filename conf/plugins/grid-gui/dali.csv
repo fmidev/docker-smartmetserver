@@ -1,0 +1,18 @@
+# Parameters
+# 1 Parameter name
+# 2 Level Id
+# 3 Level
+# 4 Id
+# 5 Name
+# 6 URL
+T-K,TD-K,TMIN-K,TMAX-K,TOL-K,TDAVE-K,TCLDTOP-K,TG-K,T-MEAN-K;;;101;Temperature isobands;dali?customer=gui&product=temperature_1&source=grid&size=1&l1.parameter=$(PARAMETER)
+T-K,TD-K,TMIN-K,TMAX-K,TOL-K,TDAVE-K,TCLDTOP-K,TG-K,T-MEAN-K;;;102;Temperature isobands & isolines;dali?customer=gui&product=temperature_2&source=grid&size=1&l1.parameter=$(PARAMETER)&l2.parameter=$(PARAMETER)
+T-K,TD-K,TMIN-K,TMAX-K,TOL-K,TDAVE-K,TCLDTOP-K,TG-K,T-MEAN-K;;;103;Temperature values (Kelvin);dali?customer=gui&product=temperature_3&source=grid&size=1&l1.parameter=$(PARAMETER)
+T-K,TD-K,TMIN-K,TMAX-K,TOL-K,TDAVE-K,TCLDTOP-K,TG-K,T-MEAN-K;;;104;Temperature values (Celcius);dali?customer=gui&product=temperature_4&source=grid&size=1&l1.parameter=$(PARAMETER)
+
+RRR-KGM2;;;201;Precipitation 1;dali?customer=gui&product=precipitation_1&source=grid&size=1
+
+FF-MS,FFG-MS,FX-MS;;;301;Wind Speed isobands;dali?customer=gui&product=wind_speed_1&source=grid&size=1&l1.parameter=$(PARAMETER)&l2.parameter=$(PARAMETER)
+FF-MS,FFG-MS,FX-MS;;;302;Wind Speed values (m/s);dali?customer=gui&product=wind_speed_2&source=grid&size=1&l1.parameter=$(PARAMETER)&l2.parameter=$(PARAMETER)&l3.parameter=$(PARAMETER)
+FF-MS,DD-D;;;303;Wind Speed And Direction arrows;dali?customer=gui&product=wind_speed_and_direction_1&source=grid&size=1
+FF-MS,DD-D;;;304;Wind Direction arrows;dali?customer=gui&product=wind_direction_1&source=grid&size=1

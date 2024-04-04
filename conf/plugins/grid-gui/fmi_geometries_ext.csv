@@ -1,0 +1,22 @@
+# In some cases geometries cannot be found according to their hash. That's because
+# the might be some variation how the geometry parameters are expressed. For example,
+# a longitude "320" can be also expressed as "-40". That's why have to be able to
+# define the same geometries in multiple ways. 
+
+# The "fmi_geometries.csv" file is automatically generated time to time. That's why we
+# do not want define our "alternative" geometries there (because they would be overridden). 
+# Instead we use this file. This is not a perfect solution, but it would take much
+# more time to code a solution that would not use hash calculation. So, we are using
+# this for now.
+
+1;1081;BLEND0025;4501;1841;320;73.5;0.025;0.025;+x-y;Blend 0.025 degrees;
+9;1073;SMARTMET7500;270;300;6;51.3;7494.390;7479.170;+x+y;20.0;60.0;SmartMet Scandinavian area 7500km resolution;
+
+9;5000;name;825;603;185.500000;44.800000;5000.000000;5000.000000;+x+y;210.000000;60.000000;description
+1;5001;name;501;501;247.000000;36.889000;0.020000;0.020000;+x-y;description
+9;5002;name;270;400;17.805054;59.379088;3000.000000;3000.000000;+x+y;20.000000;60.000000;description
+9;5003;name;490;560;7.178284;54.287112;3000.000000;3000.000000;+x+y;20.000000;60.000000;description
+9;5004;name;270;400;17.805100;59.379100;3000.000000;3000.000000;+x+y;20.000000;0.000000;description
+9;5005;name;685;765;5.940857;51.057868;3000.000000;3000.000000;+x+y;20.000000;60.000000;description
+9;5006;name;171;191;5.985607;51.104713;12017.543000;12015.707000;+x+y;20.000000;60.000000;description
+9;5007;name;171;191;5.986000;51.105000;12017.000000;12015.000000;+x+y;20.000000;60.0;description
