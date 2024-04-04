@@ -36,14 +36,13 @@ RUN dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/
     dnf --assumeyes reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common eccodes && \
     dnf clean all 
 
-# favicon is required
-COPY src/favicon.ico /smartmet/share/brainstorm/favicon.ico
-
-# Health check
-COPY conf/smartmet_alert.sh /etc/smartmet/smartmet_alert.sh
-
-# Set capabilities for smartmetd
-RUN setcap 'cap_net_bind_service=' /usr/sbin/smartmetd
+# Create configuration directory structure
+RUN mkdir -p /config && \
+    mkdir -p /config/healthcheck && \
+    mkdir -p /config/engines && \
+    mkdir -p /config/plugins && \
+    mkdir -p /config/libraries && \
+    chgrp --recursive 0 /config
 
 # create default logging directory
 RUN mkdir -p /var/log/smartmet && \
@@ -54,6 +53,19 @@ RUN mkdir -p /var/log/smartmet && \
 RUN mkdir -p /var/smartmet/grid && \
     chown ${USERNAME} /var/smartmet/grid && \
     chmod u+w /var/smartmet/grid
+
+# favicon is required
+COPY conf/favicon.ico /config/favicon.ico
+
+# Health check
+COPY conf/smartmet_alert.sh /config/healthcheck/smartmet_alert.sh
+
+# Bugged configuration files that are required even if disabled
+COPY conf/engines/grid-engine/vff_convert.csv /config/engines/grid-engine/vff_convert.csv
+COPY conf/engines/grid-engine/vff_convert.lua /config/engines/grid-engine/vff_convert.lua
+
+# Set capabilities for smartmetd
+RUN setcap 'cap_net_bind_service=' /usr/sbin/smartmetd
 
 EXPOSE ${SMARTMET_SERVER_PORT}
 

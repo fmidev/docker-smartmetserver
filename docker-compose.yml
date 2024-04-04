@@ -2,28 +2,28 @@ version: '3.8'
 services:
   smartmet-server:
     build: .
-    image: quay.io/fmi/smartmet-server:0.0.11
+    image: quay.io/fmi/smartmet-server:0.0.12
     environment:
       - REDIS_CONTENT_SERVER_ADDRESS=redis
       - REDIS_CONTENT_SERVER_PORT=6379
-    command: '/usr/sbin/smartmetd --debug --configfile /smartmet/cnf/smartmetd/server.conf --port 8080'
+    command: '/usr/sbin/smartmetd --debug --configfile /config/server.conf --port 8080'
     # This should be visible in the host
     ports:
       - "8080:8080"
       - "8081:8081"
     volumes:
       # Main configuration file
-      - ./conf/server.conf:/smartmet/cnf/smartmetd/server.conf
+      - ./conf/server.conf:/config/server.conf
       # Environment variables
       - ./conf/smartmet.env:/smartmet/smartmet.env
       # Health check TODO put this to Dockerfile
       - ./conf/smartmet_alert.sh:/etc/smartmet/smartmet_alert.sh
       # Engine configuration
-      - ./conf/engines/:/smartmet/cnf/smartmetd/engines
+      - ./conf/engines/:/config/engines
       # Plugin configuration
-      - ./conf/plugins/:/smartmet/cnf/smartmetd/plugins
+      - ./conf/plugins/:/config/plugins
       # Library configuration
-      - ./conf/libraries/:/smartmet/cnf/smartmetd/libraries
+      - ./conf/libraries/:/config/libraries
     restart: unless-stopped
     # This is the network between containers
     networks:
@@ -65,7 +65,7 @@ networks:
 # backend
 # - sputnik fmi gitissä (generoidaan tai gitistä?)
 # - etc/smartmet/smartmet.env määritellään käynnistys & portit yms systemd:lle --optiot
-#  -c = CONFIGFILE=/smartmet/cnf/smartmetd/clients/backend.conf
+#  -c = CONFIGFILE=/config/clients/backend.conf
 # frontent
 
 #configmap -> config tiedosto -> ajokomennolle
