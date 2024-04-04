@@ -3,6 +3,9 @@ services:
   smartmet-server:
     build: .
     image: quay.io/fmi/smartmet-server:0.0.11
+    environment:
+      - REDIS_CONTENT_SERVER_ADDRESS=redis
+      - REDIS_CONTENT_SERVER_PORT=6379
     command: '/usr/sbin/smartmetd --debug --configfile /smartmet/cnf/smartmetd/server.conf --port 8080'
     # This should be visible in the host
     ports:
