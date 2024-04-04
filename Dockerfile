@@ -56,7 +56,7 @@ RUN mkdir -p /var/log/smartmet && \
 # Create grid engine directories
 RUN mkdir -p /var/smartmet/grid && \
     chown ${USERNAME} /var/smartmet/grid && \
-    chmod u+w /var/smartmet/grid
+    chmod ug+w /var/smartmet/grid
 
 # favicon is required
 COPY conf/favicon.ico /config/favicon.ico
