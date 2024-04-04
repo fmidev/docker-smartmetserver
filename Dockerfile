@@ -41,8 +41,8 @@ RUN mkdir -p /config && \
     mkdir -p /config/healthcheck && \
     mkdir -p /config/engines && \
     mkdir -p /config/plugins && \
-    mkdir -p /config/libraries && \
-    chgrp --recursive 0 /config
+    mkdir -p /config/libraries
+    
 
 # create default logging directory
 RUN mkdir -p /var/log/smartmet && \
@@ -63,6 +63,10 @@ COPY conf/smartmet_alert.sh /config/healthcheck/smartmet_alert.sh
 # Bugged configuration files that are required even if disabled
 COPY conf/engines/grid-engine/vff_convert.csv /config/engines/grid-engine/vff_convert.csv
 COPY conf/engines/grid-engine/vff_convert.lua /config/engines/grid-engine/vff_convert.lua
+
+# Change permissions for configuration
+RUN chgrp --recursive 0 /config && \
+    chown --recursive ${USERNAME} /config
 
 # Set capabilities for smartmetd
 RUN setcap 'cap_net_bind_service=' /usr/sbin/smartmetd

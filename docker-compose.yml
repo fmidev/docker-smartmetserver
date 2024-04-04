@@ -59,13 +59,3 @@ services:
 networks:
   smartmetserver:
     name: smartmet-server
-
-
-# konffit
-# backend
-# - sputnik fmi gitissä (generoidaan tai gitistä?)
-# - etc/smartmet/smartmet.env määritellään käynnistys & portit yms systemd:lle --optiot
-#  -c = CONFIGFILE=/config/clients/backend.conf
-# frontent
-
-#configmap -> config tiedosto -> ajokomennolle
