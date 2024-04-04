@@ -32,6 +32,7 @@ RUN dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/
     smartmet-plugin-wms \
     smartmet-engine-grid \
     unzip \
+    tree \
     glibc-langpack-en && \
     dnf --assumeyes reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common eccodes && \
     dnf clean all 
