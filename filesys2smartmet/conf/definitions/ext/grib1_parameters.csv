@@ -1,0 +1,29 @@
+#################################################################################
+#
+# This file defines additional grib parameter identifiers for GRIB1 files. The main 
+# purpose of this file is to identify grib parameters according to their fields 
+# so that we will get unique grib identifiers for them. We can map grib fields
+# into existing (= "standard") grib identifiers (defined in "grib_parameters.csv"
+# file => see the parent directory) or our own grib identifiers (that we have 
+# defined in the "ext/grib_parameters.csv" file). 
+#
+# Add the name of this file into the "grid-files.conf" file so that the programs
+# can find it.
+#
+# Fields:
+#   1 Grib-id
+#   2 Fields used for identification
+#
+#################################################################################
+
+
+# Adding identification fields for some "standard" grib identifiers
+
+#228090;table2Version=228,indicatorOfParameter=90;
+#228100;table2Version=228,indicatorOfParameter=100;
+#228101;table2Version=228,indicatorOfParameter=101;
+#228102;table2Version=228,indicatorOfParameter=102;
+#228139;table2Version=128,indicatorOfParameter=170,indicatorOfTypeOfLevel=111;
+#228139;table2Version=128,indicatorOfParameter=170,indicatorOfTypeOfLevel=112;
+#228251;table2Version=228,indicatorOfParameter=251;
+

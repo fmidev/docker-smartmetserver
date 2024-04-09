@@ -22,6 +22,10 @@ COPY conf/default.env /environment/
 COPY conf/*.conf /config/filesys2smartmet/
 COPY conf/*.csv /config/filesys2smartmet/
 
+# TODO: These are copied from clients cluster
+# TODO: Think whether this is a great path name
+COPY conf/definitions/ /config/definitions/
+
 USER ${USERNAME}
 
 CMD ["filesys2smartmet", "/config/filesys2smartmet/filesys2smartmet.conf", "30"]

@@ -1,0 +1,90 @@
+#################################################################################
+#
+# This file is used for mapping grib identifiers to FMI identifiers.
+#
+# Add the name of this file into the "grid-files.conf" file so that the programs 
+# can find it.
+#
+# FIELDS:
+# 1) FmiParameterId/FmiParameterName
+# 2) GribParameterId
+# 3) ConversionFunction
+# 4) ReverseConversionFunction
+#
+#################################################################################
+
+
+
+# Mapping "standard" grib identifiers (defined in the "grib_parameters.csv" file) into 
+# our own FMI identifiers (defined in the "ext/fmi_parameters.csv" file).
+
+
+# Surface runoff in depth of water in metres
+X-SRO-M;8;;;
+
+# Subsurface Runoff in depth of water in metres
+X-SSRO-M;9;;
+
+# 29:Type of low vegetation
+X-TVL-N;29;;; 
+
+# 30:Type of high vegetation
+X-TVH-N;30;;;
+
+# Surface soil wetness
+X-SWVL1-M3M3;39;;;
+
+# Volumetric Soil Water layer 2
+X-SWVL2-M3M3;40;;;
+
+# Volumetric Soil Water layer 3
+X-SWVL3-M3M3;41;;;
+
+# Volumetric Soil Water layer 4
+X-SWVL4-M3M3;42;;;
+
+# Soil temperature level 1 in Kelvins
+X-STL1-K;139;;;
+
+# Snow depth (m of water equivalent)
+X-WESD-M;141;;;
+
+# Soil temperature level 2 in Kelvins
+X-STL2-K;170;;;
+
+# Top Net Solar Radation
+X-TSR-J;178;;;
+
+# Evaporation (m of water equivalent)
+X-EVAP-M;182;;;
+
+# Total precipitation in meters
+X-RR-M;228;;;
+
+# Soil temperature level 3 in Kelvins
+X-STL3-K;183;;;
+
+# Runoff in depth of water in metres
+X-RO-M;205;;;
+
+# Soil temperature level 4 in Kelvins
+X-STL4-K;236;;;
+
+# Total Water Precipitation (kg m-2)
+X-TWATERP-KGM2;260045;;;
+
+# Total snow precipitation (kg m-2)
+X-TSNOWP-KGM2;260046;;;
+
+# Mean total precipitation rate (m s-1)
+X-RRR-MEAN-MS;172228;;
+
+# Water equivalent of accumulated snow depth (deprecated) (kg m-2)
+X-WESD-KGM2;260056;;;
+
+# Total column snow water (kg m-2)
+X-TCSNOWWAT-KGM2;228090;;;
+
+# Potential evaporation (m)
+X-EVAPP-M;228251;;;
+

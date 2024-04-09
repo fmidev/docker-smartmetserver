@@ -1,0 +1,54 @@
+#################################################################################
+#
+# This file defines additional grib parameter identifiers for GRIB2 files. The main 
+# purpose of this file is to identify grib parameters according to their fields 
+# so that we will get unique grib identifiers for them. We can map grib fields
+# into existing (= "standard") grib identifiers (defined in "grib_parameters.csv"
+# file => see the parent directory) or our own grib identifiers (that we have 
+# defined in the "ext/grib_parameters.csv" file). 
+#
+# Add the name of this file into the "grid-files.conf" file so that the programs
+# can find it.
+#
+# Fields:
+#   1 Grib-id
+#   2 Fields used for identification
+#
+#################################################################################
+
+# SWVL1;Volumetric soil water layer 1
+198039;discipline=192,centre=86,parameterCategory=128,parameterNumber=39;
+
+# Volumetric soil water layer 2
+198040;discipline=192,centre=86,parameterCategory=128,parameterNumber=40;
+
+# Volumetric soil water layer 3
+198041;discipline=192,centre=86,parameterCategory=128,parameterNumber=41;
+
+# Volumetric soil water layer 4
+198042;discipline=192,centre=86,parameterCategory=128,parameterNumber=42;
+
+# Soil temperature layer 1 mineral soil
+198139;discipline=192,centre=86,parameterCategory=128,parameterNumber=139;
+
+# Soil temperature layer 2 mineral soil
+198170;discipline=192,centre=86,parameterCategory=128,parameterNumber=170;
+
+# Soil temperature layer 3 mineral soil
+198183;discipline=192,centre=86,parameterCategory=128,parameterNumber=183;
+
+# Soil temperature layer 4 mineral soil
+198236;discipline=192,centre=86,parameterCategory=128,parameterNumber=236;
+
+# Soil temperature layer 1 organic soil
+199139;discipline=192,centre=86,parameterCategory=128,parameterNumber=139;
+
+# Soil temperature layer 2 organic soil
+199170;discipline=192,centre=86,parameterCategory=128,parameterNumber=170;
+
+# Soil temperature layer 3 organic soil
+199183;discipline=192,centre=86,parameterCategory=128,parameterNumber=183;
+
+# Soil temperature layer 4 organic soil
+199236;discipline=192,centre=86,parameterCategory=128,parameterNumber=236;
+
