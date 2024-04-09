@@ -74,9 +74,10 @@ RUN chgrp --recursive 0 /config && \
 
 # Set capabilities for smartmetd
 RUN setcap 'cap_net_bind_service=' /usr/sbin/smartmetd
+RUN setcap 'cap_sys_ptrace=eip' /usr/sbin/smartmetd
 
 EXPOSE ${SMARTMET_SERVER_PORT}
 
 USER ${USERNAME}
 
-CMD [ "/usr/sbin/smartmetd"]
+CMD ["/usr/sbin/smartmetd"]
