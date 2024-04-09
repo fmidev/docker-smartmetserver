@@ -15,7 +15,7 @@ RUN dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/
     dnf --assumeyes install smartmet-tools-grid
 
 # Demo data
-COPY data/seaheat/seaheat_20240319T000000_xxx.grib2 /data/seaheat/seaheat_20240319T000000_xxx.grib2
+COPY data/demo/demo_20240319T000000_xxx.grib2 /data/demo/demo_20240319T000000_xxx.grib2
 
 # Default configuration
 COPY conf/default.env /environment/
