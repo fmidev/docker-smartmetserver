@@ -28,6 +28,7 @@ RUN dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/
     smartmet-plugin-download \
     smartmet-plugin-edr \
     smartmet-plugin-grid-admin \
+    smartmet-plugin-grid-gui \
     smartmet-plugin-timeseries \
     smartmet-plugin-wms \
     smartmet-engine-grid \
@@ -74,7 +75,9 @@ RUN chgrp --recursive 0 /config && \
 
 # Set capabilities for smartmetd
 RUN setcap 'cap_net_bind_service=' /usr/sbin/smartmetd
-RUN setcap 'cap_sys_ptrace=eip' /usr/sbin/smartmetd
+
+# Demo data
+COPY data/demo/demo_20240319T000000_xxx.grib2 /data/demo/demo_20240319T000000_xxx.grib2
 
 EXPOSE ${SMARTMET_SERVER_PORT}
 
