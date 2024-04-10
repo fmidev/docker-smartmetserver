@@ -6,6 +6,12 @@ services:
     environment:
       - REDIS_CONTENT_SERVER_ADDRESS=redis
       - REDIS_CONTENT_SERVER_PORT=6379
+      - REDIS_CONTENT_SERVER_TABLE_PREFIX=.smartmet
+      - SMARTMET_ENV_FILE=/smartmet/smartmet.env
+      - GRID_FILES_LIBRARY_CONFIG_FILE=/config/libraries/grid-files/grid-files.conf
+      - GRID_FILE_STORAGE_DIR=
+    cap_add:
+      - SYS_PTRACE
     command: '/usr/sbin/smartmetd --debug --configfile /config/server.conf --port 8080'
     # This should be visible in the host
     ports:
@@ -15,15 +21,15 @@ services:
       # Main configuration file
       - ./conf/server.conf:/config/server.conf
       # Environment variables
-      - ./conf/smartmet.env:/smartmet/smartmet.env
+      - ./conf/smartmet-backend.env:/smartmet/smartmet.env
       # Health check TODO put this to Dockerfile
       - ./conf/smartmet_alert.sh:/etc/smartmet/smartmet_alert.sh
       # Engine configuration
-      - ./conf/engines/:/config/engines
+      - ./conf/engines/:/config/engines/
       # Plugin configuration
-      - ./conf/plugins/:/config/plugins
+      - ./conf/plugins/:/config/plugins/
       # Library configuration
-      - ./conf/libraries/:/config/libraries
+      - ./conf/libraries/:/config/libraries/
     restart: unless-stopped
     # This is the network between containers
     networks:
@@ -44,6 +50,7 @@ services:
       - REDIS_CONTENT_SERVER_ADDRESS=redis
       - REDIS_CONTENT_SERVER_PORT=6379
       - REDIS_CONTENT_SERVER_TABLE_PREFIX=smartmet.
+      - MEMORYMAPPER_ENABLED=false
     image: quay.io/fmi/smartmet-server:filesys2smartmet-0.0.5
     command: '/usr/bin/fmi/filesys2smartmet /config/filesys2smartmet.conf 60'
     restart: unless-stopped
