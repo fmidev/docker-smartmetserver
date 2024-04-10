@@ -2,7 +2,11 @@ version: '3.8'
 services:
   smartmet-server:
     build: .
-    #image: quay.io/fmi/smartmet-server:0.0.12
+    image: test
+    depends_on:
+      redis:
+        condition: service_healthy
+
     environment:
       - REDIS_CONTENT_SERVER_ADDRESS=redis
       - REDIS_CONTENT_SERVER_PORT=6379
@@ -10,8 +14,10 @@ services:
       - SMARTMET_ENV_FILE=/smartmet/smartmet.env
       - GRID_FILES_LIBRARY_CONFIG_FILE=/config/libraries/grid-files/grid-files.conf
       - GRID_FILE_STORAGE_DIR=
-    cap_add:
-      - SYS_PTRACE
+#    cap_add:
+#      - ALL
+#    security_opt:
+#      - "seccomp=unconfined"
     command: '/usr/sbin/smartmetd --debug --configfile /config/server.conf --port 8080'
     # This should be visible in the host
     ports:
@@ -38,6 +44,8 @@ services:
   redis:
     image: redis:latest
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
     # This should be visible in the host
     ports:
       - "6380:6379"
@@ -46,6 +54,9 @@ services:
       - smartmetserver
 
   filesys2smartmet:
+    depends_on:
+      redis:
+        condition: service_healthy
     environment:
       - REDIS_CONTENT_SERVER_ADDRESS=redis
       - REDIS_CONTENT_SERVER_PORT=6379
