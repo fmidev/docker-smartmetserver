@@ -14,10 +14,10 @@ services:
       - SMARTMET_ENV_FILE=/smartmet/smartmet.env
       - GRID_FILES_LIBRARY_CONFIG_FILE=/config/libraries/grid-files/grid-files.conf
       - GRID_FILE_STORAGE_DIR=
-#    cap_add:
-#      - ALL
-#    security_opt:
-#      - "seccomp=unconfined"
+    cap_add:
+      - ALL
+    security_opt:
+      - "seccomp=unconfined"
     command: '/usr/sbin/smartmetd --debug --configfile /config/server.conf --port 8080'
     # This should be visible in the host
     ports:
