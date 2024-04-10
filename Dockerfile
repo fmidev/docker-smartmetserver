@@ -75,6 +75,7 @@ RUN chgrp --recursive 0 /config && \
 
 # Set capabilities for smartmetd
 RUN setcap 'cap_net_bind_service=' /usr/sbin/smartmetd
+RUN setcap 'cap_sys_ptrace=eip' /usr/sbin/smartmetd
 
 # Demo data
 COPY data/demo/demo_20240319T000000_xxx.grib2 /data/demo/demo_20240319T000000_xxx.grib2
