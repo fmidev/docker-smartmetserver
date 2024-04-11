@@ -78,8 +78,6 @@ RUN setcap -r /usr/sbin/smartmetd
 # RUN setcap 'cap_sys_ptrace=eip' /usr/sbin/smartmetd
 # RUN setcap cap_audit_control,cap_audit_write,cap_block_suspend,cap_chown,cap_dac_override,cap_dac_read_search,cap_fowner,cap_fsetid,cap_ipc_lock,cap_ipc_owner,cap_kill,cap_lease,cap_linux_immutable,cap_mac_admin,cap_mac_override,cap_mknod,cap_net_admin,cap_net_bind_service,cap_net_broadcast,cap_net_raw,cap_setgid,cap_setfcap,cap_setpcap,cap_setuid,cap_sys_admin,cap_sys_boot,cap_sys_chroot,cap_sys_module,cap_sys_nice,cap_sys_pacct,cap_sys_ptrace,cap_sys_rawio,cap_sys_resource,cap_sys_time,cap_sys_tty_config,cap_wake_alarm+ep /usr/sbin/smartmetd 
 
-RUN dnf -y install gdb smartmet-library-grid-files-debuginfo
-
 # Demo data
 COPY data/demo/demo_20240319T000000_xxx.grib2 /data/demo/demo_20240319T000000_xxx.grib2
 

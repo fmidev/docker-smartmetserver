@@ -57,11 +57,13 @@ services:
     depends_on:
       redis:
         condition: service_healthy
+    security_opt:
+      - "seccomp=unconfined"
     environment:
       - REDIS_CONTENT_SERVER_ADDRESS=redis
       - REDIS_CONTENT_SERVER_PORT=6379
       - REDIS_CONTENT_SERVER_TABLE_PREFIX=smartmet.
-      - MEMORYMAPPER_ENABLED=false
+      - MEMORYMAPPER_ENABLED=true
     image: quay.io/fmi/smartmet-server:filesys2smartmet-0.0.5
     command: '/usr/bin/fmi/filesys2smartmet /config/filesys2smartmet.conf 60'
     restart: unless-stopped
