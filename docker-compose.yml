@@ -1,8 +1,8 @@
 version: '3.8'
 services:
   smartmet-server:
-    build: .
-#    image: test
+#    build: .
+    image: quay.io/fmi/smartmet-server:0.0.21
     depends_on:
       redis:
         condition: service_healthy
@@ -19,7 +19,7 @@ services:
 #      - ALL
     security_opt:
       - "seccomp=unconfined"
-    command: '/usr/sbin/smartmetd --debug --configfile /config/server.conf --port 8080'
+    command: bash -c "sleep 5; /usr/sbin/smartmetd --debug --configfile /config/server.conf --port 8080"
     # This should be visible in the host
     ports:
       - "8080:8080"
@@ -47,6 +47,7 @@ services:
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
+      start_period: 10s
     # This should be visible in the host
     ports:
       - "6380:6379"
