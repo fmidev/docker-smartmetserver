@@ -10,10 +10,11 @@ services:
     environment:
       - REDIS_CONTENT_SERVER_ADDRESS=redis
       - REDIS_CONTENT_SERVER_PORT=6379
-      - REDIS_CONTENT_SERVER_TABLE_PREFIX=.smartmet
+      - REDIS_CONTENT_SERVER_TABLE_PREFIX=smartmet.
       - SMARTMET_ENV_FILE=/smartmet/smartmet.env
       - GRID_FILES_LIBRARY_CONFIG_FILE=/config/libraries/grid-files/grid-files.conf
       - GRID_FILE_STORAGE_DIR=
+      - GRID_ENGINE_CONFIG_DIR=/config/engines/grid-engine
 #    cap_add:
 #      - ALL
     security_opt:

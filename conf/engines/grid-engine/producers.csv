@@ -1,0 +1,6 @@
+# Producer & geometryId search order. If no producer is given in
+# the query then the producers are used in the following order.
+#producer;geometry_id;grid_size (info)
+#Harmonie;999;
+# Add line line at the end of file!
+demo:1110
