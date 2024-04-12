@@ -3,7 +3,7 @@ LABEL maintainer "Mikko Rauhala <mikko.rauhala@fmi.fi>"
 LABEL license    "MIT License Copyright (c) 2023 FMI Open Development"
 
 ENV USER_NAME="smartmet" \
-    GOOGLE_FONTS="Lato Noto%20Sans Open%20Sans Poppins Roboto Ubuntu" 
+    GOOGLE_FONTS="Montserrat NotoSans OpenSans Roboto" 
 
 RUN dnf -y install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-open-release-latest-9.noarch.rpm && \
     dnf -y install yum-utils && \
@@ -34,9 +34,8 @@ RUN \
     for FONT in $GOOGLE_FONTS; \
     do \
         mkdir -p /usr/share/fonts/truetype/${FONT} && \
-        curl -s -S -o ${FONT}.zip "https://fonts.google.com/download?family=${FONT}" && \
-        unzip -o ${FONT}.zip -d /usr/share/fonts/truetype/${FONT} && \
-        rm -f ${FONT}.zip ; \
+        curl -s -S --output-dir /usr/share/fonts/truetype/${FONT}  "https://github.com/google/fonts/raw/main/ofl/${FONT,,}/${FONT}%5Bwdth,wght%5D.ttf" && \
+        curl -s -S --output-dir /usr/share/fonts/truetype/${FONT}  "https://github.com/google/fonts/raw/main/ofl/${FONT,,}/${FONT}-italic%5Bwdth,wght%5D.ttf" && \
     done
 
 HEALTHCHECK --interval=30s --timeout=10s \
