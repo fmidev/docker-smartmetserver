@@ -35,7 +35,7 @@ RUN \
     do \
         mkdir -p /usr/share/fonts/truetype/${FONT} && \
         curl -s -S --output-dir /usr/share/fonts/truetype/${FONT}  "https://github.com/google/fonts/raw/main/ofl/${FONT,,}/${FONT}%5Bwdth,wght%5D.ttf" && \
-        curl -s -S --output-dir /usr/share/fonts/truetype/${FONT}  "https://github.com/google/fonts/raw/main/ofl/${FONT,,}/${FONT}-italic%5Bwdth,wght%5D.ttf"
+        curl -s -S --output-dir /usr/share/fonts/truetype/${FONT}  "https://github.com/google/fonts/raw/main/ofl/${FONT,,}/${FONT}-italic%5Bwdth,wght%5D.ttf" \
     done
 
 HEALTHCHECK --interval=30s --timeout=10s \
