@@ -1,8 +1,8 @@
 version: '3.8'
 services:
   smartmet-server:
-#    build: .
-    image: quay.io/fmi/smartmet-server:0.0.21
+    build: .
+#    image: quay.io/fmi/smartmet-server:0.0.21
     depends_on:
       redis:
         condition: service_healthy
@@ -39,6 +39,12 @@ services:
       - ./conf/libraries/:/config/libraries/
     restart: unless-stopped
     # This is the network between containers
+    networks:
+      - smartmetserver
+
+  smartmet-server-test-db:
+    image: fmidev/smartmet-server-test-db:latest
+    restart: unless-stopped
     networks:
       - smartmetserver
 

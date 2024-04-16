@@ -12,6 +12,8 @@ RUN localedef -c -i fi_FI -f UTF-8 fi_FI.utf8
 
 # Install required packages
 RUN dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-open-release-latest-9.noarch.rpm && \
+    dnf --assumeyes install https://download.fmi.fi/smartmet-private/rhel/9/x86_64/smartmet-private-release-latest-9.noarch.rpm && \
+    dnf --assumeyes install https://download.fmi.fi/fmiforge/rhel/9/x86_64/fmiforge-release-latest.noarch.rpm && \
     dnf --assumeyes install yum-utils && \
     dnf config-manager --set-enabled crb && \
     dnf --assumeyes install epel-release && \
@@ -32,6 +34,14 @@ RUN dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/
     smartmet-plugin-timeseries \
     smartmet-plugin-wms \
     smartmet-engine-grid \
+    # Dependency for EDR
+    smartmet-engine-observation \
+    # Dependency for EDR
+    smartmet-engine-querydata \
+    # Dependency for EDR
+    smartmet-library-delfoi \
+    # Dependency for EDR
+    smartmet-engine-avi \
     unzip \
     tree \
     glibc-langpack-en && \
