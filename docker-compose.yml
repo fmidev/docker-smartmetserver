@@ -15,6 +15,16 @@ services:
       - GRID_FILES_LIBRARY_CONFIG_FILE=/config/libraries/grid-files/grid-files.conf
       - GRID_FILE_STORAGE_DIR=
       - GRID_ENGINE_CONFIG_DIR=/config/engines/grid-engine
+      - FMINAMES_USER=${FMINAMES_USER}
+      - FMINAMES_PASSWORD=${FMINAMES_PASSWORD}
+      - FMINAMES_HOST=${FMINAMES_HOST}
+      - FMINAMES_DATABASE=${FMINAMES_DATABASE}
+      - GIS_USER=${GIS_USER}
+      - GIS_PASSWORD=${GIS_PASSWORD}
+      - GIS_HOST=${GIS_HOST}
+      - GIS_DATABASE=${GIS_DATABASE}
+
+
 #    cap_add:
 #      - ALL
     security_opt:
