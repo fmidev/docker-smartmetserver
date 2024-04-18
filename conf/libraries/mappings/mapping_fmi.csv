@@ -71,4 +71,5 @@
 # 14) Mapping function (enables data conversions during the mapping)
 # 15) Reverse mapping function
 # 16) Default precision
-demo;FMI-0;1;FMI-0;0;1;6;00002;1;1;1;0;E;;;;
+
+demo;TD-K;2;TD-K;1110;1;6;000002;1;1;1;0;E;;;;
