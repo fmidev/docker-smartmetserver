@@ -75,18 +75,17 @@ COPY conf/favicon.ico /config/favicon.ico
 # Health check
 COPY conf/smartmet_alert.sh /config/healthcheck/smartmet_alert.sh
 
-# Bugged configuration files that are required even if disabled
-COPY conf/engines/grid-engine/vff_convert.csv /config/engines/grid-engine/vff_convert.csv
-COPY conf/engines/grid-engine/vff_convert.lua /config/engines/grid-engine/vff_convert.lua
+# Copy default configuration files
+COPY conf/engines /config/engines
+COPY conf/libraries /config/libraries
+COPY conf/plugins /config/plugins
 
 # Change permissions for configuration
 RUN chgrp --recursive 0 /config && \
     chown --recursive ${USERNAME} /config
 
-# Set capabilities for smartmetd
+# remove capabilities for smartmetd
 RUN setcap -r /usr/sbin/smartmetd
-# RUN setcap 'cap_sys_ptrace=eip' /usr/sbin/smartmetd
-# RUN setcap cap_audit_control,cap_audit_write,cap_block_suspend,cap_chown,cap_dac_override,cap_dac_read_search,cap_fowner,cap_fsetid,cap_ipc_lock,cap_ipc_owner,cap_kill,cap_lease,cap_linux_immutable,cap_mac_admin,cap_mac_override,cap_mknod,cap_net_admin,cap_net_bind_service,cap_net_broadcast,cap_net_raw,cap_setgid,cap_setfcap,cap_setpcap,cap_setuid,cap_sys_admin,cap_sys_boot,cap_sys_chroot,cap_sys_module,cap_sys_nice,cap_sys_pacct,cap_sys_ptrace,cap_sys_rawio,cap_sys_resource,cap_sys_time,cap_sys_tty_config,cap_wake_alarm+ep /usr/sbin/smartmetd 
 
 # Demo data
 COPY data/demo/demo_20240319T000000_xxx.grib2 /data/demo/demo_20240319T000000_xxx.grib2
