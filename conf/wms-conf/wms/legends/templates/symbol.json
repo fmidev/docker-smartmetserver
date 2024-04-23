@@ -1,0 +1,38 @@
+{
+  "layer_type": "legend",
+  "x": 99999,
+  "y": 99999,
+  "dx": 0,
+  "dy": 0,
+  "symbols": {
+    "symbol": ""
+  },
+  "layers": [
+    {
+      "tag": "text",
+      "cdata": "symbol_group_header",
+      "attributes": {
+        "x": 99999,
+        "y": 99999
+      }
+    },
+    {
+      "layer_type": "symbol",
+      "symbol": "symbol_file_name",
+      "positions": {
+        "x": 99999,
+        "y": 99999,
+        "dx": 99999,
+        "dy": 99999
+      }
+    },
+    {
+      "tag": "text",
+      "cdata": "symbol_text",
+      "attributes": {
+        "x": 99999,
+        "y": 99999
+      }
+    }
+  ]
+}

@@ -47,6 +47,8 @@ services:
       - ./conf/plugins/:/config/plugins/
       # Library configuration
       - ./conf/libraries/:/config/libraries/
+      # Mandatory WMS configuration paths
+      - ./conf/wms-conf:/config/wms-conf
     restart: unless-stopped
     # This is the network between containers
     networks:

@@ -1,0 +1,60 @@
+{
+  "defs": {
+    "layers": [
+      {
+        "tag": "symbol",
+        "attributes": {
+          "id": "isoband_symbol_id"
+        },
+        "layers": [
+          {
+            "tag": "rect",
+            "attributes": {
+              "width": "14",
+              "height": "9"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "layer_type": "legend",
+  "x": 99999,
+  "y": 99999,
+  "dx": 0,
+  "dy": 9,
+  "isobands": "isoband_color_scale",
+  "symbols": {
+    "css": "isoband_css",
+    "symbol": "isoband_symbol_id",
+    "attributes": {
+      "stroke": "black",
+      "stroke-width": "0.5"
+    }
+  },
+  "labels": {
+    "separator": "-",
+    "dx": 18,
+    "dy": 9
+  },
+  "layers": [
+    {
+      "tag": "text",
+      "cdata": "isoband_header",
+      "attributes": {
+        "x": 99999,
+        "y": 99999,
+        "class": "Units"
+      }
+    },
+    {
+      "tag": "text",
+      "cdata": "isoband_unit",
+      "attributes": {
+        "x": 99999,
+        "y": 99999,
+        "class": "Units"
+      }
+    }
+  ]
+}
