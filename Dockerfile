@@ -80,6 +80,9 @@ COPY conf/engines /config/engines
 COPY conf/libraries /config/libraries
 COPY conf/plugins /config/plugins
 
+# wms layer configuration
+COPY conf/wms-layer-conf /config/wms-layer-config
+
 # Change permissions for configuration
 RUN chgrp --recursive 0 /config && \
     chown --recursive ${USERNAME} /config
