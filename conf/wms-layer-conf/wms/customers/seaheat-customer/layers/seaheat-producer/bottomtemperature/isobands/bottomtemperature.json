@@ -1,0 +1,159 @@
+[
+  {
+    "attributes": {
+      "class": "TemperatureSea_missing"
+    },
+    "qid": "TemperatureSea_missing"
+  },
+  {
+    "attributes": {
+      "class": "TemperatureSea_-2_-1"
+    },
+    "hilimit": -1,
+    "lolimit": -2,
+    "qid": "TemperatureSea_-2_-1"
+  },
+  {
+    "attributes": {
+      "class": "TemperatureSea_-1_0"
+    },
+    "hilimit": 0,
+    "lolimit": -1,
+    "qid": "TemperatureSea_-1_0"
+  },
+  {
+    "attributes": {
+      "class": "TemperatureSea_0_1"
+    },
+    "hilimit": 1,
+    "lolimit": 0,
+    "qid": "TemperatureSea_0_1"
+  },
+  {
+    "attributes": {
+      "class": "TemperatureSea_1_2"
+    },
+    "hilimit": 2,
+    "lolimit": 1,
+    "qid": "TemperatureSea_1_2"
+  },
+  {
+    "attributes": {
+      "class": "TemperatureSea_2_3"
+    },
+    "hilimit": 3,
+    "lolimit": 2,
+    "qid": "TemperatureSea_2_3"
+  },
+  {
+    "attributes": {
+      "class": "TemperatureSea_3_4"
+    },
+    "hilimit": 4,
+    "lolimit": 3,
+    "qid": "TemperatureSea_3_4"
+  },
+  {
+    "attributes": {
+      "class": "TemperatureSea_4_5"
+    },
+    "hilimit": 5,
+    "lolimit": 4,
+    "qid": "TemperatureSea_4_5"
+  },
+  {
+    "attributes": {
+      "class": "TemperatureSea_5_6"
+    },
+    "hilimit": 6,
+    "lolimit": 5,
+    "qid": "TemperatureSea_5_6"
+  },
+  {
+    "attributes": {
+      "class": "TemperatureSea_6_8"
+    },
+    "hilimit": 8,
+    "lolimit": 6,
+    "qid": "TemperatureSea_6_8"
+  },
+  {
+    "attributes": {
+      "class": "TemperatureSea_8_10"
+    },
+    "hilimit": 10,
+    "lolimit": 8,
+    "qid": "TemperatureSea_8_10"
+  },
+  {
+    "attributes": {
+      "class": "TemperatureSea_10_12"
+    },
+    "hilimit": 12,
+    "lolimit": 10,
+    "qid": "TemperatureSea_10_12"
+  },
+  {
+    "attributes": {
+      "class": "TemperatureSea_12_14"
+    },
+    "hilimit": 14,
+    "lolimit": 12,
+    "qid": "TemperatureSea_12_14"
+  },
+  {
+    "attributes": {
+      "class": "TemperatureSea_14_16"
+    },
+    "hilimit": 16,
+    "lolimit": 14,
+    "qid": "TemperatureSea_14_16"
+  },
+  {
+    "attributes": {
+      "class": "TemperatureSea_16_18"
+    },
+    "hilimit": 18,
+    "lolimit": 16,
+    "qid": "TemperatureSea_16_18"
+  },
+  {
+    "attributes": {
+      "class": "TemperatureSea_18_20"
+    },
+    "hilimit": 20,
+    "lolimit": 18,
+    "qid": "TemperatureSea_18_20"
+  },
+  {
+    "attributes": {
+      "class": "TemperatureSea_20_25"
+    },
+    "hilimit": 25,
+    "lolimit": 20,
+    "qid": "TemperatureSea_20_25"
+  },
+  {
+    "attributes": {
+      "class": "TemperatureSea_25_30"
+    },
+    "hilimit": 30,
+    "lolimit": 25,
+    "qid": "TemperatureSea_25_30"
+  },
+  {
+    "attributes": {
+      "class": "TemperatureSea_30_35"
+    },
+    "hilimit": 35,
+    "lolimit": 30,
+    "qid": "TemperatureSea_30_35"
+  },
+  {
+    "attributes": {
+      "class": "TemperatureSea_35"
+    },
+    "lolimit": 35,
+    "qid": "TemperatureSea_35"
+  }
+]
