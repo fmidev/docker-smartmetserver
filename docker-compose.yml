@@ -29,7 +29,7 @@ services:
 #      - ALL
     security_opt:
       - "seccomp=unconfined"
-    command: bash -c "sleep 5; /usr/sbin/smartmetd --debug --configfile /config/server.conf --port 8080"
+    command: bash -c "sleep 30; /usr/sbin/smartmetd --debug --configfile /config/server.conf --port 8080"
     # This should be visible in the host
     ports:
       - "8080:8080"

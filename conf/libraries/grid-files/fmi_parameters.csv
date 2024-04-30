@@ -13,6 +13,7 @@
 # 7) LevelInterpolationMethod
 # 8) DefaultPrecision
 #
+1666;BOTTOMTEMPERATURE;JustAnumber;Bottom Temperature;1;1;1;;
 2;PRECFORM-N;JustAnumber;Precipitation form;2;2;2;;
 11;PRECTYPE-N;JustAnumber;Precipitation type, large scale or convective;2;2;2;;
 12;RR-5D-MM;mm;Precipitation over 5 days in mm;1;1;1;;
