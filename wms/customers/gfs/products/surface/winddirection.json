@@ -1,7 +1,7 @@
 {
     "title": "GFS Wind Direction 10m",
     "abstract": "Wind direction from GFS forecast model.",
-    "producer": "gfs_world_surface",
+    "producer": "gfs_surface",
     "views": [
         {
             "layers": [
