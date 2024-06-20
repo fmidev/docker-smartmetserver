@@ -40,15 +40,6 @@
   "layers": [
     {
       "tag": "text",
-      "cdata": "isoband_header",
-      "attributes": {
-        "x": 99999,
-        "y": 99999,
-        "class": "Units"
-      }
-    },
-    {
-      "tag": "text",
       "cdata": "isoband_unit",
       "attributes": {
         "x": 99999,

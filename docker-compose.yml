@@ -1,8 +1,8 @@
 version: '3.8'
 services:
   smartmet-server:
-    build: .
-#    image: quay.io/fmi/smartmet-server:0.0.21
+#    build: .
+    image: quay.io/fmi/smartmet-server:0.1.3
     depends_on:
       redis:
         condition: service_healthy
@@ -84,7 +84,7 @@ services:
       - REDIS_CONTENT_SERVER_PORT=6379
       - REDIS_CONTENT_SERVER_TABLE_PREFIX=smartmet.
       - MEMORYMAPPER_ENABLED=true
-    image: quay.io/fmi/smartmet-server:filesys2smartmet-0.0.5
+    image: quay.io/fmi/smartmet-server:filesys2smartmet-0.1.2
     command: '/usr/bin/fmi/filesys2smartmet /config/filesys2smartmet.conf 60'
     restart: unless-stopped
     volumes:

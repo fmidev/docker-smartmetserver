@@ -18,6 +18,9 @@
 # Seaheat bottom temperature
 85001666;discipline=10,parameterCategory=4,parameterNumber=18
 
+# Seaheat monthly mean
+85001667;discipline=10,parameterCategory=4,parameterNumber=193
+
 # Stream function
 1;discipline=0,parameterCategory=2,parameterNumber=4;
 
