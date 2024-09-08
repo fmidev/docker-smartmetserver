@@ -7,4 +7,7 @@
 # Demo data
 demo;demo;demo-title;demo-description
 seaheat;seaheat;seaheat-title;seaheat-description
-test-seaheat;test-seaheat;test-seaheat-title;test-seaheat-description
+
+seaheat2d;seaheat2d;seaheat2d-title;seaheat2d-description
+seaheat3d;seaheat3d;seaheat3d-title;seaheat3d-description
+

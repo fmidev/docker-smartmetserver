@@ -16,7 +16,10 @@
 #################################################################################
 
 BOTTOMTEMPERATURE;85001666;;;
-MONTHLYMEAN;85001667;;;
+
+# Seaheat 3d parameters
+monthly_timmax_so;85001668;;;
+monthly_timmax_thetao;85001669;;;
 
 # 1:Stream function (m2 s-1)
 

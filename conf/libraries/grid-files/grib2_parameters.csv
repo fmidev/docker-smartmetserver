@@ -16,10 +16,14 @@
 #################################################################################
 
 # Seaheat bottom temperature
-85001666;discipline=10,parameterCategory=4,parameterNumber=18
+85001666;discipline=10,parameterCategory=4,parameterNumber=18;scaleFactorOfFirstFixedSurface=7;
 
-# Seaheat monthly mean
-85001667;discipline=10,parameterCategory=4,parameterNumber=193
+# Seaheat monthly_timmax_so
+85001668;discipline=10,parameterCategory=4,parameterNumber=193;scaleFactorOfFirstFixedSurface=7;
+
+# Seaheat monthly_timmax_thetao
+85001669;discipline=10,parameterCategory=4,parameterNumber=192;scaleFactorOfFirstFixedSurface=7;
+
 
 # Stream function
 1;discipline=0,parameterCategory=2,parameterNumber=4;
