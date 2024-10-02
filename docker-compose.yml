@@ -7,20 +7,20 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - model-fmi-hirlam:/smartmet/data/hirlam
+      - model-fmi-meps:/smartmet/data/meps
     restart: unless-stopped
-  hirlam-surface:
+  meps-surface:
     image: fmidev/fmidownloader
-    container_name: fmidownloader-hirlam-surface
+    container_name: fmidownloader-meps-surface
     command:
-      - "--producer=hirlam"
+      - "--producer=meps"
       - "--dir=surface"
-      - "--filename=hirlam_europe_surface"
+      - "--filename=meps_northeurope_surface"
       - "--parameters=Temperature,DewPoint,Humidity,WindDirection,WindSpeedMS,WindGust,TotalCloudCover,Precipitation1h,WeatherSymbol3,Pressure,CAPE,CIN"
     volumes:
-      - model-fmi-hirlam:/tmp
+      - model-fmi-meps:/tmp
     restart: unless-stopped
 
 volumes:
-  model-fmi-hirlam:
-    name: model-fmi-hirlam
+  model-fmi-meps:
+    name: model-fmi-meps

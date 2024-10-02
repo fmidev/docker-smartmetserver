@@ -1,7 +1,7 @@
 {
     "title" : "GFS Wind Speed 10m",
     "abstract" : "Wind speed in m/s from HIRLAM forecast GFS.",
-    "producer": "gfs_world_surface",
+    "producer": "gfs_surface",
     "views": [{
         "layers": [{
             "qid": "l",

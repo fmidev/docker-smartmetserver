@@ -1,7 +1,7 @@
 {
     "title" : "GFS Precipitation Rate",
     "abstract" : "Precipitation Rate from GFS",
-    "producer": "gfs_world_surface",
+    "producer": "gfs_surface",
     "views": [{
         "layers": [{
             "qid": "l",

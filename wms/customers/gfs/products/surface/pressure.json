@@ -1,7 +1,7 @@
 {
     "title" : "GFS Pressure MSL",
     "abstract" : "MSL Pressure from GFS",
-    "producer": "gfs_world_surface",
+    "producer": "gfs_surface",
     "views": [{
         "layers": [{
             "qid": "l",
