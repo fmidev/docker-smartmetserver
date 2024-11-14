@@ -60,6 +60,9 @@ RUN mkdir -p /config && \
 COPY conf/libraries/grid-files /config/libraries/grid-files
 COPY conf/plugins/grid-gui /config/plugins/grid-gui
 
+# Copy timeseries alias configuration
+COPY config/plugins/timeseries /config/plugins/timeseries
+
 # create default logging directory
 RUN mkdir -p /var/log/smartmet && \
     chgrp 0 /var/log/smartmet && \
