@@ -13,14 +13,21 @@ RUN dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/
     dnf --assumeyes install yum-utils && \
     dnf config-manager --set-enabled crb && \
     dnf --assumeyes install epel-release && \
-    dnf --assumeyes install smartmet-tools-grid tree
+    dnf --assumeyes install smartmet-tools-grid tree && \
+    dnf --assumeyes install postgresql redis
+
+RUN mkdir -p /config/libraries/tools-grid && mkdir -p /config/libraries/grid-files
+
 
 COPY conf/default.env /environment/default.env
-COPY conf/libraries/ /config/libraries/
+COPY conf/libraries/grid-files/grid-files.conf /config/libraries/grid-files/grid-files.conf
+COPY conf/libraries/tools-grid/producers.cfg /config/libraries/tools-grid/producers.cfg
 COPY conf/radon-to-smartmet.cfg /config/radon-to-smartmet.cfg
 COPY run.sh /usr/local/bin/run.sh
 
+RUN chmod --recursive g+w /config
 RUN chmod +x /usr/local/bin/run.sh
+
 
 ENV SMARTMET_GRID_CONFIG_FILE=/config/libraries/grid-files/grid-files.conf
 
