@@ -16,8 +16,8 @@
 1666;BOTTOMTEMPERATURE;JustAnumber;Bottom Temperature;1;1;1;;
 
 # Seaheat 3d parameters
-1668;monthly_timmax_so;JustAnumber;monthly_timmax_so;1;1;1;;
-1669;monthly_timmax_thetao;JustAnumber;monthly_timmax_thetao;1;1;1;;
+1668;monthly_so;JustAnumber;monthly_so;1;1;1;;
+1669;monthly_thetao;JustAnumber;monthly_thetao;1;1;1;;
 
 2;PRECFORM-N;JustAnumber;Precipitation form;2;2;2;;
 11;PRECTYPE-N;JustAnumber;Precipitation type, large scale or convective;2;2;2;;

@@ -24,6 +24,27 @@
 # Seaheat monthly_timmax_thetao
 85001669;discipline=10,parameterCategory=4,parameterNumber=192;scaleFactorOfFirstFixedSurface=7;
 
+# # Seaheat monthly_timmean_so
+# 85001670;discipline=10,parameterCategory=4,parameterNumber
+# # Seaheat monthly_timmean_thetao
+# 85001671;
+# # Seaheat monthly_timmin_so
+# 85001672;
+# # Seaheat timmin_thetao
+# 85001673;
+# # Seaheat timstd_so
+# 85001674;
+# # Seaheat timstd_thetao
+# 85001675;
+# # Seaheat timpctl_10_so
+# 85001676;
+# # Seaheat timpctl_10_thetao
+# 85001677;
+# # Seaheat timpctl_90_so
+# 85001678;
+# # Seaheat timpctl_90_thetao
+# 85001679;
+
 
 # Stream function
 1;discipline=0,parameterCategory=2,parameterNumber=4;

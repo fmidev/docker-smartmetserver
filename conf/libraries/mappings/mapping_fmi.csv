@@ -73,5 +73,15 @@
 # 16) Default precision
 demo;TD-K;2;TD-K;1110;1;6;000002;1;1;1;0;E;;;;
 seaheat;BOTTOMTEMPERATURE;2;BOTTOMTEMPERATURE;666;1;1;000000;1;1;1;0;E;;;;
-seaheat3d;monthly_timmax_so;2;monthly_timmax_so;666;1;10;000000;1;1;1;0;E;;;;
-seaheat3d;monthly_timmax_thetao;2;monthly_timmax_thetao;666;1;10;000000;1;1;1;0;E;;;;
+seaheat3dtimmax;monthly_timmax_so;2;monthly_so;666;1;10;000000;1;1;1;0;E;;;;
+seaheat3dtimmax;monthly_timmax_thetao;2;monthly_thetao;666;1;10;000000;1;1;1;0;E;;;;
+seaheat3dtimmin;monthly_timmax_so;2;monthly_so;666;1;10;000000;1;1;1;0;E;;;;
+seaheat3dtimmin;monthly_timmax_thetao;2;monthly_thetao;666;1;10;000000;1;1;1;0;E;;;;
+seaheat3dtimmean;monthly_so;2;monthly_so;666;1;10;000000;1;1;1;0;E;;;;
+seaheat3dtimmean;monthly_thetao;2;monthly_thetao;666;1;10;000000;1;1;1;0;E;;;;
+seaheat3dtimpctl10;monthly_so;2;monthly_so;666;1;10;000000;1;1;1;0;E;;;;
+seaheat3dtimpctl10;monthly_thetao;2;monthly_thetao;666;1;10;000000;1;1;1;0;E;;;;
+seaheat3dtimpctl90;monthly_so;2;monthly_so;666;1;10;000000;1;1;1;0;E;;;;
+seaheat3dtimpctl90;monthly_thetao;2;monthly_thetao;666;1;10;000000;1;1;1;0;E;;;;
+seaheat3dtimstd;monthly_so;2;monthly_so;666;1;10;000000;1;1;1;0;E;;;;
+seaheat3dtimstd;monthly_thetao;2;monthly_thetao;666;1;10;000000;1;1;1;0;E;;;;

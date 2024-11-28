@@ -12,7 +12,6 @@ RUN localedef -c -i fi_FI -f UTF-8 fi_FI.utf8
 
 # Install required packages
 RUN dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-open-release-latest-9.noarch.rpm && \
-    dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/beta/smartmet-open-beta-24.6.5-1.el9.fmi.noarch.rpm && \
     dnf --assumeyes install https://download.fmi.fi/smartmet-private/rhel/9/x86_64/smartmet-private-release-latest-9.noarch.rpm && \
     dnf --assumeyes install https://download.fmi.fi/fmiforge/rhel/9/x86_64/fmiforge-release-latest.noarch.rpm && \
     dnf --assumeyes install yum-utils && \

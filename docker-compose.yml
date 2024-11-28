@@ -2,7 +2,7 @@ version: '3.8'
 services:
   smartmet-server:
 #    build: .
-    image: quay.io/fmi/smartmet-server:0.1.4
+    image: quay.io/fmi/smartmet-server:0.1.6
     depends_on:
       redis:
         condition: service_healthy
@@ -32,8 +32,8 @@ services:
     command: bash -c "sleep 30; /usr/sbin/smartmetd --debug --configfile /config/server.conf --port 8080"
     # This should be visible in the host
     ports:
-      - "8080:8080"
-      - "8081:8081"
+      - "8088:8080"
+      - "8089:8081"
     volumes:
       # Main configuration file
       - ./conf/server.conf:/config/server.conf
@@ -49,6 +49,8 @@ services:
       - ./conf/libraries/:/config/libraries/
       # Mandatory WMS configuration paths
       - ./conf/wms-layer-conf:/config/wms-layer-conf
+      # Data location TODO change this when deploying to Openshift
+      - ./data/:/ext-seaheat-data/
     restart: unless-stopped
     # This is the network between containers
     networks:
@@ -68,7 +70,7 @@ services:
       start_period: 10s
     # This should be visible in the host
     ports:
-      - "6380:6379"
+      - "6379:6379"
     # This is the network between containers
     networks:
       - smartmetserver
@@ -84,13 +86,13 @@ services:
       - REDIS_CONTENT_SERVER_PORT=6379
       - REDIS_CONTENT_SERVER_TABLE_PREFIX=smartmet.
       - MEMORYMAPPER_ENABLED=true
-    image: quay.io/fmi/smartmet-server:filesys2smartmet-0.1.2
+    image: quay.io/fmi/smartmet-server:filesys2smartmet-0.1.6
     command: '/usr/bin/fmi/filesys2smartmet /config/filesys2smartmet.conf 60'
     restart: unless-stopped
     volumes:
       - ./filesys2smartmet/conf/filesys2smartmet.conf:/config/filesys2smartmet.conf
       - ./filesys2smartmet/conf/libraries/:/config/libraries
-      - ./filesys2smartmet/data/:/data/
+      - ./data/:/ext-seaheat-data/
     # This is the network between containers
     networks:
       - smartmetserver

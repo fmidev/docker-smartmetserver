@@ -6,5 +6,12 @@
 demo:1110
 seaheat:666
 
-seaheat2d:666
-seaheat3d:666
+seaheat2d;666
+seaheat3d;666
+
+seaheat3dtimmax;666
+seaheat3dtimmean;666
+seaheat3dtimmin;666
+seaheat3dtimpctl10;666
+seaheat3dtimpctl90;666
+seaheat3dtimstd;666

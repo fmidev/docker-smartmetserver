@@ -4,10 +4,9 @@
 # 3. Producer title
 # 4. Producer desciption
 
-# Demo data
-demo;demo;demo-title;demo-description
-seaheat;seaheat;seaheat-title;seaheat-description
-
-seaheat2d;seaheat2d;seaheat2d-title;seaheat2d-description
-seaheat3d;seaheat3d;seaheat3d-title;seaheat3d-description
-
+seaheat3dtimmax;seaheat3dtimmax;seaheat3dtimmax-title;seaheat3dtimmax-description
+seaheat3dtimmean;seaheat3dtimmean;seaheat3dtimmean-title;seaheat3dtimmean-description
+seaheat3dtimmin;seaheat3dtimmin;seaheat3dtimmin-title;seaheat3dtimmin-description
+seaheat3dtimpctl10;seaheat3dtimpctl10;seaheat3dtimpctl10-title;seaheat3dtimpctl10-description
+seaheat3dtimpctl90;seaheat3dtimpctl90;seaheat3dtimpctl90-title;seaheat3dtimpctl90-description
+seaheat3dtimstd;seaheat3dtimstd;seaheat3dtimstd-title;seaheat3dtimstd-description

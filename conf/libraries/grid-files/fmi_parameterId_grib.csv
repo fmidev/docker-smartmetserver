@@ -18,8 +18,21 @@
 BOTTOMTEMPERATURE;85001666;;;
 
 # Seaheat 3d parameters
-monthly_timmax_so;85001668;;;
-monthly_timmax_thetao;85001669;;;
+monthly_so;85001668;;;
+monhly_thetao;85001669;;;
+
+# monthly_timmax_so;85001668;;;
+# monthly_timmax_thetao;85001669;;;
+# monthly_timmean_so;85001670;;;
+# monthly_timmean_thetao;85001671;;;
+# monthly_timmin_so;85001672;;;
+# timmin_thetao;85001673;;;
+# timstd_so;85001674;;;
+# timstd_thetao;85001675;;;
+# timpctl_10_so;85001676;;;
+# timpctl_10_thetao;85001677;;;
+# timpctl_90_so;85001678;;;
+# timpctl_90_thetao;85001679;;;
 
 # 1:Stream function (m2 s-1)
 
