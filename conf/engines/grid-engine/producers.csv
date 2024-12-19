@@ -1,17 +1,38 @@
 # Producer & geometryId search order. If no producer is given in
 # the query then the producers are used in the following order.
-#producer;geometry_id;grid_size (info)
-#Harmonie;999;
+#producer:geometry_id:grid_size (info)
+#Harmonie:999:
 # Add line line at the end of file!
-demo:1110
-seaheat:666
 
-seaheat2d;666
-seaheat3d;666
-
-seaheat3dtimmax;666
-seaheat3dtimmean;666
-seaheat3dtimmin;666
-seaheat3dtimpctl10;666
-seaheat3dtimpctl90;666
-seaheat3dtimstd;666
+# We assume that the producer names are case insensitive
+SeaHeat-Monthly-RCP45long-RCP45-monthly-timmax:666
+SeaHeat-Monthly-RCP45long-RCP45-monthly-timmean:666
+SeaHeat-Monthly-RCP45long-RCP45-monthly-timmin:666
+SeaHeat-Monthly-RCP45long-RCP45-monthly-timpctl-10:666
+SeaHeat-Monthly-RCP45long-RCP45-monthly-timpctl-90:666
+SeaHeat-Monthly-RCP45long-RCP45-monthly-timstd:666
+SeaHeat-Monthly-RCP45mid-RCP45-monthly-timmax:666
+SeaHeat-Monthly-RCP45mid-RCP45-monthly-timmean:666
+SeaHeat-Monthly-RCP45mid-RCP45-monthly-timmin:666
+SeaHeat-Monthly-RCP45mid-RCP45-monthly-timpctl-10:666
+SeaHeat-Monthly-RCP45mid-RCP45-monthly-timpctl-90:666
+SeaHeat-Monthly-RCP45mid-RCP45-monthly-timstd:666
+SeaHeat-Monthly-RCP85long-RCP85-monthly-timmax:666
+SeaHeat-Monthly-RCP85long-RCP85-monthly-timmean:666
+SeaHeat-Monthly-RCP85long-RCP85-monthly-timmin:666
+SeaHeat-Monthly-RCP85long-RCP85-monthly-timpctl-10:666
+SeaHeat-Monthly-RCP85long-RCP85-monthly-timpctl-90:666
+SeaHeat-Monthly-RCP85long-RCP85-monthly-timstd:666
+SeaHeat-Monthly-RCP85mid-RCP85-monthly-timmax:666
+SeaHeat-Monthly-RCP85mid-RCP85-monthly-timmean:666
+SeaHeat-Monthly-RCP85mid-RCP85-monthly-timmin:666
+SeaHeat-Monthly-RCP85mid-RCP85-monthly-timpctl-10:666
+SeaHeat-Monthly-RCP85mid-RCP85-monthly-timpctl-90:666
+SeaHeat-Monthly-RCP85mid-RCP85-monthly-timstd:666
+# SeaHeat-Monthly-monthly-timmax:666
+seaheat-monthly-monthly-timmax:666
+SeaHeat-Monthly-monthly-timmean:666
+SeaHeat-Monthly-monthly-timmin:666
+SeaHeat-Monthly-monthly-timpctl-10:666
+SeaHeat-Monthly-monthly-timpctl-90:666
+SeaHeat-Monthly-monthly-timstd:666

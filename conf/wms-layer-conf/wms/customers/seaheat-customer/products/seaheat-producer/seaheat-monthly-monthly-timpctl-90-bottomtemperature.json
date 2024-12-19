@@ -3,7 +3,7 @@
   "title": "Seaheat Bottom Temperature in C",
   "abstract": "Seaheat Bottom Temperature in C",
   "source": "grid",
-  "producer": "seaheat",
+  "producer": "SeaHeat-Monthly-monthly-timpctl-90",
   "views": [
     {
       "layers": [
@@ -12,7 +12,7 @@
           "layer_type": "isoband",
           "isobands": "json:seaheat-producer/bottomtemperature/isobands/bottomtemperature.json",
           "css": "seaheat-producer/bottomtemperature/isobands/bottomtemperature.css",
-          "parameter": "BOTTOMTEMPERATURE:seaheat:666:1:0:0",
+          "parameter": "BOTTOMTEMPERATURE:SeaHeat-Monthly-monthly-timpctl-90:666:1:0:0",
           "attributes": {
             "shape-rendering": "crispEdges"
           }

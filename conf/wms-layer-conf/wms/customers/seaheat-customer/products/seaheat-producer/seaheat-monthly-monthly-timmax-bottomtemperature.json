@@ -1,0 +1,23 @@
+{
+  "projection": {},
+  "title": "Seaheat Bottom Temperature in C",
+  "abstract": "Seaheat Bottom Temperature in C",
+  "source": "grid",
+  "producer": "SeaHeat-Monthly-monthly-timmax",
+  "views": [
+    {
+      "layers": [
+        {
+          "qid": "l",
+          "layer_type": "isoband",
+          "isobands": "json:seaheat-producer/bottomtemperature/isobands/bottomtemperature.json",
+          "css": "seaheat-producer/bottomtemperature/isobands/bottomtemperature.css",
+          "parameter": "BOTTOMTEMPERATURE:SeaHeat-Monthly-monthly-timmax:666:1:0:0",
+          "attributes": {
+            "shape-rendering": "crispEdges"
+          }
+        }
+      ]
+    }
+  ]
+}
