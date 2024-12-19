@@ -45,8 +45,12 @@ RUN dnf --assumeyes install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/
     unzip \
     tree \
     glibc-langpack-en && \
-    dnf --assumeyes reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common eccodes && \
-    dnf clean all 
+    dnf --assumeyes reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common eccodes
+
+#debug stuff
+RUN dnf install --assumeyes awscli iputils telnet
+
+RUN dnf clean all 
 
 # Create configuration directory structure
 RUN mkdir -p /config && \
@@ -58,6 +62,9 @@ RUN mkdir -p /config && \
 # Copy grid engine configuration
 COPY conf/libraries/grid-files /config/libraries/grid-files
 COPY conf/plugins/grid-gui /config/plugins/grid-gui
+
+# Copy timeseries alias configuration
+COPY conf/plugins/timeseries /config/plugins/timeseries
 
 # create default logging directory
 RUN mkdir -p /var/log/smartmet && \

@@ -1,0 +1,54 @@
+#################################################################################
+#
+# This file defines FMI level identifiers for GRIB2 files. The main purpose
+# of this file is to identify GRIB2 levels according to GRIB2 (header) fields so
+# that we will get unique FMI level identifiers for them.
+#
+# Notice that this file contains default definitions that comes with 
+# the installation package. You should use another file for your own definitions
+# (for example 'ext/fmi_levelId_grib2.csv'. Add the name of your file into the
+# 'grid-files.conf' file so that the programs can find it.
+#
+# Fields:
+#   1 FMI level id
+#   2 Fields used for identification
+#
+#################################################################################
+#
+
+1;typeOfFirstFixedSurface=1;
+
+2;typeOfFirstFixedSurface=100;
+
+3;typeOfFirstFixedSurface=105;
+
+5;typeOfFirstFixedSurface=8;
+
+6;typeOfFirstFixedSurface=103;
+6;generatingProcessIdentifier=1,centre=78,typeOfFirstFixedSurface=4;
+6;generatingProcessIdentifier=2,centre=78,typeOfFirstFixedSurface=4;
+
+7;typeOfFirstFixedSurface=101;
+7;generatingProcessIdentifier=16,centre=86,typeOfFirstFixedSurface=102;
+7;generatingProcessIdentifier=0,centre=251,typeOfFirstFixedSurface=102;
+7;generatingProcessIdentifier=10,centre=251,typeOfFirstFixedSurface=102;
+7;generatingProcessIdentifier=11,centre=251,typeOfFirstFixedSurface=102;
+
+8;typeOfFirstFixedSurface=10;
+8;generatingProcessIdentifier=96,centre=7,typeOfFirstFixedSurface=200;
+
+9;typeOfFirstFixedSurface=106;
+
+11;typeOfFirstFixedSurface=108;
+
+12;typeOfFirstFixedSurface=246;
+
+15;typeOfFirstFixedSurface=20;
+
+16;typeOfFirstFixedSurface=6;
+
+18;typeOfFirstFixedSurface=150;
+
+19;typeOfFirstFixedSurface=166;
+
+20;typeOfFirstFixedSurface=7;

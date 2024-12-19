@@ -97,6 +97,31 @@ services:
     networks:
       - smartmetserver
 
+  radon2smartmet:
+    depends_on:
+      redis:
+        condition: service_healthy
+    security_opt:
+      - "seccomp=unconfined"
+    environment:
+      - REDIS_CONTENT_SERVER_ADDRESS=redis
+      - REDIS_CONTENT_SERVER_PORT=6379
+      - REDIS_CONTENT_SERVER_TABLE_PREFIX=smartmet.
+      - RADON_PASSWORD=${RADON_PASSWORD}
+      - RADON_HOST=${RADON_HOST}
+      - RADON_DATABASE=${RADON_DATABASE}
+      - RADON_USER=${RADON_USER}
+      - RADON_PRODUCERFILE=${RADON_PRODUCERFILE}
+    image: quay.io/fmi/smartmet-server:radon2smartmet-0.0.2
+    command: '/usr/local/bin/run.sh 30'
+    restart: unless-stopped
+    volumes:
+      - ./radon2smartmet/conf/radon-to-smartmet.cfg:/config/radon-to-smartmet.cfg
+      - ./radon2smartmet/conf/libraries/:/config/libraries
+    # This is the network between containers
+    networks:
+      - smartmetserver    
+
 networks:
   smartmetserver:
     name: smartmet-server
