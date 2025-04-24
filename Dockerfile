@@ -24,6 +24,7 @@ RUN dnf -y install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-
     smartmet-plugin-timeseries \
     smartmet-plugin-wms \
     smartmet-engine-grid \
+    smartmet-library-tron \
     smartmet-plugin-q3 \
     unzip \
     glibc-langpack-en && \
