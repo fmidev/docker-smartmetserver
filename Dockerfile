@@ -24,6 +24,8 @@ RUN dnf -y install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-
     smartmet-plugin-timeseries \
     smartmet-plugin-wms \
     smartmet-engine-grid \
+    smartmet-library-tron \
+    smartmet-plugin-q3 \
     unzip \
     glibc-langpack-en && \
     dnf -y reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common eccodes && \
@@ -48,6 +50,7 @@ RUN mkdir -p /smartmet/data/{meps,hirlam,gfs,meteor,nam,icon,gem,gens-avg,gens-c
              /smartmet/share/wms
 
 RUN install -m 775 -g 0 -d /var/smartmet
+RUN install -m 775 -g 0 -d /var/smartmet/archivecache
 
 RUN chmod -R g=u /etc/passwd
 
