@@ -1,0 +1,33 @@
+{
+    "variants": [
+        {
+            "name": "model:icon:isobaric:relativehumidity",
+            "title": "ICON Relative Humidity Isobaric",
+            "producer": "icon_pressure"
+        },
+        {
+            "name": "model:gem:isobaric:relativehumidity",
+            "title": "GEM Relative Humidity Isobaric",
+            "producer": "gem_pressure"
+        },
+        {
+            "name": "model:gfs:isobaric:relativehumidity",
+            "title": "GFS Relative Humidity Isobaric",
+            "producer": "gfs_pressure"
+        }
+
+    ],
+    "producer": "gfs_pressure",
+    "views": [{
+        "layers": [{
+            "qid": "l",
+            "layer_type": "isoband",
+            "isobands": "json:isobands/relativehumidity.json",
+            "parameter": "Humidity",
+            "level": 700,
+            "attributes": {
+                "shape-rendering": "crispEdges"
+            }
+        }]
+    }]
+}

@@ -1,0 +1,37 @@
+{
+    "variants": [
+        {
+            "name": "model:ecmwf:surface:windspeed",
+            "title": "ECMWF Wind Speed 10m",
+            "producer": "ecmwf_surface"
+        },
+        {
+            "name": "model:icon:surface:windspeed",
+            "title": "ICON Wind Speed 10m",
+            "producer": "icon_surface"
+        },
+        {
+            "name": "model:gem:surface:windspeed",
+            "title": "GEM Wind Speed 10m",
+            "producer": "gem_surface"
+        },
+        {
+            "name": "model:gfs:surface:windspeed",
+            "title": "GFS Wind Speed 10m",
+            "producer": "gfs_surface"
+        }
+
+    ],
+    "producer": "gfs_surface",
+    "views": [{
+        "layers": [{
+            "qid": "l",
+            "layer_type": "isoband",
+            "parameter": "WindSpeedMS",
+            "isobands": "json:isobands/windspeed.json",
+            "attributes": {
+                "shape-rendering": "crispEdges"
+            }
+        }]
+    }]
+}
