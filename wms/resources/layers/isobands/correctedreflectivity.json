@@ -1,0 +1,114 @@
+[
+    {
+      "attributes": {
+        "class": "correctedreflectivity_0_5"
+      },
+      "hilimit": 5,
+      "lolimit": 0.1,
+      "qid": "correctedreflectivity_0_5"
+    },
+    {
+      "attributes": {
+        "class": "correctedreflectivity_5_10"
+      },
+      "hilimit": 10,
+      "lolimit": 5,
+      "qid": "correctedreflectivity_5_10"
+    },
+    {
+      "attributes": {
+        "class": "correctedreflectivity_10_15"
+      },
+      "hilimit": 15,
+      "lolimit": 10,
+      "qid": "correctedreflectivity_10_15"
+    },
+    {
+      "attributes": {
+        "class": "correctedreflectivity_15_20"
+      },
+      "hilimit": 20,
+      "lolimit": 15,
+      "qid": "correctedreflectivity_15_20"
+    },
+    {
+      "attributes": {
+        "class": "correctedreflectivity_20_25"
+      },
+      "hilimit": 25,
+      "lolimit": 20,
+      "qid": "correctedreflectivity_20_25"
+    },
+    {
+      "attributes": {
+        "class": "correctedreflectivity_25_30"
+      },
+      "hilimit": 30,
+      "lolimit": 25,
+      "qid": "correctedreflectivity_25_30"
+    },
+    {
+      "attributes": {
+        "class": "correctedreflectivity_30_35"
+      },
+      "hilimit": 35,
+      "lolimit": 30,
+      "qid": "correctedreflectivity_30_35"
+    },
+    {
+      "attributes": {
+        "class": "correctedreflectivity_35_40"
+      },
+      "hilimit": 40,
+      "lolimit": 35,
+      "qid": "correctedreflectivity_35_40"
+    },
+    {
+      "attributes": {
+        "class": "correctedreflectivity_40_45"
+      },
+      "hilimit": 45,
+      "lolimit": 40,
+      "qid": "correctedreflectivity_40_45"
+    },
+    {
+      "attributes": {
+        "class": "correctedreflectivity_45_50"
+      },
+      "hilimit": 50,
+      "lolimit": 45,
+      "qid": "correctedreflectivity_45_50"
+    },
+    {
+      "attributes": {
+        "class": "correctedreflectivity_50_55"
+      },
+      "hilimit": 55,
+      "lolimit": 50,
+      "qid": "correctedreflectivity_50_55"
+    },
+    {
+      "attributes": {
+        "class": "correctedreflectivity_55_60"
+      },
+      "hilimit": 60,
+      "lolimit": 55,
+      "qid": "correctedreflectivity_55_60"
+    },
+    {
+      "attributes": {
+        "class": "correctedreflectivity_60_65"
+      },
+      "hilimit": 65,
+      "lolimit": 60,
+      "qid": "correctedreflectivity_60_65"
+    },
+    {
+      "attributes": {
+        "class": "correctedreflectivity_65_70"
+      },
+      "hilimit": 70,
+      "lolimit": 65,
+      "qid": "correctedreflectivity_65_70"
+    }
+  ]

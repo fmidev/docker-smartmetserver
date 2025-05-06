@@ -1,0 +1,22 @@
+{
+    "title": "Radar Composite Reflectivity",
+    "abstract": "Corrected Reflectivity in dBZ",
+    "projection": {},
+    "producer": "radar_composite_dbzh",
+    "views": [
+      {
+        "layers": [
+          {
+            "qid": "l",
+            "layer_type": "isoband",
+            "isobands": "json:isobands/correctedreflectivity.json",
+            "css": "isobands/correctedreflectivity.css",
+            "parameter": "CorrectedReflectivity",
+            "attributes": {
+              "shape-rendering": "crispEdges"
+            }
+          }
+        ]
+      }
+    ]
+  }
