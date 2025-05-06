@@ -1,0 +1,36 @@
+{
+    "variants": [
+        {
+            "name": "model:icon:relativehumidity",
+            "title": "ICON Relative Humidity 2m",
+            "producer": "icon_surface"
+        },
+        {
+            "name": "model:gem:relativehumidity",
+            "title": "GEM Relative Humidity 2m",
+            "producer": "gem_surface"
+        },
+        {
+            "name": "model:gfs:relativehumidity",
+            "title": "GFS Relative Humidity 2m",
+            "producer": "gfs_surface"
+        }
+
+    ],
+    "producer": "ecmwf_surface",
+    "views": [
+        {
+            "layers": [
+                {
+                    "qid": "l",
+                    "layer_type": "isoband",
+                    "isobands": "json:isobands/relativehumidity.json",
+                    "parameter": "Humidity",
+                    "attributes": {
+                        "shape-rendering": "crispEdges"
+                    }
+                }
+            ]
+        }
+    ]
+}
