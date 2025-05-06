@@ -1,7 +1,7 @@
 {
     "title": "GEM Temperature 2m",
     "abstract": "Temperature 2m from GEM",
-    "producer": "gem_world_surface",
+    "producer": "gem_surface",
     "views": [
         {
             "layers": [

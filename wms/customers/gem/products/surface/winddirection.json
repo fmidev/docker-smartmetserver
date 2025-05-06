@@ -1,7 +1,7 @@
 {
     "title": "GEM Wind Direction 10m",
     "abstract": "Wind direction from GEM forecast model.",
-    "producer": "gem_world_surface",
+    "producer": "gem_surface",
     "views": [
         {
             "layers": [

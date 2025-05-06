@@ -1,14 +1,14 @@
 {
-    "title" : "GEM Relative Humidity 2m",
-    "abstract" : "Relative Humidity 2m from GEM",
+    "title" : "GEM Precipitation Rate",
+    "abstract" : "Precipitation Rate from GEM",
     "producer": "gem_surface",
-    "keyword": ["model:gem"],
     "views": [{
         "layers": [{
             "qid": "l",
             "layer_type": "isoband",
-            "isobands": "json:isobands/relativehumidity.json",
-            "parameter": "Humidity",
+            "isobands": "json:isobands/precipitation.json",
+            "css": "isobands/precipitation.css",
+            "parameter": "Precipitation1h",
             "attributes": {
                 "shape-rendering": "crispEdges"
             }
