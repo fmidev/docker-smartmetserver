@@ -1,0 +1,22 @@
+{
+    "title": "Radar Composite Rain rate",
+    "abstract": "Radar Rain rate in mm/h",
+    "projection": {},
+    "producer": "radar_composite_rr",
+    "views": [
+      {
+        "layers": [
+          {
+            "qid": "l",
+            "layer_type": "isoband",
+            "isobands": "json:isobands/precipitation.json",
+            "css": "isobands/precipitation.css",
+            "parameter": "PrecipitationRate",
+            "attributes": {
+              "shape-rendering": "crispEdges"
+            }
+          }
+        ]
+      }
+    ]
+  }
