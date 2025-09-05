@@ -75,7 +75,7 @@ http://localhost:8080/timeseries?producer=meps&lonlat=24.94,60.17&param=time,tem
 http://localhost:8080/wms?service=wms&version=1.3.0&request=GetCapabilities
 
 #### Access data inventory
-http://localhost:8080/admin?what=qengine
+http://localhost:8080/info?what=qengine
 
 Get more help for timeseries usage from github [wiki page](https://github.com/fmidev/smartmet-plugin-timeseries/wiki/SmartMet-plugin-TimeSeries).
 
