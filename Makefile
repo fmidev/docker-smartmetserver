@@ -18,7 +18,7 @@ clean:
 
 build-rhel10:
 	$(MAKE) clean-rhel10
-	docker build . --file Dockerfile.rh10 --tag fmidev/smartmetserver-rhel10:latest
+	docker build . --file Dockerfile.rhel10 --tag fmidev/smartmetserver-rhel10:latest
 
 test-rhel10:
 	docker run --name test10 --rm -p 127.0.0.1:8080:8080 fmidev/smartmetserver-rhel10:latest &> debug10.log &
@@ -32,5 +32,3 @@ clean-rhel10:
 	-docker image rm -f fmidev/smartmetserver-rhel10
 	-docker image prune -f
 	rm -f debug10.log
-
-	docker build -t fmidev/smartmetserver:rhel10 -f Dockerfile.rhel10 .
