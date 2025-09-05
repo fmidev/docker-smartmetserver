@@ -10,7 +10,7 @@ fi
 if [ "$1" = 'smartmetd' ]; then
     id
     whoami
-    exec /usr/sbin/smartmetd
+    LD_PRELOAD=libjemalloc.so.2 exec /usr/sbin/smartmetd
 fi
 
 exec "$@"
