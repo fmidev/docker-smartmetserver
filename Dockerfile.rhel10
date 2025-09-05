@@ -16,6 +16,7 @@ RUN dnf -y install https://download.fmi.fi/smartmet-open/rhel/10/x86_64/smartmet
     dnf config-manager --set-disabled epel-source && \
     dnf -y update && \
     dnf -y install --setopt=install_weak_deps=False \
+    dnf -y install jemalloc \
     smartmet-plugin-autocomplete \
     smartmet-plugin-backend \
     smartmet-plugin-download \
