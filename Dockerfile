@@ -31,6 +31,9 @@ RUN dnf -y install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-
     glibc-langpack-en && \
     dnf -y reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common eccodes && \
     dnf clean all 
+    
+# Remove unnecessary capabilities
+RUN setcap -r /usr/sbin/smartmetd
 
 # Install Google Fonts
 RUN \
