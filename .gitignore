@@ -1,0 +1,10 @@
+# Development tools
+actionlint
+debug.log
+
+# Editor files
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
