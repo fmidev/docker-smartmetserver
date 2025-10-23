@@ -32,23 +32,6 @@ RUN dnf -y install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-
     glibc-langpack-en && \
     dnf -y reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common eccodes && \
     dnf clean all 
-    
-# discover the real, regular file path (not a symlink)
-RUN BIN="$(realpath -e "$(command -v smartmetd)")" \
- && echo "smartmetd real path: $BIN" \
- # show current caps (if any)
- && getcap "$BIN" || true \
- # remove caps only if present; ignore ENODATA
- && ( getcap "$BIN" | grep -q . && setcap -v -r "$BIN" || true )
-
-# Install Google Fonts
-RUN \
-    for FONT in $GOOGLE_FONTS; \
-    do \
-        mkdir -p /usr/share/fonts/truetype/${FONT} && \
-        curl -s -S --output-dir /usr/share/fonts/truetype/${FONT}  "https://github.com/google/fonts/raw/main/ofl/${FONT,,}/${FONT}%5Bwdth,wght%5D.ttf" && \
-        curl -s -S --output-dir /usr/share/fonts/truetype/${FONT}  "https://github.com/google/fonts/raw/main/ofl/${FONT,,}/${FONT}-italic%5Bwdth,wght%5D.ttf" ; \
-    done
 
 HEALTHCHECK --interval=30s --timeout=10s \
   CMD curl -f http://localhost:8080/admin?what=qengine || exit 1
