@@ -53,6 +53,11 @@ The server is especially good for extracting weather data and generating product
 * [smartmet-server](https://github.com/fmidev/smartmet-server)
 
 ### Usage
+
+The Docker images are available on both Docker Hub and GitHub Container Registry:
+- Docker Hub: `fmidev/smartmetserver`
+- GitHub Container Registry: `ghcr.io/fmidev/smartmetserver`
+
 #### Run container
 ```
 docker run -d --restart=always --name smartmetserver -v $HOME/data:/smartmet/data \
