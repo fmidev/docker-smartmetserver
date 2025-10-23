@@ -33,8 +33,13 @@ RUN dnf -y install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-
     dnf -y reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common eccodes && \
     dnf clean all 
     
-# Remove unnecessary capabilities
-RUN setcap -r /usr/sbin/smartmetd
+# discover the real, regular file path (not a symlink)
+RUN BIN="$(realpath -e "$(command -v smartmetd)")" \
+ && echo "smartmetd real path: $BIN" \
+ # show current caps (if any)
+ && getcap "$BIN" || true \
+ # remove caps only if present; ignore ENODATA
+ && ( getcap "$BIN" | grep -q . && setcap -v -r "$BIN" || true )
 
 # Install Google Fonts
 RUN \
