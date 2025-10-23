@@ -2,33 +2,84 @@ name: Docker Image CI
 
 on:
   schedule:
-    - cron:  '0 6 * * *'
+    - cron: '0 6 * * *'
   push:
-    branches: [ master ]
+    branches: [master, main]
   pull_request:
-    branches: [ master ]
+    branches: [master, main]
 
 jobs:
-
-  build:
-
+  # Build and test job - runs on all commits and PRs
+  build-and-test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Docker login
-      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USER }} --password-stdin
-    - name: Docker build
-      run: docker build . --file Dockerfile --tag fmidev/smartmetserver:latest
-    - name: Docker test
-      run: |
-        docker run --name test --rm -p 127.0.0.1:8080:8080 fmidev/smartmetserver:latest &> debug.log &
-        sleep 45
-        cat debug.log
-        docker logs test
-        curl -f  "http://localhost:8080/wms?request=getCapabilities&service=WMS" || exit 1
-        docker stop test
-    - name: Docker tag
-      run: docker image tag fmidev/smartmetserver:latest fmidev/smartmetserver:$(date +%y.%m.%d -d @$(docker run --rm fmidev/smartmetserver:latest rpm -qa --queryformat %'{buildtime}\n' smartmet-*|sort -n|tail -1))
-    - name: Docker push
-      run: docker push --all-tags fmidev/smartmetserver
+      - uses: actions/checkout@v4
+
+      - name: Docker build
+        run: docker build . --file Dockerfile --tag fmidev/smartmetserver:latest
+
+      - name: Docker test
+        run: |
+          docker run --name test --rm -p 127.0.0.1:8080:8080 \
+            fmidev/smartmetserver:latest &> debug.log &
+          sleep 45
+          cat debug.log
+          docker logs test
+          curl -f "http://localhost:8080/wms?request=getCapabilities&service=WMS" \
+            || exit 1
+          docker stop test
+
+  # Push job - runs on master/main branch updates and scheduled builds
+  push:
+    runs-on: ubuntu-latest
+    needs: build-and-test
+    permissions:
+      contents: read
+      packages: write
+    if: |
+      (github.event_name == 'schedule') ||
+      (github.event_name == 'push' &&
+       (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'))
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Docker build
+        run: docker build . --file Dockerfile --tag fmidev/smartmetserver:latest
+
+      - name: Docker tag
+        run: |
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            # For scheduled builds, use RPM buildtime
+            DATE_TAG=$(date +%y.%m.%d -d @"$(docker run --rm \
+              fmidev/smartmetserver:latest rpm -qa \
+              --queryformat %'{buildtime}\n' smartmet-*|sort -n|tail -1)")
+          else
+            # For push events, use current date
+            DATE_TAG=$(date +%y.%m.%d)
+          fi
+          docker image tag fmidev/smartmetserver:latest \
+            "fmidev/smartmetserver:${DATE_TAG}"
+          docker image tag fmidev/smartmetserver:latest \
+            ghcr.io/fmidev/smartmetserver:latest
+          docker image tag fmidev/smartmetserver:latest \
+            "ghcr.io/fmidev/smartmetserver:${DATE_TAG}"
+
+      - name: Login to Docker Hub
+        run: |
+          echo "${{ secrets.DOCKER_PASSWORD }}" | \
+            docker login -u ${{ secrets.DOCKER_USER }} --password-stdin
+
+      - name: Login to GitHub Container Registry
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | \
+            docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      - name: Push to Docker Hub
+        run: docker push --all-tags fmidev/smartmetserver
+
+      - name: Push to GitHub Container Registry
+        run: docker push --all-tags ghcr.io/fmidev/smartmetserver
