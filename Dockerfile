@@ -14,6 +14,7 @@ RUN dnf -y install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-
     dnf config-manager --setopt="epel.exclude=eccodes*" --save && \
     dnf config-manager --set-disabled epel-source && \ 
     dnf -y module disable postgresql:15 && \
+    sed -i -e 's/^mirrorlist=/#mirrorlist=/' -e 's/^#baseurl=/baseurl=/' /etc/yum.repos.d/rocky.repo && \
     dnf -y update && \
     dnf -y install --setopt=install_weak_deps=False \
     smartmet-plugin-admin \
