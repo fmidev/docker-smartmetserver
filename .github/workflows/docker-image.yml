@@ -32,7 +32,7 @@ jobs:
             || exit 1
           docker stop test
 
-  # Push job - only runs on master/main branch updates
+  # Push job - runs on master/main branch updates and scheduled builds
   push:
     runs-on: ubuntu-latest
     needs: build-and-test
@@ -40,8 +40,9 @@ jobs:
       contents: read
       packages: write
     if: |
-      github.event_name != 'pull_request' &&
-      (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
+      (github.event_name == 'schedule') ||
+      (github.event_name == 'push' &&
+       (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'))
 
     steps:
       - uses: actions/checkout@v4
@@ -51,9 +52,15 @@ jobs:
 
       - name: Docker tag
         run: |
-          DATE_TAG=$(date +%y.%m.%d -d @"$(docker run --rm \
-            fmidev/smartmetserver:latest rpm -qa \
-            --queryformat %'{buildtime}\n' smartmet-*|sort -n|tail -1)")
+          if [ "${{ github.event_name }}" = "schedule" ]; then
+            # For scheduled builds, use RPM buildtime
+            DATE_TAG=$(date +%y.%m.%d -d @"$(docker run --rm \
+              fmidev/smartmetserver:latest rpm -qa \
+              --queryformat %'{buildtime}\n' smartmet-*|sort -n|tail -1)")
+          else
+            # For push events, use current date
+            DATE_TAG=$(date +%y.%m.%d)
+          fi
           docker image tag fmidev/smartmetserver:latest \
             "fmidev/smartmetserver:${DATE_TAG}"
           docker image tag fmidev/smartmetserver:latest \
