@@ -110,7 +110,7 @@ docker run --name test -p 8080:8080 fmidev/smartmetserver:latest
 
 # In another terminal, test endpoints:
 curl "http://localhost:8080/wms?request=getCapabilities&service=WMS"
-curl "http://localhost:8080/admin?what=qengine"
+curl "http://localhost:8080/info?what=qengine"
 curl "http://localhost:8080/timeseries?producer=meps&lonlat=24.94,60.17&param=time,temperature,pressure"
 
 # Stop the container
@@ -211,7 +211,7 @@ docker-compose down
 - Verify configuration files are valid
 - Ensure data directories are properly mounted
 - Check file permissions (remember: running as UID 101010)
-- Use healthcheck endpoint: `curl http://localhost:8080/admin?what=qengine`
+- Use healthcheck endpoint: `curl http://localhost:8080/info?what=qengine`
 
 ### Test Failures in CI
 - Check if 45-second wait time is sufficient
