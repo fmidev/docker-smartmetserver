@@ -12,6 +12,8 @@ jobs:
   # Build and test job - runs on all commits and PRs
   build-and-test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     steps:
       - uses: actions/checkout@v4
@@ -34,6 +36,9 @@ jobs:
   push:
     runs-on: ubuntu-latest
     needs: build-and-test
+    permissions:
+      contents: read
+      packages: write
     if: |
       github.event_name != 'pull_request' &&
       (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
@@ -46,15 +51,15 @@ jobs:
 
       - name: Docker tag
         run: |
-          DATE_TAG=$(date +%y.%m.%d -d @$(docker run --rm \
+          DATE_TAG=$(date +%y.%m.%d -d @"$(docker run --rm \
             fmidev/smartmetserver:latest rpm -qa \
-            --queryformat %'{buildtime}\n' smartmet-*|sort -n|tail -1))
+            --queryformat %'{buildtime}\n' smartmet-*|sort -n|tail -1)")
           docker image tag fmidev/smartmetserver:latest \
-            fmidev/smartmetserver:${DATE_TAG}
+            "fmidev/smartmetserver:${DATE_TAG}"
           docker image tag fmidev/smartmetserver:latest \
             ghcr.io/fmidev/smartmetserver:latest
           docker image tag fmidev/smartmetserver:latest \
-            ghcr.io/fmidev/smartmetserver:${DATE_TAG}
+            "ghcr.io/fmidev/smartmetserver:${DATE_TAG}"
 
       - name: Login to Docker Hub
         run: |
