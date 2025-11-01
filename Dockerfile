@@ -48,6 +48,7 @@ RUN install -m 775 -g 0 -d /var/smartmet/archivecache
 RUN chmod -R g=u /etc/passwd
 
 COPY smartmetconf /etc/smartmet
+COPY share/edr /usr/share/smartmet/edr
 COPY wms /smartmet/share/wms
 COPY docker-entrypoint.sh /
 
