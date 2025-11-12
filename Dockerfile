@@ -25,6 +25,7 @@ RUN dnf -y install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-
     smartmet-plugin-timeseries \
     smartmet-plugin-wms \
     smartmet-engine-grid \
+    smartmet-engine-observation \
     smartmet-library-tron \
     smartmet-plugin-q3 \
     lua-newcairo-q3 \
