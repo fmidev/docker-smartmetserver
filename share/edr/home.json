@@ -1,0 +1,30 @@
+{
+  "title": "SmartMet EDR API",
+  "description": "SmartMet API for querying meteorological datasets. Conforms to OGC API Environmental Data Retrieval specification",
+  "links": [
+    {
+      "href": "__HOST__/?f=JSON",
+      "rel": "self",
+      "type": "application/json",
+      "title": "Landing Page in JSON"
+    },
+    {
+      "href": "__HOST__/api",
+      "rel": "service-desc",
+      "type": "application/json",
+      "title": "API description in JSON"
+    },
+    {
+      "href": "__HOST__/conformance",
+      "rel": "conformance",
+      "type": "application/json",
+      "title": "Conformance Declaration in JSON"
+    },
+    {
+      "href": "__HOST__/collections",
+      "rel": "data",
+      "type": "application/json",
+      "title": "Collections metadata in JSON"
+    }
+  ]
+}

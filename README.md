@@ -53,6 +53,11 @@ The server is especially good for extracting weather data and generating product
 * [smartmet-server](https://github.com/fmidev/smartmet-server)
 
 ### Usage
+
+The Docker images are available on both Docker Hub and GitHub Container Registry:
+- Docker Hub: `fmidev/smartmetserver`
+- GitHub Container Registry: `ghcr.io/fmidev/smartmetserver`
+
 #### Run container
 ```
 docker run -d --restart=always --name smartmetserver -v $HOME/data:/smartmet/data \
@@ -62,9 +67,7 @@ docker run -d --restart=always --name smartmetserver -v $HOME/data:/smartmet/dat
 ```
 mkdir -p $HOME/data/meps/surface
 mkdir -p $HOME/data/ecmwf/surface
-wget -O $HOME/data/meps/surface/$(date -u +%Y%m%d0000)_meps_northeurope_surface.sqd \ 
--S "https://opendata.fmi.fi/download?param=Temperature,TotalCloudCover,Precipitation1h,WindSpeedMS,Humidity,
-Pressure,WeatherSymbol3&format=qd&producer=harmonie_scandinavia_surface&origintime=$(date -u +%Y-%m-%dT00Z)&timestep=data"
+wget -O $HOME/data/meps/surface/$(date -u +%Y%m%d0000)_meps_northeurope_surface.sqd -S "https://opendata.fmi.fi/download?param=Temperature,TotalCloudCover,Precipitation1h,WindSpeedMS,Humidity,Pressure,WeatherSymbol3&format=qd&producer=harmonie_scandinavia_surface&origintime=$(date -u +%Y-%m-%dT00Z)&timestep=data"
 wget -O $HOME/data/ecmwf/surface/$(date -u +%Y%m%d0000)_ecmwf_europe_surface.sqd -S "https://opendata.fmi.fi/download?param=Temperature&format=qd&producer=ecmwf&origintime=$(date -u +%Y-%m-%dT00Z)&timestep=data"
 ```
 
@@ -75,7 +78,7 @@ http://localhost:8080/timeseries?producer=meps&lonlat=24.94,60.17&param=time,tem
 http://localhost:8080/wms?service=wms&version=1.3.0&request=GetCapabilities
 
 #### Access data inventory
-http://localhost:8080/admin?what=qengine
+http://localhost:8080/info?what=qengine
 
 Get more help for timeseries usage from github [wiki page](https://github.com/fmidev/smartmet-plugin-timeseries/wiki/SmartMet-plugin-TimeSeries).
 

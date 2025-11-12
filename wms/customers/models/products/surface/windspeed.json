@@ -1,6 +1,11 @@
 {
     "variants": [
         {
+            "name": "model:arpege:surface:windspeed",
+            "title": "ARPEGE Wind Speed 10m",
+            "producer": "arpege_surface"
+        },
+        {
             "name": "model:ecmwf:surface:windspeed",
             "title": "ECMWF Wind Speed 10m",
             "producer": "ecmwf_surface"
@@ -19,6 +24,11 @@
             "name": "model:gfs:surface:windspeed",
             "title": "GFS Wind Speed 10m",
             "producer": "gfs_surface"
+        },
+        {
+            "name": "model:wrf:surface:windspeed",
+            "title": "WRF Wind Speed 10m",
+            "producer": "wrf_surface"
         }
 
     ],

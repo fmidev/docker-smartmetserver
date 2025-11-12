@@ -14,6 +14,7 @@ RUN dnf -y install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-
     dnf config-manager --setopt="epel.exclude=eccodes*" --save && \
     dnf config-manager --set-disabled epel-source && \ 
     dnf -y module disable postgresql:15 && \
+    sed -i -e 's/^mirrorlist=/#mirrorlist=/' -e 's/^#baseurl=/baseurl=/' /etc/yum.repos.d/rocky.repo && \
     dnf -y update && \
     dnf -y install jemalloc && \
     dnf -y install --setopt=install_weak_deps=False \
@@ -33,15 +34,6 @@ RUN dnf -y install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-
     dnf -y reinstall --setopt=override_install_langs='' --setopt=tsflags='' glibc-common eccodes && \
     dnf clean all 
 
-# Install Google Fonts
-RUN \
-    for FONT in $GOOGLE_FONTS; \
-    do \
-        mkdir -p /usr/share/fonts/truetype/${FONT} && \
-        curl -s -S --output-dir /usr/share/fonts/truetype/${FONT}  "https://github.com/google/fonts/raw/main/ofl/${FONT,,}/${FONT}%5Bwdth,wght%5D.ttf" && \
-        curl -s -S --output-dir /usr/share/fonts/truetype/${FONT}  "https://github.com/google/fonts/raw/main/ofl/${FONT,,}/${FONT}-italic%5Bwdth,wght%5D.ttf" ; \
-    done
-
 HEALTHCHECK --interval=30s --timeout=10s \
   CMD curl -f http://localhost:8080/admin?what=qengine || exit 1
 
@@ -57,6 +49,7 @@ RUN install -m 775 -g 0 -d /var/smartmet/archivecache
 RUN chmod -R g=u /etc/passwd
 
 COPY smartmetconf /etc/smartmet
+COPY share/edr /usr/share/smartmet/edr
 COPY wms /smartmet/share/wms
 COPY docker-entrypoint.sh /
 
