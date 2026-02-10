@@ -4,6 +4,7 @@ build:
 	docker build . --file Dockerfile --tag fmidev/smartmetserver:latest
 
 test:
+	docker rm -f test 2>/dev/null || true
 	docker run --name test --rm -p 127.0.0.1:8080:8080 fmidev/smartmetserver:latest &> debug.log &
 	# Wait for the server to start
 	sleep 45s
@@ -21,6 +22,7 @@ build-rhel10:
 	docker build . --file Dockerfile.rhel10 --tag fmidev/smartmetserver-rhel10:latest
 
 test-rhel10:
+	docker rm -f test10 2>/dev/null || true
 	docker run --name test10 --rm -p 127.0.0.1:8080:8080 fmidev/smartmetserver-rhel10:latest &> debug10.log &
 	# Wait for the server to start
 	sleep 45s
