@@ -17,7 +17,6 @@ RUN dnf -y install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-
     sed -i -e 's/^mirrorlist=/#mirrorlist=/' -e 's/^#baseurl=/baseurl=/' /etc/yum.repos.d/rocky.repo && \
     dnf -y update && \
     dnf -y install --setopt=install_weak_deps=False \
-    smartmet-plugin-admin \
     smartmet-plugin-autocomplete \
     smartmet-plugin-backend \
     smartmet-plugin-download \
