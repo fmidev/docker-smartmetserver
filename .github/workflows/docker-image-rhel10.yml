@@ -30,5 +30,5 @@ jobs:
         docker stop test
     - name: Docker tag
       run: docker image tag fmidev/smartmetserver-rhel10:latest fmidev/smartmetserver-rhel10:$(date +%y.%m.%d -d @$(docker run --rm fmidev/smartmetserver-rhel10:latest rpm -qa --queryformat %'{buildtime}\n' smartmet-*|sort -n|tail -1))
-#    - name: Docker push
-#      run: docker push --all-tags fmidev/smartmetserver-rhel10
+    - name: Docker push
+      run: docker push --all-tags fmidev/smartmetserver-rhel10
