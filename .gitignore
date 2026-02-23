@@ -1,2 +1,11 @@
-/debug.log
-/debug10.log
+# Development tools
+actionlint
+debug.log
+debug10.log
+
+# Editor files
+*~
+*.swp
+*.swo
+.vscode/
+.idea/
