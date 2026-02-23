@@ -1,7 +1,6 @@
 
 build:
-	$(MAKE) clean
-	docker build . --file Dockerfile --tag fmidev/smartmetserver:latest --no-cache
+	docker build . --no-cache --file Dockerfile --tag fmidev/smartmetserver:latest --no-cache
 
 test:
 	docker rm -f test 2>/dev/null || true
@@ -18,8 +17,7 @@ clean:
 	rm -f debug.log
 
 build-rhel10:
-	$(MAKE) clean-rhel10
-	docker build . --file Dockerfile.rhel10 --tag fmidev/smartmetserver-rhel10:latest --no-cache
+	docker build . --no-cache --file Dockerfile.rhel10 --tag fmidev/smartmetserver-rhel10:latest --no-cache
 
 test-rhel10:
 	docker rm -f test10 2>/dev/null || true
