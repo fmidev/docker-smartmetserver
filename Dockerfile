@@ -1,6 +1,14 @@
 FROM docker.io/rockylinux:9
 LABEL maintainer "Mikko Rauhala <mikko.rauhala@fmi.fi>"
 LABEL license    "MIT License Copyright (c) 2023 FMI Open Development"
+LABEL org.opencontainers.image.source=https://github.com/fmidev/docker-smartmetserver
+LABEL org.opencontainers.image.description="Docker image for FMI SmartMet Server \
+providing high-performance meteorological data services. Includes core engine, \
+plugins, and APIs for querying, processing, and serving weather, climate, and \
+geospatial data. Optimized for cloud and Kubernetes deployments with scalable \
+architecture, fast data access, and support for standard formats and protocols \
+(WMS, WFS, OGC API)."
+LABEL org.opencontainers.image.licenses=MIT
 
 ENV USER_NAME="smartmet" \
     GOOGLE_FONTS="Montserrat NotoSans OpenSans Roboto" 
