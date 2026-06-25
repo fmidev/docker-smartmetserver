@@ -14,8 +14,9 @@ ENV USER_NAME="smartmet" \
     GOOGLE_FONTS="Montserrat NotoSans OpenSans Roboto" 
 
 ARG SMARTMET_REPO_RPM=https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-open-release-latest-9.noarch.rpm
+ARG SMARTMET_BETA_REPO_RPM
 
-RUN dnf -y install ${SMARTMET_REPO_RPM} && \
+RUN dnf -y install ${SMARTMET_REPO_RPM} ${SMARTMET_BETA_REPO_RPM:+${SMARTMET_BETA_REPO_RPM}} && \
     dnf -y install yum-utils && \
     dnf config-manager --set-enabled crb && \
     dnf -y install epel-release && \

@@ -20,7 +20,7 @@ jobs:
       - name: Docker build
         run: |
           docker build . --file Dockerfile \
-            --build-arg SMARTMET_REPO_RPM=https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-open-beta-latest-9.noarch.rpm \
+            --build-arg SMARTMET_BETA_REPO_RPM=https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-open-beta-latest-9.noarch.rpm \
             --tag fmidev/smartmetserver:beta
 
       - name: Docker test
@@ -51,7 +51,7 @@ jobs:
       - name: Docker build
         run: |
           docker build . --file Dockerfile \
-            --build-arg SMARTMET_REPO_RPM=https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-open-beta-latest-9.noarch.rpm \
+            --build-arg SMARTMET_BETA_REPO_RPM=https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-open-beta-latest-9.noarch.rpm \
             --tag fmidev/smartmetserver:beta
 
       - name: Docker tag
