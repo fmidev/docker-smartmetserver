@@ -9,10 +9,12 @@ on:
     branches: [master, main]
 
 jobs:
-  build-and-test:
+  build-test-push:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+    env:
+      SHOULD_PUSH: ${{ github.event_name == 'schedule' || (github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')) }}
 
     steps:
       - uses: actions/checkout@v6
@@ -34,27 +36,8 @@ jobs:
             || exit 1
           docker stop test
 
-  push:
-    runs-on: ubuntu-latest
-    needs: build-and-test
-    permissions:
-      contents: read
-      packages: write
-    if: |
-      (github.event_name == 'schedule') ||
-      (github.event_name == 'push' &&
-       (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'))
-
-    steps:
-      - uses: actions/checkout@v6
-
-      - name: Docker build
-        run: |
-          docker build . --file Dockerfile \
-            --build-arg SMARTMET_BETA_REPO_RPM=https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-open-beta-latest-9.noarch.rpm \
-            --tag fmidev/smartmetserver:beta
-
       - name: Docker tag
+        if: env.SHOULD_PUSH == 'true'
         run: |
           if [ "${{ github.event_name }}" = "schedule" ]; then
             DATE_TAG=$(date +%y.%m.%d -d @"$(docker run --rm \
@@ -65,23 +48,13 @@ jobs:
           fi
           docker image tag fmidev/smartmetserver:beta \
             "fmidev/smartmetserver:beta-${DATE_TAG}"
-          docker image tag fmidev/smartmetserver:beta \
-            ghcr.io/fmidev/smartmetserver:beta
-          docker image tag fmidev/smartmetserver:beta \
-            "ghcr.io/fmidev/smartmetserver:beta-${DATE_TAG}"
 
       - name: Login to Docker Hub
+        if: env.SHOULD_PUSH == 'true'
         run: |
           echo "${{ secrets.DOCKER_PASSWORD }}" | \
             docker login -u ${{ secrets.DOCKER_USER }} --password-stdin
 
-      - name: Login to GitHub Container Registry
-        run: |
-          echo "${{ secrets.GITHUB_TOKEN }}" | \
-            docker login ghcr.io -u ${{ github.actor }} --password-stdin
-
       - name: Push to Docker Hub
+        if: env.SHOULD_PUSH == 'true'
         run: docker push --all-tags fmidev/smartmetserver
-
-      - name: Push to GitHub Container Registry
-        run: docker push --all-tags ghcr.io/fmidev/smartmetserver

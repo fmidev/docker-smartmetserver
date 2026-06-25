@@ -4,31 +4,48 @@ on:
   schedule:
     - cron:  '0 6 * * *'
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
-
-  build:
-
+  build-test-push:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      SHOULD_PUSH: ${{ github.event_name == 'schedule' || (github.event_name == 'push' && github.ref == 'refs/heads/master') }}
 
     steps:
-    - uses: actions/checkout@v6
-    - name: Docker login
-      run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USER }} --password-stdin
-    - name: Docker build
-      run: docker build . --file Dockerfile.rocky10 --tag fmidev/smartmetserver-rocky10:latest
-    - name: Docker test
-      run: |
-        docker run --name test --rm -p 127.0.0.1:8080:8080 fmidev/smartmetserver-rocky10:latest &> debug.log &
-        sleep 45
-        cat debug.log
-        docker logs test
-        curl -f  "http://localhost:8080/wms?request=getCapabilities&service=WMS" || exit 1
-        docker stop test
-    - name: Docker tag
-      run: docker image tag fmidev/smartmetserver-rocky10:latest fmidev/smartmetserver-rocky10:$(date +%y.%m.%d -d @$(docker run --rm fmidev/smartmetserver-rocky10:latest rpm -qa --queryformat %'{buildtime}\n' smartmet-*|sort -n|tail -1))
-    - name: Docker push
-      run: docker push --all-tags fmidev/smartmetserver-rocky10
+      - uses: actions/checkout@v6
+
+      - name: Docker build
+        run: docker build . --file Dockerfile.rocky10 --tag fmidev/smartmetserver-rocky10:latest
+
+      - name: Docker test
+        run: |
+          docker run --name test --rm -p 127.0.0.1:8080:8080 \
+            fmidev/smartmetserver-rocky10:latest &> debug.log &
+          sleep 45
+          cat debug.log
+          docker logs test
+          curl -f "http://localhost:8080/wms?request=getCapabilities&service=WMS" || exit 1
+          docker stop test
+
+      - name: Docker tag
+        if: env.SHOULD_PUSH == 'true'
+        run: |
+          docker image tag fmidev/smartmetserver-rocky10:latest \
+            fmidev/smartmetserver-rocky10:$(date +%y.%m.%d -d @$(docker run --rm \
+              fmidev/smartmetserver-rocky10:latest rpm -qa \
+              --queryformat %'{buildtime}\n' smartmet-*|sort -n|tail -1))
+
+      - name: Docker login
+        if: env.SHOULD_PUSH == 'true'
+        run: |
+          echo "${{ secrets.DOCKER_PASSWORD }}" | \
+            docker login -u ${{ secrets.DOCKER_USER }} --password-stdin
+
+      - name: Docker push
+        if: env.SHOULD_PUSH == 'true'
+        run: docker push --all-tags fmidev/smartmetserver-rocky10
