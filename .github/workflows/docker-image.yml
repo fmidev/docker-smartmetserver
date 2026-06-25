@@ -16,7 +16,7 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Docker build
         run: docker build . --file Dockerfile --tag fmidev/smartmetserver:latest
@@ -45,7 +45,7 @@ jobs:
        (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'))
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Docker build
         run: docker build . --file Dockerfile --tag fmidev/smartmetserver:latest
