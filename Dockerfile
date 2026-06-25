@@ -13,7 +13,9 @@ LABEL org.opencontainers.image.licenses=MIT
 ENV USER_NAME="smartmet" \
     GOOGLE_FONTS="Montserrat NotoSans OpenSans Roboto" 
 
-RUN dnf -y install https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-open-release-latest-9.noarch.rpm && \
+ARG SMARTMET_REPO_RPM=https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-open-release-latest-9.noarch.rpm
+
+RUN dnf -y install ${SMARTMET_REPO_RPM} && \
     dnf -y install yum-utils && \
     dnf config-manager --set-enabled crb && \
     dnf -y install epel-release && \
