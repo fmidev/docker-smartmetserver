@@ -8,6 +8,11 @@ on:
   pull_request:
     branches: [master, main]
 
+# A new run on the same branch cancels a previous one still in flight.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   build-test-push:
     runs-on: ubuntu-latest
@@ -20,37 +25,67 @@ jobs:
     steps:
       - uses: actions/checkout@v6
 
-      - name: Docker build
+      # --- Build (release and beta share the same Dockerfile) ---
+      - name: Build release image
         run: docker build . --file Dockerfile --tag fmidev/smartmetserver:latest
 
-      - name: Docker test
+      - name: Build beta image
         run: |
-          docker run --name test --rm -p 127.0.0.1:8080:8080 \
+          docker build . --file Dockerfile \
+            --build-arg SMARTMET_BETA_REPO_RPM=https://download.fmi.fi/smartmet-open/rhel/9/x86_64/smartmet-open-beta-latest-9.noarch.rpm \
+            --tag fmidev/smartmetserver:beta
+
+      # --- Test (sequential; each stops its container before the next binds 8080) ---
+      - name: Test release image
+        run: |
+          docker run --name test-release --rm -p 127.0.0.1:8080:8080 \
             fmidev/smartmetserver:latest &> debug.log &
           sleep 45
           cat debug.log
-          docker logs test
+          docker logs test-release
           curl -f "http://localhost:8080/wms?request=getCapabilities&service=WMS" \
             || exit 1
-          docker stop test
+          docker stop test-release
 
-      - name: Docker tag
+      - name: Test beta image
+        run: |
+          docker run --name test-beta --rm -p 127.0.0.1:8080:8080 \
+            fmidev/smartmetserver:beta &> debug-beta.log &
+          sleep 45
+          cat debug-beta.log
+          docker logs test-beta
+          curl -f "http://localhost:8080/wms?request=getCapabilities&service=WMS" \
+            || exit 1
+          docker stop test-beta
+
+      # --- Tag ---
+      - name: Tag images
         if: env.SHOULD_PUSH == 'true'
         run: |
           if [ "${{ github.event_name }}" = "schedule" ]; then
-            DATE_TAG=$(date +%y.%m.%d -d @"$(docker run --rm \
+            RELEASE_DATE_TAG=$(date +%y.%m.%d -d @"$(docker run --rm \
               fmidev/smartmetserver:latest rpm -qa \
               --queryformat %'{buildtime}\n' smartmet-*|sort -n|tail -1)")
+            BETA_DATE_TAG=$(date +%y.%m.%d -d @"$(docker run --rm \
+              fmidev/smartmetserver:beta rpm -qa \
+              --queryformat %'{buildtime}\n' smartmet-*|sort -n|tail -1)")
           else
-            DATE_TAG=$(date +%y.%m.%d)
+            RELEASE_DATE_TAG=$(date +%y.%m.%d)
+            BETA_DATE_TAG=$(date +%y.%m.%d)
           fi
-          docker image tag fmidev/smartmetserver:latest \
-            "fmidev/smartmetserver:${DATE_TAG}"
-          docker image tag fmidev/smartmetserver:latest \
-            ghcr.io/fmidev/smartmetserver:latest
-          docker image tag fmidev/smartmetserver:latest \
-            "ghcr.io/fmidev/smartmetserver:${DATE_TAG}"
+          echo "RELEASE_DATE_TAG=$RELEASE_DATE_TAG" >> "$GITHUB_ENV"
+          echo "BETA_DATE_TAG=$BETA_DATE_TAG" >> "$GITHUB_ENV"
 
+          # release
+          docker image tag fmidev/smartmetserver:latest "fmidev/smartmetserver:${RELEASE_DATE_TAG}"
+          docker image tag fmidev/smartmetserver:latest ghcr.io/fmidev/smartmetserver:latest
+          docker image tag fmidev/smartmetserver:latest "ghcr.io/fmidev/smartmetserver:${RELEASE_DATE_TAG}"
+          # beta
+          docker image tag fmidev/smartmetserver:beta "fmidev/smartmetserver:beta-${BETA_DATE_TAG}"
+          docker image tag fmidev/smartmetserver:beta ghcr.io/fmidev/smartmetserver:beta
+          docker image tag fmidev/smartmetserver:beta "ghcr.io/fmidev/smartmetserver:beta-${BETA_DATE_TAG}"
+
+      # --- Login ---
       - name: Login to Docker Hub
         if: env.SHOULD_PUSH == 'true'
         run: |
@@ -63,10 +98,20 @@ jobs:
           echo "${{ secrets.GITHUB_TOKEN }}" | \
             docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
-      - name: Push to Docker Hub
+      # --- Push: beta first, release last, so the release version stays on
+      #     top of the GHCR package page (GHCR orders by publish time). ---
+      - name: Push beta images
         if: env.SHOULD_PUSH == 'true'
-        run: docker push --all-tags fmidev/smartmetserver
+        run: |
+          docker push "fmidev/smartmetserver:beta"
+          docker push "fmidev/smartmetserver:beta-${BETA_DATE_TAG}"
+          docker push "ghcr.io/fmidev/smartmetserver:beta"
+          docker push "ghcr.io/fmidev/smartmetserver:beta-${BETA_DATE_TAG}"
 
-      - name: Push to GitHub Container Registry
+      - name: Push release images
         if: env.SHOULD_PUSH == 'true'
-        run: docker push --all-tags ghcr.io/fmidev/smartmetserver
+        run: |
+          docker push "fmidev/smartmetserver:${RELEASE_DATE_TAG}"
+          docker push "fmidev/smartmetserver:latest"
+          docker push "ghcr.io/fmidev/smartmetserver:${RELEASE_DATE_TAG}"
+          docker push "ghcr.io/fmidev/smartmetserver:latest"
